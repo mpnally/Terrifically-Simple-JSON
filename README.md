@@ -33,7 +33,7 @@ representstion design, just tht it doesn't follow the rules of "Very Simple JDON
     {
      "name": "Martin",
      "birthday": "1957-01-05"
-    }
+    },
  "links": [
     {
      "rel": "birthplace",
