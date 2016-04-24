@@ -60,7 +60,7 @@ Lines 3 and 7 violate rule 1—they introduce JSON objects that have no correspo
 Lines 2, 6, 8 and 9 violate rule 2—they introduce JSON names that are not properties of the entity in the data model  
 Line 9 violates rule 3—`bornIn` is a property name, not a value.
 
-This example has 3 JSON objects, an array, and 6 name/value pairs. Nevertheless, it appears to encode the same 3 properties
+This example has 3 JSON objects, an array, and 6 name/value pairs. Nevertheless, it appears to only encode the same 3 properties
 of the same single entity from the data model.
 
 Humans can easily see that this example is following different rules, because we understand the data model, and we 
