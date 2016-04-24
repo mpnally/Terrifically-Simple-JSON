@@ -117,8 +117,10 @@ The following two examples are both valid TS-JSON (verify that they follow the r
  "bornIn": {"_id": "http://www.scotland.org#"}
 }
 ```
-API designers using TS-JSON can choose which they prefer, or allow both. 
-There is a subtle difference in the datatype of the value of `bornIn`—[see below](#datatypes). 
+There is a subtle difference in the datatype of the value of `bornIn`—[see below](#datatypes). Viewed pedantically,
+the second says I was born in a country while the first says I was born in a string. Common sense tells us that
+the intent of the first is the same as the second. Computers are not very good at common sense, but humans are—whether
+you use the first or second form might depend on who the audience is.
 
 ## _isA
 
