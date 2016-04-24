@@ -34,7 +34,7 @@ If you know the data model, you already know what the JSON will look like a vice
 but none of them do it as simply and directly as TS-JSON. Other formats build new concepts or structures on top of JSON, 
 while TS-JSON just uses the concepts that are already there. 
 This is why there is no media type for TS-JSON. TS-JSON is trying to define the simplest possible mapping from the underlying
-data model to JSON—our ideal is that the mapping so direct, obvious and intuitive that it appears not to exist.
+data model to JSON—our ideal is that the mapping is so direct, obvious and intuitive that it appears not to exist.
 
 The following is a valid TS-JSON document:
 ```JSON
