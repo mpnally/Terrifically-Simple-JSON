@@ -87,7 +87,7 @@ Here is an example of its use:
  "firstName": "Martin"
 }
 ```
-This example says simply that the first name of http://martin-nally.name# is Martin.
+This example says simply that the first name of the entity whose id is http://martin-nally.name# is Martin.
 
 The `_id` property can be used in nested objects too, like this:
 ```JSON
