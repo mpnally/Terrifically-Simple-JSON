@@ -24,7 +24,7 @@ The following is a valid VS-JSON document:
 ```JSON
 {
  "name": "Martin",
- "birthday": "1957-01-05",
+ "bornOn": "1957-01-05",
  "bornIn": "http://www.scotland.org"
 }
 ```
@@ -36,7 +36,7 @@ representation design, just that it follows a different set of rules from "Very 
  "properties": 
     {
      "name": "Martin",
-     "birthday": "1957-01-05"
+     "bornOn": "1957-01-05"
     },
  "links": [
     {
@@ -57,7 +57,7 @@ It can have more than one value, so its value can be a JSON array, but can also 
 {
  "_isA": "Person",
  "name": "Martin",
- "birthday": "1957-01-05",
+ "bornOn": "1957-01-05",
  "bornIn": "http://www.scotland.org"
 }
 ```
@@ -67,7 +67,7 @@ VS-JSON allows nested objects, so it is valid to write this:
 {
  "_isA": "Person",
  "name": "Martin",
- "birthday": "1957-01-05",
+ "bornOn": "1957-01-05",
  "bornIn": "http://www.scotland.org",
  "eyeColor": 
     {
