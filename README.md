@@ -152,7 +152,8 @@ When an object is missing an `_id` property, it should be read as a noun clause.
 should be read as meaning
 "The eyeColor of that Person whose name is Martin is that RGBColor whose red value is zero, green value is 0 and blue value is 155"
 
-One of the challenges of JSON is that it only supports 4 datatypes: number, syting, boolean and null. The two most common
+One of the challenges of JSON is that it only supports 3 datatypes: number, string, and boolean (maybe the null value can be considered a 4th). 
+The two most common
 datatypes in Web API programming that are not covered by JSON are Date and URI. Unless you are willing to invent extensions or
 conventions on top of JSON, the best you can do is to encode them as strings. The examples above show how the `_id` property
 can be used to encode URLs more explicitly. This idea can be extended to other datatypes. The idea is that this JSON:
