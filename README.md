@@ -107,6 +107,8 @@ This example makes two independent statements:
 * http://martin-nally.name# was born in http://www.scotland.org#
 * The Gaelic name for http://www.scotland.org# is Alba
 
+## An explicit way of encoding URLs
+
 The following two examples are both valid TS-JSON (verify that they follow the rules)
 ```JSON
 {
