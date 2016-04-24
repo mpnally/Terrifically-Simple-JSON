@@ -228,7 +228,7 @@ we must to state explicitly which notation we're using, or rely on out-of-band k
 ## Full Disclosure
 
 If you know RDF, you will recognize that TS-JSON is a proprietary format for a loose interpretation of the RDF data model.
-Compared to the real RDF data model, TS-JSON's interpretation drops the requirements that predicates and types be entities 
+Compared to the real RDF data model, TS-JSON's interpretation drops the requirements that predicates and classes be entities 
 identified with URLs. Why make my own interpretation? Having done a couple of projects using a strict interpretation of the RDF model, 
 I've seen that those particular features cause significant friction in practical API programming, and that most programming teams are
 unwilling to accept that friction. Those features are important for RDF's ambitions as an internet-scale informtion model but are not
