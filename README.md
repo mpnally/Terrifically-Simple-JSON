@@ -17,7 +17,9 @@ TS-JSON places 3 restrictions on the use of JSON for Web APIs:
 3. The value of a name/value pair must be the value of the property referenced by the name.
 
 TS-JSON also defines two JSON properties, `_id` and `_isA`. `_id` is used to express the identity of an object. `_isA` is used to
-express the type(s) of an object.
+express the type(s) of an object. `_id` is fairly fundamental to TD-JSON, because it is the construct tht allows you
+to specify the correspondence between a JSON object and the underlying entity it represents. `_isA` is not so fundamental—I
+added it because it makes it a bit easier to talk about the concepts and it is generally useful.
 
 The 3 JSON restrictions and 2 JSON properties above comprise the complete specification of TS-JSON. There is no more. What follows
 is descriptive.
