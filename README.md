@@ -222,3 +222,13 @@ references to them [and perhaps some rules for operators that can be performed o
 JSON has built-in support for the reference notations for numbers, booleans and strings.
 Lacking a built-in reference notation for other datatypes, 
 we must to state explicitly which notation we're using, or rely on out-of-band knowledge. [RDF/JSON](https://www.w3.org/TR/rdf-json/) uses a version of this idea.
+
+## Full Disclosure
+
+If you know RDF, you will recognize that TS-JSON is a proprietary format for a loose interpretation of the RDF data model.
+Compared to the real RDF data model, TS-JSON's interpretation drops the requirements that predicates and types be entities 
+identified with URLs. Why make my own interpretation? Having done a couple of projects using a strict interpretation of the RDF model, 
+I've seen that those particular features cause significant friction in practical API programming, and that most programming teams are
+unwilling to accept that friction. Those features are important for RDF's ambitions as an internet-scale informtion model_they are less
+important for most API programming needs. Those features also contribute significantly to the complexity of standard JSON representations
+of RDF, especially JSON-LD, whose complexity is likely to be fatal in my opinion, but also to RDF/JSON—hence the need for TS-JSON.
