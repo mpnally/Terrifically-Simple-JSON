@@ -230,6 +230,6 @@ If you know RDF, you will recognize that TS-JSON is a proprietary format for a l
 Compared to the real RDF data model, TS-JSON's interpretation drops the requirements that predicates and types be entities 
 identified with URLs. Why make my own interpretation? Having done a couple of projects using a strict interpretation of the RDF model, 
 I've seen that those particular features cause significant friction in practical API programming, and that most programming teams are
-unwilling to accept that friction. Those features are important for RDF's ambitions as an internet-scale informtion model but are less
+unwilling to accept that friction. Those features are important for RDF's ambitions as an internet-scale informtion model but are not
 important for most API programming needs. Those features also contribute significantly to the complexity of standard JSON representations
 of RDF, especially JSON-LD whose complexity is likely to be fatal in my opinion, but also RDF/JSON. Hence the need for TS-JSON.
