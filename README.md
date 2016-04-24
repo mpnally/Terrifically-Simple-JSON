@@ -68,9 +68,9 @@ VS-JSON allows nested objects, so it is valid to write this:
  "eyeColor": 
     {
      "isA": "RGBColor",
-     red: 0,
-     green: 0,
-     blue: 155
+     "red": 0,
+     "green": 0,
+     "blue": 155
     }
 }
 ```
