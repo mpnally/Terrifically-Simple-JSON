@@ -33,7 +33,7 @@ The following is a valid VS-JSON document:
 {
  "name": "Martin",
  "bornOn": "1957-01-05",
- "bornIn": "http://www.scotland.org"
+ "bornIn": "http://www.scotland.org#"
 }
 ```
 Because of VS-JSON's 3 restrictions, we know that this single JSON object with 3 name/value pairs represents 3 property values of a single entity in the data model.
@@ -50,7 +50,7 @@ representation design, just that it follows a different set of rules from "Very 
  "links": [
     {
      "rel": "bornIn",
-     "href": "http://www.scotland.org"
+     "href": "http://www.scotland.org#"
     } 
  ]
 }
@@ -65,7 +65,7 @@ of the same single entity from the data model.
 
 Humans can easily see that this example is following different rules, because we understand the data model, and we 
 can see that the mapping of the data model to the JSON is different from VS-JSON's. Unfortuntely, it is not easy to
-write a computer program to verify this. 
+write a computer program to verify this. Writing a program that understands data models is hard.
 
 `_isA` is used to define the "type" or "kind" of an object.
 It can have more than one value, so its value can be a JSON array, but can also be a simple value.
@@ -74,7 +74,7 @@ It can have more than one value, so its value can be a JSON array, but can also 
  "_isA": "Person",
  "name": "Martin",
  "bornOn": "1957-01-05",
- "bornIn": "http://www.scotland.org"
+ "bornIn": "http://www.scotland.org#"
 }
 ```
 
@@ -84,7 +84,7 @@ It can have more than one value, so its value can be a JSON array, but can also 
  "_isA": "Person",
  "name": "Martin",
  "bornOn": "1957-01-05",
- "bornIn": "http://www.scotland.org",
+ "bornIn": "http://www.scotland.org#",
  "eyeColor": 
     {
      "_isA": "RGBColor",
