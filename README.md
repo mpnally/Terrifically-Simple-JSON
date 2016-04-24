@@ -163,7 +163,8 @@ considered the unique member of a 4th datatype).
 The two most common
 datatypes in Web API programming that are not covered by JSON are date and URI. Unless you are willing to invent extensions or
 conventions on top of JSON, the best you can do is to encode them as strings. The examples above show how the `_id` property
-can be used to encode URLs more explicitly. This idea can be extended to other datatypes. The idea is that this JSON:
+can be used in TS-JSON to encode URLs more explicitly, at some cost to simplictiy and ease-of-programming. 
+This idea can be extended to other datatypes. The idea is that this JSON:
 ```JSON
 {
  "_id": "http://martin-nally.name#",
@@ -180,7 +181,7 @@ is really a shorthand for this:
     }
 }
 ```
-This pattern can be used for dates, like this:
+This longer pattern can be used for dates, like this:
 ```JSON
 {
  "_id": "http://martin-nally.name#",
