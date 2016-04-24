@@ -72,8 +72,9 @@ This example has 3 JSON objects, an array, and 6 name/value pairs. Nevertheless,
 of the same single entity from the data model that the TS-JSON example encodes.
 
 Humans can easily see that this example is following different rules, because we understand the data model, and we 
-can see that the mapping of the data model to the JSON is different from TS-JSON's. Unfortuntely, it is not easy to
-write a computer program to verify this.
+can see that the mapping of the data model to the JSON is different from TS-JSON's. [Unfortunately, it is not easy to
+write a computer program to verify this.] TS-JSON is trying to define the simplest possible mapping from the underlying
+data model to JSON, ideally making the mapping so obvious and intuitive that it appears not to exist.
 
 ## _isA
 
