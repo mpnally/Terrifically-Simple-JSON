@@ -114,7 +114,7 @@ Writing
     }
 }
 ```
-is an alaternative to writing:
+is an alternative to writing:
 ```JSON
 {
  "_id": "http://martin-nally.name#",
