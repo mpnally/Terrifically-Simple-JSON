@@ -105,7 +105,7 @@ JSON allows nested objects, so in TS-JSON it is valid to write this:
 
 ## _id
 
-The `_id` property is used to state the identity of the data model entity corresponding to a JSON object. Its value is always a URL (possibly relative).
+The `_id` property holds the identity of the data model entity corresponding to a JSON object. Its value is always a URL (possibly relative).
 Here is an example of its use:
 
 ```JSON
