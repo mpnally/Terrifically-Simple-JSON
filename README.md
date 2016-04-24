@@ -17,16 +17,16 @@ VS-JSON adds 3 restrictions to JSON:
    of the API
 3. The value of a name/value pair must be the value of the property.
 
-The value of adhering to these restrictions is that there is a simple 1-1 mapping between the data of he API and the JSON.
-If you know the data model, you already know what the JSON will look like a vice versa. Some other formats also have this property,
-but none of them do it as simply and directly as VS-JSON. Other formats build new concepts and structures on top of JSON, 
-while VS-JSON just tells you how to use the concepts thst are already there.
-
 VS-JSON defines two JSON properties, `_id` and `_isA`. `_id` is used to express the identity of an object. `_isA` is used to
 express the type(s) of an object.
 
 The 3 JSON restrictions and 2 JSON properties above comprise the complete specification of VS-JSON. There is no more. What follows
 is descriptive.
+
+The value of adhering to the 3 restrictions is that there is a simple 1-1 mapping between the data of he API and the JSON.
+If you know the data model, you already know what the JSON will look like a vice versa. Some other formats also have this property,
+but none of them do it as simply and directly as VS-JSON. Other formats build new concepts and structures on top of JSON, 
+while VS-JSON just tells you how to use the concepts that are already there.
 
 The following is a valid VS-JSON document:
 ```JSON
