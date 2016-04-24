@@ -219,12 +219,12 @@ handled the same way. In other words, the following are equivalent:
 ```
 I'm not suggesting that anyone would actually encode a number in JSON in this way—I just wanted to illustrate
 that the concept can apply to all datatypes—but if you need a way
-to encode dates that distinguishes them from strings, this would be a way to do it in TS-JSON. If the number example
+to encode dates that distinguishes them from strings, this is the right way to do it in TS-JSON. If the number example
 seems unintuitive, consider that
 when you write `178` in JSON, you are really writing a reference to a number. The language we use to write these references was
 [developed over 3 millenia](https://en.wikipedia.org/wiki/History_of_the_Hindu-Arabic_numeral_system).
 When you write `true` or `false` in JSON, you are using a different reference language—one that is specific to booleans. 
-Strings can be viewed the same way. Any datatype can be viewed as being a set of pre-existing entities with a language for writing
+Strings can be viewed the same way. Any datatype can be viewed as consisting of a set of pre-existing entities with a language for writing
 references to them [and perhaps some rules for operators that can be performed on them, but JSON does not have operators].
 JSON has built-in support for the reference languages for numbers, booleans and strings.
 Lacking a built-in reference language for other datatypes like URLs and dates, 
