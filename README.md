@@ -26,7 +26,7 @@ The following is a valid VS-JSON document:
 ```
 
 The following JSON document is not valid VS-JSON. It violates each of the rules above. That does not necessarily mean it's a bad
-representation design, just that it doesn't follow the rules of "Very Simple JDON"
+representation design, just that it follows a different set of rules from "Very Simple JSON"
 ```JSON
 {
  "properties": 
