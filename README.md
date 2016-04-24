@@ -147,6 +147,8 @@ JSON allows nested objects, so in TS-JSON it is valid to write this:
 }
 ```
 
+## When `_id` is missing
+
 When the `_id` property of a JSON object is missing, as in this example, the object must still must correspond to an 
 entity in the API data model. A JSON object with no `_id` should be read as a noun clause that references an entity. This example
 should be read as meaning
