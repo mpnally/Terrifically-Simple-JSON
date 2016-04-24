@@ -33,7 +33,8 @@ The value of adhering to the 3 restrictions is that it creates a direct 1-1 mapp
 If you know the data model, you already know what the JSON will look like a vice versa. Other formats also have this property,
 but none of them do it as simply and directly as TS-JSON. Other formats build new concepts or structures on top of JSON, 
 while TS-JSON just uses the concepts that are already there. 
-This is why there is no media type for TS-JSON.
+This is why there is no media type for TS-JSON. TS-JSON is trying to define the simplest possible mapping from the underlying
+data model to JSON, ideally making the mapping so obvious and intuitive that it appears not to exist.
 
 The following is a valid TS-JSON document:
 ```JSON
@@ -73,8 +74,7 @@ of the same single entity from the data model that the TS-JSON example encodes.
 
 Humans can easily see that this example is following different rules, because we understand the data model, and we 
 can see that the mapping of the data model to the JSON is different from TS-JSON's. [Unfortunately, it is not easy to
-write a computer program to verify this.] TS-JSON is trying to define the simplest possible mapping from the underlying
-data model to JSON, ideally making the mapping so obvious and intuitive that it appears not to exist.
+write a computer program to verify this.]
 
 ## _isA
 
