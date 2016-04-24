@@ -214,7 +214,7 @@ seems unintuitive, consider that
 when you write `178` in JSON, you are really writing a reference to a number. The language we use to write these references was
 [developed over 3 millenia](https://en.wikipedia.org/wiki/History_of_the_Hindu-Arabic_numeral_system).
 When you write `true` or `false` in JSON, you are using a different reference language—one that is specific to booleans. 
-Strings can be viewed the same way. Any datatype can be viewed as consisting of a set of pre-existing entities with a language for writing
+Strings can be viewed the same way. Any datatype can be thought of as consisting of a set of pre-existing entities with a language for writing
 references to them [and perhaps some rules for operators that can be performed on them, but JSON does not have operators].
 JSON has built-in support for the reference languages for numbers, booleans and strings.
 Lacking a built-in reference language for other datatypes, 
