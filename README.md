@@ -84,9 +84,10 @@ Here is an example of its use:
 ```JSON
 {
  "_id": "http://martin-nally.name#",
- "name": "Martin"
+ "firstName": "Martin"
 }
 ```
+This example says simply that the first name of http://martin-nally.name# is Martin.
 
 The `_id` property can be used in nested objects too, like this:
 ```JSON
