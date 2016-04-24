@@ -211,7 +211,9 @@ handled the same way. In other words, the following are equivalent:
 ```
 I'm not suggesting that anyone would actually encode a number in JSON in this way—the point is to show
 that the concept works for all datatypes—but if you need a way
-to encode dates that distinguishes them from strings, this is the right way to do it in TS-JSON. If the number example
+to encode dates that distinguishes them from strings, this is the right way to do it in TS-JSON. 
+
+If the number example
 seems unintuitive, consider that
 when you write `178` in JSON, you are really writing a reference to a number. The notation we use to write these references was
 [developed over 3 millenia](https://en.wikipedia.org/wiki/History_of_the_Hindu-Arabic_numeral_system).
