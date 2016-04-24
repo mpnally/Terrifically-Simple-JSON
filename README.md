@@ -26,7 +26,7 @@ really be built into TS-JSON—I added it because it makes it a bit easier to ta
 
 ## Tutorial
 
-The 3 JSON restrictions and 2 JSON properties above comprise the complete specification of TS-JSON. There is no more. What follows
+The 3 JSON restrictions and 3 JSON properties above comprise the complete specification of TS-JSON. There is no more. What follows
 is descriptive.
 
 The value of adhering to the 3 restrictions is that it creates a direct 1-1 mapping between the data of the API and the JSON.
