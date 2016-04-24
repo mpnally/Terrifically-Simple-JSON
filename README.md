@@ -26,7 +26,7 @@ is descriptive.
 The value of adhering to the 3 restrictions is that it creates a direct 1-1 mapping between the data of the API and the JSON.
 If you know the data model, you already know what the JSON will look like a vice versa. Other formats also have this property,
 but none of them do it as simply and directly as VS-JSON. Other formats build new concepts and structures on top of JSON, 
-while VS-JSON just tells you how to use the concepts that are already there.
+while VS-JSON just tells you how to use the concepts that are already there. This is why there is no media type for VS-JSON.
 
 The following is a valid VS-JSON document:
 ```JSON
