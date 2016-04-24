@@ -107,7 +107,7 @@ This example makes two statements:
 * http://martin-nally.name# was born in http://www.scotland.org#
 * http://www.scotland.org# is a country
 
-Writing
+The following two examples are equivalent—Both are valid VS-JSON
 ```JSON
 {
  "_id": "http://martin-nally.name#",
@@ -124,7 +124,7 @@ is an alternative to writing:
  "bornIn": "http://www.scotland.org#"
 }
 ```
-Both are valid VS-JSON—API designers using VS-JSON can choose which they prefer, or use both.
+API designers using VS-JSON can choose which they prefer, or allow both.
 
 When an object is missing an `_id` property, it should be read as a noun clause. For example
 
