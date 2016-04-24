@@ -127,7 +127,8 @@ When an object is missing an `_id` property, it should be read as a noun clause.
 
 ```JSON
 {
- "_id": "http://martin-nally.name#",
+ "_isA": "Person",
+ "name": "Martin",
  "eyeColor": 
     {
      "_isA": "RGBColor",
@@ -137,5 +138,5 @@ When an object is missing an `_id` property, it should be read as a noun clause.
     }
 }
 ```
-should be read as meaning  
-http://martin-nally.name#'s eyeColor is that RGBColor whose red value is zero, green value is 0 and blue value is 155
+should be read as meaning
+"The eyeColor of that Person whose name is Martin is that RGBColor whose red value is zero, green value is 0 and blue value is 155"
