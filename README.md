@@ -144,7 +144,7 @@ The following two examples are equivalent—both are valid TS-JSON (verify that 
 API designers using TS-JSON can choose which they prefer, or allow both.
 
 In TS-JSON it is possible for the `_id` property of a JSON object to be missing, but the object still must correspond to an 
-entity in the API dsta model. A JSON object with no `_id` should be read as a noun clause that references an entity. For example
+entity in the API data model. A JSON object with no `_id` should be read as a noun clause that references an entity. For example
 
 ```JSON
 {
@@ -164,7 +164,8 @@ should be read as meaning
 
 ## datatypes
 
-One of the challenges of JSON is that it only supports 3 datatypes: number, string, and boolean (maybe the null value can be considered a 4th). 
+One of the challenges of JSON is that it only supports 3 datatypes: number, string, and boolean (maybe the null value can be 
+considered a member of a 4th datatype). 
 The two most common
 datatypes in Web API programming that are not covered by JSON are Date and URI. Unless you are willing to invent extensions or
 conventions on top of JSON, the best you can do is to encode them as strings. The examples above show how the `_id` property
