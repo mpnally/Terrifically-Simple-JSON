@@ -120,7 +120,7 @@ This example makes two independent statements:
 * http://martin-nally.name# was born in http://www.scotland.org#
 * http://www.scotland.org# is a country
 
-The following two examples are equivalent—both are valid VS-JSON
+The following two examples are equivalent—both are valid VS-JSON (verify that they follow the rules)
 ```JSON
 {
  "_id": "http://martin-nally.name#",
