@@ -227,5 +227,5 @@ When you write `true` or `false` in JSON, you are using a different reference la
 Strings can be viewed the same way. Any datatype can be viewed as consisting of a set of pre-existing entities with a language for writing
 references to them [and perhaps some rules for operators that can be performed on them, but JSON does not have operators].
 JSON has built-in support for the reference languages for numbers, booleans and strings.
-Lacking a built-in reference language for other datatypes like URLs and dates, 
+Lacking a built-in reference language for other datatypes, 
 we're forced to state explicitly which language we're using. [RDF/JSON](https://www.w3.org/TR/rdf-json/) uses a version of this idea.
