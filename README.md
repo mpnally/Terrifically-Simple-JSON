@@ -104,7 +104,7 @@ This example makes two independent statements:
 * http://martin-nally.name# was born in http://www.scotland.org#
 * The Gaelic name for http://www.scotland.org# is Alba
 
-The following two examples are equivalent—both are valid TS-JSON (verify that they follow the rules)
+The following two examples are both valid TS-JSON (verify that they follow the rules)
 ```JSON
 {
  "_id": "http://martin-nally.name#",
@@ -117,7 +117,7 @@ The following two examples are equivalent—both are valid TS-JSON (verify that 
  "bornIn": {"_id": "http://www.scotland.org#"}
 }
 ```
-API designers using TS-JSON can choose which they prefer, or allow both.
+API designers using TS-JSON can choose which they prefer, or allow both. There is a subtle difference in the datatype of the value of `bornIn`—see below. 
 
 ## _isA
 
