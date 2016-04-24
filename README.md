@@ -199,7 +199,7 @@ This longer pattern can be used for dates, like this:
 ```
 In other words, the rule that said that the value of `_id` is a URL is just the default—it can be overridden by setting the value of `_idType`. 
 
-The JSON built-in types can be
+In principle, the JSON built-in types can be
 handled the same way. In other words, the following are equivalent:
 ```JSON
 {
