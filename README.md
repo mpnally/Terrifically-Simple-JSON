@@ -156,7 +156,7 @@ should be read as meaning
 
 ## Datatypes
 
-One of the challenges of JSON is that it only supports 3 datatypes: number, string, and boolean (maybe the null value should be 
+One of the challenges of JSON is that it only supports 3 datatypes: number, string, and boolean (possibly the null value should be 
 considered the unique member of a 4th datatype). 
 The two most common
 datatypes in Web API programming that are not covered by JSON are date and URI. Unless you are willing to invent extensions or
