@@ -67,7 +67,7 @@ Lines 2, 7, 9 and 10 violate rule 2—they introduce JSON names that are not pro
 Line 9 violates rule 3—`bornIn` is a property name, not a value.
 
 This example has 3 JSON objects, an array, and 6 name/value pairs. Nevertheless, it appears to only encode the same 3 properties
-of the same single entity from the data model thst the TS-JSON example encodes.
+of the same single entity from the data model that the TS-JSON example encodes.
 
 Humans can easily see that this example is following different rules, because we understand the data model, and we 
 can see that the mapping of the data model to the JSON is different from TS-JSON's. Unfortuntely, it is not easy to
@@ -103,7 +103,7 @@ JSON allows nested objects, so in TS-JSON it is valid to write this:
 
 ## _id
 
-The `_id` property is used to define the identity of an object. Its value is always a URL (possibly relative).
+The `_id` property is used to define the identity of the data model entity corresponding to a JSON object. Its value is always a URL (possibly relative).
 Here is an example of its use:
 
 ```JSON
@@ -143,7 +143,8 @@ The following two examples are equivalent—both are valid TS-JSON (verify that 
 ```
 API designers using TS-JSON can choose which they prefer, or allow both.
 
-When an object is missing an `_id` property, it should be read as a noun clause. For example
+In TS-JSON it is possible for the `_id` property of a JSON object to be missing, but the object still must correspond to an 
+entity in the API dsta model. A JSON object with no `_id` should be read as a noun clause that references an entity. For example
 
 ```JSON
 {
