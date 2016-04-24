@@ -167,7 +167,7 @@ should be read as meaning
 One of the challenges of JSON is that it only supports 3 datatypes: number, string, and boolean (maybe the null value should be 
 considered a member of a 4th datatype). 
 The two most common
-datatypes in Web API programming that are not covered by JSON are Date and URI. Unless you are willing to invent extensions or
+datatypes in Web API programming that are not covered by JSON are date and URI. Unless you are willing to invent extensions or
 conventions on top of JSON, the best you can do is to encode them as strings. The examples above show how the `_id` property
 can be used to encode URLs more explicitly. This idea can be extended to other datatypes. The idea is that this JSON:
 ```JSON
@@ -182,7 +182,7 @@ is really a shorthand for this:
  "_id": "http://martin-nally.name#",
  "bornIn": {
     "_id": "http://www.scotland.org#",
-    "_idType": "uri"
+    "_idType": "URI"
     }
 }
 ```
@@ -196,7 +196,9 @@ This pattern can be used for dates, like this:
     }
 }
 ```
-In other words, the rule that said that the value of `_id` is a URL is just the default. The JSON built-in types can be
+In other words, the rule that said that the value of `_id` is a URL is just the default. 
+
+The JSON built-in types can be
 handled the same way. In other words, the following are equivalent:
 ```JSON
 {
@@ -223,5 +225,5 @@ When you write `true` or `false` in JSON, you are using a different reference la
 Strings can be viewed the same way. Any datatype can be viewed as being a set of pre-existing entities with a language for writing
 references to them [and perhaps some rules for operators that can be performed on them, but JSON does not have operators].
 JSON has built-in support for the reference languages for numbers, booleans and strings.
-Lacking a built-in reference language for other datatypes like URLs and Dates, 
+Lacking a built-in reference language for other datatypes like URLs and dates, 
 we're forced to state explicitly which language we're using. [RDF/JSON](https://www.w3.org/TR/rdf-json/) uses a version of this idea.
