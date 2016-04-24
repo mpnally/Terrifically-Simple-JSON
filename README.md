@@ -72,8 +72,8 @@ Lines 2, 7, 9 and 10 violate rule 2—they introduce JSON names that are not pro
 Line 9 violates rule 3—`bornIn` is a property name in the data model, not a value.
 
 Humans can easily see that this example is following different rules, because we understand the data model, and we 
-can see that the mapping of the data model to the JSON is different from TS-JSON's. [Unfortunately, it is not easy to
-write a computer program to verify this.]
+can see that the mapping of the data model to the JSON is different from TS-JSON's. Unfortunately, it is not easy to
+write a computer program to verify this.
 
 ## _id
 
@@ -121,6 +121,7 @@ Viewed pedantically,
 the second says I was born in a country while the first says I was born in a string. Common sense tells us that
 the intent of the first is the same as the second. Computers are not very good at common sense, but humans are if they have some context—whether
 you use the first or second form for your API might depend on who the audience is and whether you want to require them to have context.
+The first form is significantly easier to code to for programmers that do have the required context, so the trade-off is real.
 
 ## _isA
 
