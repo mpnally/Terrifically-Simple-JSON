@@ -129,10 +129,7 @@ The following two examples are equivalent—both are valid TS-JSON (verify that 
 ```JSON
 {
  "_id": "http://martin-nally.name#",
- "bornIn": 
-    {
-    "_id": "http://www.scotland.org#",
-    }
+ "bornIn": {"_id": "http://www.scotland.org#"}
 }
 ```
 API designers using TS-JSON can choose which they prefer, or allow both.
