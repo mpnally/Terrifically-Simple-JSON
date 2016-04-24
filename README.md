@@ -3,8 +3,9 @@
 ## Introduction
 
 TS-JSON stands for "Terrifically Simple JSON". 
-TS-JSON defines an especially simple and regular way of using JSON to represent data in Web APIs. 
-The syntax of TS-JSON is exaclty the same as the syntax of JSON—no more and no less.
+TS-JSON defines an extremely simple and regular way of using JSON to represent data in Web APIs. 
+The syntax of TS-JSON is exaclty the same as the syntax of JSON—no more and no less—TS-JSON concerns 
+itself only with how you use JSON to represent your data.
 
 Regular [JSON](http://www.json.org/) describes as object as an unordered set of name/value pairs. 
 It does not otherwise say what an object is, what a name is or what a value is (beyond defining basic datatypes).
