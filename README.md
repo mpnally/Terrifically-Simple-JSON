@@ -7,7 +7,7 @@ TS-JSON is to define the simplest and most regular way possible of using JSON to
 The syntax of TS-JSON is exaclty the same as the syntax of JSON—TS-JSON concerns 
 itself only with how you use JSON to represent your data.
 
-Regular [JSON](http://www.json.org/) describes an object as "an unordered set of name/value pairs". 
+[Regular JSON](http://www.json.org/) describes an object as "an unordered set of name/value pairs". 
 It does not otherwise say what an object is, what a name is or what a value is (beyond defining basic datatypes).
 This gives designers a lot of flexibility, which
 of course is part of the reason that JSON is popular, but it also allows them to make complex JSON, and they often do. 
