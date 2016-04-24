@@ -59,6 +59,10 @@ Lines 3 and 7 violate rule 1—they introduce JSON objects that have no correspo
 Lines 2, 6, 8 and 9 violate rule 2—they introduce JSON names that are not properties of the entity in the data model  
 Line 9 violates rule 3—`bornIn` is a property name, not a value.
 
+Humans can easily see that this example is following different rules, because we understand the data model, and we 
+can see that the mapping of the data model to the JSON is different from VS-JSON's. Unfortuntely, it is not easy to
+write a computer program to verify this. 
+
 `_isA` is used to define the "type" or "kind" of an object.
 It can have more than one value, so its value can be a JSON array, but can also be a simple value.
 ```JSON
