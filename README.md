@@ -36,6 +36,7 @@ The following is a valid VS-JSON document:
  "bornIn": "http://www.scotland.org"
 }
 ```
+Because of VS-JSON's 3 restrictions, we know that this single JSON object with 3 name/value pairs represents 3 property values of a single entity in the data model.
 
 The following JSON document is not valid VS-JSON. It violates all 3 of the rules above. That does not mean it's a bad
 representation design, just that it follows a different set of rules from "Very Simple JSON"
@@ -58,6 +59,9 @@ representation design, just that it follows a different set of rules from "Very 
 Lines 3 and 7 violate rule 1—they introduce JSON objects that have no correspondence in the data model  
 Lines 2, 6, 8 and 9 violate rule 2—they introduce JSON names that are not properties of the entity in the data model  
 Line 9 violates rule 3—`bornIn` is a property name, not a value.
+
+This example has 3 JSON objects, an array, and 6 name/value pairs. Nevertheless, it appears to encode the same 3 properties
+of the same single entity from the data model.
 
 Humans can easily see that this example is following different rules, because we understand the data model, and we 
 can see that the mapping of the data model to the JSON is different from VS-JSON's. Unfortuntely, it is not easy to
@@ -112,7 +116,7 @@ The `_id` property can be used in nested objects too, like this:
     }
 }
 ```
-This example makes two statements:
+This example makes two independent statements:
 * http://martin-nally.name# was born in http://www.scotland.org#
 * http://www.scotland.org# is a country
 
@@ -120,16 +124,16 @@ The following two examples are equivalent—both are valid VS-JSON
 ```JSON
 {
  "_id": "http://martin-nally.name#",
- "bornIn": 
-    {
-    "_id": "http://www.scotland.org#",
-    }
+ "bornIn": "http://www.scotland.org#"
 }
 ```
 ```JSON
 {
  "_id": "http://martin-nally.name#",
- "bornIn": "http://www.scotland.org#"
+ "bornIn": 
+    {
+    "_id": "http://www.scotland.org#",
+    }
 }
 ```
 API designers using VS-JSON can choose which they prefer, or allow both.
