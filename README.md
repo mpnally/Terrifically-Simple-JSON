@@ -67,7 +67,7 @@ Lines 2, 7, 9 and 10 violate rule 2—they introduce JSON names that are not pro
 Line 9 violates rule 3—`bornIn` is a property name, not a value.
 
 This example has 3 JSON objects, an array, and 6 name/value pairs. Nevertheless, it appears to only encode the same 3 properties
-of the same single entity from the data model.
+of the same single entity from the data model thst the TS-JSON example encodes.
 
 Humans can easily see that this example is following different rules, because we understand the data model, and we 
 can see that the mapping of the data model to the JSON is different from TS-JSON's. Unfortuntely, it is not easy to
