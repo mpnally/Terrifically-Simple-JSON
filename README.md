@@ -95,7 +95,7 @@ It can have more than one value, so its value can be a JSON array, but can also 
 }
 ```
 
-The `_id` property is used to define the identity of an object.
+The `_id` property is used to define the identity of an object. Its value is always an URL (possibly relative).
 Here is an example of its use:
 
 ```JSON
