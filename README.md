@@ -40,7 +40,7 @@ The following is a valid TS-JSON document:
 Because of TS-JSON's 3 restrictions, we know that this single JSON object with 3 name/value pairs represents 3 property values of a single entity in the data model.
 
 The following JSON document is not valid TS-JSON. It violates all 3 of the rules above. That does not mean it's a bad
-representation design, just that it follows a different set of rules from "Terrifically Simple JSON"
+representation design, just that it follows a different set of rules from Terrifically Simple JSON.
 ```JSON
 {
  "properties": 
