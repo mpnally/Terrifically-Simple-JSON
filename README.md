@@ -58,7 +58,7 @@ representation design, just that it follows a different set of rules from Terrif
  7.  "links": [
  8.     {
  9.      "rel": "bornIn",
-10.     "href": "http://www.scotland.org#"
+10.      "href": "http://www.scotland.org#"
 11.     } 
 12.  ]
 13. }
@@ -66,7 +66,7 @@ representation design, just that it follows a different set of rules from Terrif
 
 Lines 3 and 8 violate rule 1—they introduce JSON objects that have no correspondence in the data model.  
 Lines 2, 7, 9 and 10 violate rule 2—they introduce JSON names that are not properties of an entity in the data model.  
-Line 9 violates rule 3—`bornIn` is a property name, not a value.
+Line 9 violates rule 3—`bornIn` is a property name in the data model, not a value.
 
 This example has 3 JSON objects, an array, and 6 name/value pairs. Nevertheless, it appears to only encode the same 3 properties
 of the same single entity from the data model that the TS-JSON example encodes.
@@ -105,7 +105,7 @@ JSON allows nested objects, so in TS-JSON it is valid to write this:
 
 ## _id
 
-The `_id` property is used to define the identity of the data model entity corresponding to a JSON object. Its value is always a URL (possibly relative).
+The `_id` property is used to state the identity of the data model entity corresponding to a JSON object. Its value is always a URL (possibly relative).
 Here is an example of its use:
 
 ```JSON
