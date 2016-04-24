@@ -13,14 +13,15 @@ of course is part of the reason that JSON is popular, but it also allows them to
 
 TS-JSON places 3 restrictions on the use of JSON for Web APIs:
 
-1. Every TS-JSON object must correspond to an object in the data model of the API. TS-JSON does not allow 
+1. Every TS-JSON object must correspond to an entity in the data model of the API. TS-JSON does not allow 
    objects that are purely syntactic, or are technical features of the representation.
-2. The name of a name/value pair must correspond to a property or relationship in the state of the object.
+2. The name of a name/value pair must correspond to a property or relationship in the state of the entity.
 3. The value of a name/value pair must be the value of the property referenced by the name.
 
-TS-JSON also defines three JSON properties, `_id`, `_idType` and `_isA`. `_id` is used to express the identity of an object. 
+TS-JSON also defines three JSON properties, `_id`, `_idType` and `_isA`. `_id` is used to declare the identifier of the entity
+corresponding to a JSON object. 
 `_idType` is used for datatypes that are not built in to JSON. `_isA` is used to
-express the type(s) of an object. `_id` is fairly fundamental to TD-JSON, because it is the construct that allows you
+declare the type(s) of an entity. `_id` is fairly fundamental to TD-JSON, because it is the construct that allows you
 to specify the correspondence between a JSON object and the underlying entity it represents. `_isA` is not so fundamental and needn't
 really be built into TS-JSON—I added it because it makes it a bit easier to talk about the concepts and it is generally useful.
 
