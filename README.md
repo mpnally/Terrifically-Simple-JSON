@@ -84,8 +84,6 @@ JSON allows nested objects, so in TS-JSON it is valid to write this:
 {
  "_isA": "Person",
  "name": "Martin",
- "bornOn": "1957-01-05",
- "bornIn": "http://www.scotland.org#",
  "eyeColor": 
     {
      "_isA": "RGBColor",
@@ -153,3 +151,57 @@ When an object is missing an `_id` property, it should be read as a noun clause.
 ```
 should be read as meaning
 "The eyeColor of that Person whose name is Martin is that RGBColor whose red value is zero, green value is 0 and blue value is 155"
+
+One of the challenges of JSON is that it only supports 4 datatypes: number, syting, boolean and null. The two most common
+datatypes in Web API programming that are not covered by JSON are Date and URI. Unless you are willing to invent extensions or
+conventions on top of JSON, the best you can do is to encode them as strings. The examples above show how the `_id` property
+can be used to encode URLs more explicitly. This idea can be extended to other datatypes. The idea is that this JSON:
+```JSON
+{
+ "_id": "http://martin-nally.name#",
+ "bornIn": {"_id": "http://www.scotland.org#"}
+}
+```
+is really a shorthand for this:
+```JSON
+{
+ "_id": "http://martin-nally.name#",
+ "bornIn": {
+    "_id": "http://www.scotland.org#",
+    "_idType": "uri"
+    }
+}
+```
+This pattern can be used for dates, like this:
+```JSON
+{
+ "_id": "http://martin-nally.name#",
+ "bornOn": {
+    "_id": "1957-01-05",
+    "_idType": "ISO8601"
+    }
+}
+```
+In other words, the rule that said that the value of `_id` is a URL is just the default. The JSON built-in types can be
+handled the same way. In other words, the following are equivalent:
+```JSON
+{
+ "_id": "http://martin-nally.name#",
+ "heightInCM": 178
+}
+```
+```JSON
+{
+ "_id": "http://martin-nally.name#",
+ "heightInCM": {
+    "_id": "178",
+    "_idType": "number"
+    }
+}
+```
+I'm not suggesting that anyone would actually encode a number in JSON in this way: I'm just showing that the model is consistent.
+When you write `178` in JSON, you are actually writing a reference to a number. The language we use to write these references was
+[developed over 3 milleania](https://en.wikipedia.org/wiki/History_of_the_Hindu-Arabic_numeral_system). 
+When you write `true` or `false` in JSON, you are using a different reference language—one that is specific to booleans. 
+Strings can be viewed the same way. Lacking a built-in reference
+language for URLs and Dates in JSON, we're forced to state explicitly which language we're using.
