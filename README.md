@@ -13,7 +13,7 @@ VS-JSON adds 3 restrictions to JSON:
 
 1. VS-JSON objects must be meaningful objects of the data model of the API. VS-JSON does not allow 
    objects that are purely syntactic, or technical
-2. The name of a name/value pair must correspond to a property or relationship in the data model
+2. The name of a name/value pair must correspond to a property or relationship of the object in the data model
    of the API
 3. The value of a name/value pair must be the value of the property.
 
