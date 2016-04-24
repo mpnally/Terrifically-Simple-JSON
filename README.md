@@ -2,7 +2,7 @@
 
 VS-JSON defines an especially simple and regular way of using JSON to represent data in Web APIs. 
 The syntax of VS-JSON is exaclty the same as the syntax of JSON—no more and no less.
-VS-JSON stands for "Very Simple JSON". I'm not sure yet whether it makes sense to have a separate media type for VS-JSON—it might.
+VS-JSON stands for "Very Simple JSON". I'm not sure yet whether it makes sense to have a separate media type for VS-JSON.
 
 Regular [JSON](http://www.json.org/) describes as object as an unordered set of name/value pairs. It does not otherwise say what an object is.
 This gives designers a lot of flexibility, which
