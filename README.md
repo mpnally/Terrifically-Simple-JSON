@@ -76,6 +76,48 @@ Humans can easily see that this example is following different rules, because we
 can see that the mapping of the data model to the JSON is different from TS-JSON's. [Unfortunately, it is not easy to
 write a computer program to verify this.]
 
+## _id
+
+The value of the `_id` property is the identifier of the data model entity corresponding to the JSON object. By default, its value is a URI (possibly relative).
+Here is an example of its use:
+
+```JSON
+{
+ "_id": "http://martin-nally.name#",
+ "name": "Martin"
+}
+```
+
+The `_id` property can be used in nested objects too, like this:
+```JSON
+{
+ "_id": "http://martin-nally.name#",
+ "bornIn": 
+    {
+    "_id": "http://www.scotland.org#",
+    "gaelicName": "Alba"
+    }
+}
+```
+This example makes two independent statements:
+* http://martin-nally.name# was born in http://www.scotland.org#
+* The Gaelic name for http://www.scotland.org# is Alba
+
+The following two examples are equivalent—both are valid TS-JSON (verify that they follow the rules)
+```JSON
+{
+ "_id": "http://martin-nally.name#",
+ "bornIn": "http://www.scotland.org#"
+}
+```
+```JSON
+{
+ "_id": "http://martin-nally.name#",
+ "bornIn": {"_id": "http://www.scotland.org#"}
+}
+```
+API designers using TS-JSON can choose which they prefer, or allow both.
+
 ## _isA
 
 `_isA` is used to define the "type" or "kind" of an object.
@@ -104,64 +146,8 @@ JSON allows nested objects, so in TS-JSON it is valid to write this:
 }
 ```
 
-## _id
-
-The value of the `_id` property is the identifier of the data model entity corresponding to the JSON object. By default, its value is a URI (possibly relative).
-Here is an example of its use:
-
-```JSON
-{
- "_id": "http://martin-nally.name#",
- "_isA": "Person"
-}
-```
-
-The `_id` property can be used in nested objects too, like this:
-```JSON
-{
- "_id": "http://martin-nally.name#",
- "bornIn": 
-    {
-    "_id": "http://www.scotland.org#",
-    "_isA": "Country"
-    }
-}
-```
-This example makes two independent statements:
-* http://martin-nally.name# was born in http://www.scotland.org#
-* http://www.scotland.org# is a country
-
-The following two examples are equivalent—both are valid TS-JSON (verify that they follow the rules)
-```JSON
-{
- "_id": "http://martin-nally.name#",
- "bornIn": "http://www.scotland.org#"
-}
-```
-```JSON
-{
- "_id": "http://martin-nally.name#",
- "bornIn": {"_id": "http://www.scotland.org#"}
-}
-```
-API designers using TS-JSON can choose which they prefer, or allow both.
-
-In TS-JSON it is possible for the `_id` property of a JSON object to be missing, but the object still must correspond to an 
-entity in the API data model. A JSON object with no `_id` should be read as a noun clause that references an entity. For example
-
-```JSON
-{
- "_isA": "Person",
- "name": "Martin",
- "eyeColor": 
-    {
-     "_isA": "RGBColor",
-     "red": 0,
-     "green": 0,
-     "blue": 155
-    }
-}
-```
+When the `_id` property of a JSON object is missing, as in this example, the object must still must correspond to an 
+entity in the API data model. A JSON object with no `_id` should be read as a noun clause that references an entity. This example
 should be read as meaning
 "The eyeColor of that Person whose name is Martin is that RGBColor whose red value is zero, green value is 0 and blue value is 155"
 
