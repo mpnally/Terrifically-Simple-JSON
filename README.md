@@ -7,7 +7,7 @@ The syntax of VS-JSON is exaclty the same as the syntax of JSON—no more and no
 Regular [JSON](http://www.json.org/) describes as object as an unordered set of name/value pairs. 
 It does not otherwise say what an object is, what a name is or what a value is (beyond basic datatypes).
 This gives designers a lot of flexibility, which
-of course is part of the reason that JSON is popular. 
+of course is part of the reason that JSON is popular, but it also allows them to make complex JSON, and they often do. 
 
 VS-JSON adds 3 restrictions to JSON:
 
