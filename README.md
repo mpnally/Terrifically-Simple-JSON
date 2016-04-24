@@ -164,10 +164,10 @@ entity in the API data model. A JSON object with no `_id` should be read as a no
 should be read as meaning
 "The eyeColor of that Person whose name is Martin is that RGBColor whose red value is zero, green value is 0 and blue value is 155"
 
-## datatypes
+## Datatypes
 
 One of the challenges of JSON is that it only supports 3 datatypes: number, string, and boolean (maybe the null value should be 
-considered a member of a 4th datatype). 
+considered the unique member of a 4th datatype). 
 The two most common
 datatypes in Web API programming that are not covered by JSON are date and URI. Unless you are willing to invent extensions or
 conventions on top of JSON, the best you can do is to encode them as strings. The examples above show how the `_id` property
