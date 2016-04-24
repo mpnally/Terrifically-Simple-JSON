@@ -15,7 +15,7 @@ TS-JSON places 3 restrictions on the use of JSON for Web APIs:
 
 1. TS-JSON objects must be meaningful objects of the data model of the API. TS-JSON does not allow 
    objects that are purely syntactic, or are technical features of the representation rather than the state of the resource.
-2. The name of a name/value pair must correspond to a property or relationship of the stte of the object.
+2. The name of a name/value pair must correspond to a property or relationship of the state of the object.
 3. The value of a name/value pair must be the value of the property referenced by the name.
 
 TS-JSON also defines two JSON properties, `_id` and `_isA`. `_id` is used to express the identity of an object. `_isA` is used to
@@ -31,7 +31,8 @@ is descriptive.
 The value of adhering to the 3 restrictions is that it creates a direct 1-1 mapping between the data of the API and the JSON.
 If you know the data model, you already know what the JSON will look like a vice versa. Other formats also have this property,
 but none of them do it as simply and directly as TS-JSON. Other formats build new concepts or structures on top of JSON, 
-while TS-JSON just tells you how to use the concepts that are already there. This is why there is no media type for TS-JSON.
+while TS-JSON just uses the concepts that are already there in the simplest way we could imagine. 
+This is why there is no media type for TS-JSON.
 
 The following is a valid TS-JSON document:
 ```JSON
