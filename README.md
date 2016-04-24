@@ -10,7 +10,7 @@ of course is part of the reason that JSON is popular. VS-JSON adds 3 restriction
 
 1. VS-JSON objects must be meaningful objects of the conceptual data model of the API. VS-JSON does not allow 
    objects that are purely syntactic, or technical
-1. The name of a name/value pair must correspond to a true property or relationship in the conceptual data model
+1. The name of a name/value pair must correspond to a property or relationship in the conceptual data model
    of the API
 1. The value of a name/value pair must be the value of the property.
 
@@ -47,11 +47,11 @@ The 3rd and 7th lines violate rule 1—they introduce JSON objects that have no 
 The 2nd and 6th lines violate rule 2—they introduce JSON names that are not properties of the entity on the data model  
 Line 9 violates rule 3—`birthplace` is a property name, not a value.
 
-VS-JSON defines a special JSON property whose name is `isA`. It is used to define the "type" or "kind" of an object.
+VS-JSON defines a special JSON property whose name is `_isA`. It is used to define the "type" or "kind" of an object.
 It can have more than one value, so its value can be a JSON array, but can also be a simple value.
 ```JSON
 {
- "isA": "Person",
+ "_isA": "Person",
  "name": "Martin",
  "birthday": "1957-01-05",
  "birthplace": "http://www.scotland.org"
@@ -61,13 +61,13 @@ It can have more than one value, so its value can be a JSON array, but can also 
 VS-JSON allows nested objects, so it is valid to write this:
 ```JSON
 {
- "isA": "Person",
+ "_isA": "Person",
  "name": "Martin",
  "birthday": "1957-01-05",
  "birthplace": "http://www.scotland.org",
  "eyeColor": 
     {
-     "isA": "RGBColor",
+     "_isA": "RGBColor",
      "red": 0,
      "green": 0,
      "blue": 155
@@ -76,4 +76,45 @@ VS-JSON allows nested objects, so it is valid to write this:
 ```
 
 VS-JSON defines a special JSON property whose name is `_id`. It is used to define the identity of an object.
+Here is an example of its use:
 
+```JSON
+{
+ "_id": "http://martin-nally.name#",
+ "_isA": "Person"
+}
+```
+
+The `_id` property can be used in nested objects too, like this:
+```JSON
+{
+ "_id": "http://martin-nally.name#",
+ "birthplace": 
+    {
+    "_id": "http://www.scotland.org",
+    "_isA": "Country"
+    }
+}
+```
+This example makes two statements:
+* http://martin-nally.name# was born in http://www.scotland.org
+* Scotland is a country
+
+Writing
+```JSON
+{
+ "_id": "http://martin-nally.name#",
+ "birthplace": 
+    {
+    "_id": "http://www.scotland.org",
+    }
+}
+```
+is an alaternative to writing:
+```JSON
+{
+ "_id": "http://martin-nally.name#",
+ "birthplace": "http://www.scotland.org"
+}
+```
+Both are valid VS-JSON—API designers using VS-JSON can choose which they prefer, or use both.
