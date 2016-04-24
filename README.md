@@ -200,9 +200,14 @@ handled the same way. In other words, the following are equivalent:
     }
 }
 ```
-I'm not suggesting that anyone would actually encode a number in JSON in this way: I'm just showing that the model is consistent.
-When you write `178` in JSON, you are actually writing a reference to a number. The language we use to write these references was
-[developed over 3 milleania](https://en.wikipedia.org/wiki/History_of_the_Hindu-Arabic_numeral_system). 
+I'm not suggesting that anyone would actually encode a number in JSON in this waybut if you need a way
+to encode Dates that distinguishes them from strings, this would be a way to do it in TS-JSON. If the number example
+seems unintuitive, consider that
+when you write `178` in JSON, you are really writing a reference to a number. The language we use to write these references was
+[developed over 3 milleania](https://en.wikipedia.org/wiki/History_of_the_Hindu-Arabic_numeral_system).
 When you write `true` or `false` in JSON, you are using a different reference language—one that is specific to booleans. 
-Strings can be viewed the same way. Lacking a built-in reference
-language for URLs and Dates in JSON, we're forced to state explicitly which language we're using.
+Strings can be viewed the same way. A datatype is really just a set of pre-existing entities, with a language for writing
+references to them (and perhaps some rules for operators that can be performed on them, but JSON does not have operators).
+JSON has built-in support for the reference languages for numbers, booleans and strings.
+Lacking a built-in reference language for other datatypes like URLs and Dates, 
+we're forced to state explicitly which language we're using. [RDF/JSON](https://www.w3.org/TR/rdf-json/) uses a version of this idea.
