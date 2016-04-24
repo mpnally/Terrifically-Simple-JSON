@@ -1,5 +1,7 @@
 # TS-JSON
 
+## Introduction
+
 TS-JSON stands for "Terrifically Simple JSON". 
 TS-JSON defines an especially simple and regular way of using JSON to represent data in Web APIs. 
 The syntax of TS-JSON is exaclty the same as the syntax of JSON—no more and no less.
@@ -20,6 +22,8 @@ TS-JSON also defines two JSON properties, `_id` and `_isA`. `_id` is used to exp
 express the type(s) of an object. `_id` is fairly fundamental to TD-JSON, because it is the construct that allows you
 to specify the correspondence between a JSON object and the underlying entity it represents. `_isA` is not so fundamental and needn't
 really be built into TS-JSON—I added it because it makes it a bit easier to talk about the concepts and it is generally useful.
+
+## Tutorial
 
 The 3 JSON restrictions and 2 JSON properties above comprise the complete specification of TS-JSON. There is no more. What follows
 is descriptive.
@@ -68,6 +72,8 @@ Humans can easily see that this example is following different rules, because we
 can see that the mapping of the data model to the JSON is different from TS-JSON's. Unfortuntely, it is not easy to
 write a computer program to verify this.
 
+## _isA
+
 `_isA` is used to define the "type" or "kind" of an object.
 It can have more than one value, so its value can be a JSON array, but can also be a simple value.
 ```JSON
@@ -93,6 +99,8 @@ JSON allows nested objects, so in TS-JSON it is valid to write this:
     }
 }
 ```
+
+## _id
 
 The `_id` property is used to define the identity of an object. Its value is always a URL (possibly relative).
 Here is an example of its use:
@@ -151,6 +159,8 @@ When an object is missing an `_id` property, it should be read as a noun clause.
 ```
 should be read as meaning
 "The eyeColor of that Person whose name is Martin is that RGBColor whose red value is zero, green value is 0 and blue value is 155"
+
+## datatypes
 
 One of the challenges of JSON is that it only supports 3 datatypes: number, string, and boolean (maybe the null value can be considered a 4th). 
 The two most common
