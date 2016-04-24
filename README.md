@@ -21,10 +21,11 @@ TS-JSON places 3 restrictions on the use of JSON for Web APIs:
 
 We think these restrictions are simply enforcing the most obvious and most natural way of using JSON.
 
-TS-JSON also defines three JSON properties, `_id`, `_idType` and `_isA`. `_id` is used to declare the identifier of the 
-data model entity corresponding to a JSON object. 
-`_idType` is used for datatypes that are not built in to JSON. `_isA` is used to
-declare the type(s) of an entity. `_id` is fundamental to TD-JSON. `_idType` is an optional-use feature. 
+TS-JSON also defines three JSON properties, `_id`, `_idType` and `_isA`. 
+* `_id` is used to declare the identifier of the data model entity corresponding to a JSON object. 
+* `_idType` is used for datatypes that are not built in to JSON. 
+* `_isA` is used to declare the type(s) of an entity.  
+`_id` is fundamental to TD-JSON. `_idType` is an optional-use feature. 
 `_isA` is not so fundamental and needn't
 really be built into TS-JSON, but it makes it a bit easier to talk about the concepts and it is generally useful.
 
