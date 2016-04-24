@@ -70,7 +70,7 @@ It can have more than one value, so its value can be a JSON array, but can also 
 }
 ```
 
-VS-JSON allows nested objects, so it is valid to write this:
+[VS-]JSON allows nested objects, so it is valid to write this:
 ```JSON
 {
  "_isA": "Person",
