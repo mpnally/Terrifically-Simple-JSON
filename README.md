@@ -117,7 +117,8 @@ The following two examples are both valid TS-JSON (verify that they follow the r
  "bornIn": {"_id": "http://www.scotland.org#"}
 }
 ```
-API designers using TS-JSON can choose which they prefer, or allow both. There is a subtle difference in the datatype of the value of `bornIn`—see below. 
+API designers using TS-JSON can choose which they prefer, or allow both. 
+There is a subtle difference in the datatype of the value of `bornIn`—[see below](#datatypes). 
 
 ## _isA
 
@@ -154,7 +155,7 @@ entity in the API data model. A JSON object with no `_id` should be read as a no
 should be read as meaning
 "The eyeColor of that Person whose name is Martin is that RGBColor whose red value is zero, green value is 0 and blue value is 155"
 
-## Datatypes
+## <a name="datatypes"></a>Datatypes
 
 One of the challenges of JSON is that it only supports 3 datatypes: number, string, and boolean (possibly the null value should be 
 considered the unique member of a 4th datatype). 
