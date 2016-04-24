@@ -18,7 +18,7 @@ TS-JSON places 3 restrictions on the use of JSON for Web APIs:
 2. The name of a name/value pair must correspond to a property or relationship in the state of the entity.
 3. The value of a name/value pair must be the value of the property referenced by the name.
 
-TS-JSON also defines three JSON properties, `_id`, `_idType` and `_isA`. `_id` is used to declare the identifier of the entity
+TS-JSON also defines three JSON properties, `_id`, `_idType` and `_isA`. `_id` is used to declare the identifier of the data model entity
 corresponding to a JSON object. 
 `_idType` is used for datatypes that are not built in to JSON. `_isA` is used to
 declare the type(s) of an entity. `_id` is fairly fundamental to TD-JSON. `_isA` is not so fundamental and needn't
