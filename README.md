@@ -130,9 +130,7 @@ It can have more than one value, so its value can be a JSON array, but can also 
 ```JSON
 {
  "_isA": "Person",
- "name": "Martin",
- "bornOn": "1957-01-05",
- "bornIn": "http://www.scotland.org#"
+ "name": "Martin"
 }
 ```
 
@@ -154,7 +152,7 @@ JSON allows nested objects, so in TS-JSON it is valid to write this:
 ## When `_id` is missing
 
 When the `_id` property of a TS-JSON object is missing, as in the previous example, the object must still must correspond to an 
-entity in the API data model. A JSON object with no `_id` should be read as a noun clause that references an entity. This example
+entity in the API data model. A JSON object with no `_id` should be read as a noun clause that references an entity. The previous example
 should be read as meaning
 "The eyeColor of that Person whose name is Martin is that RGBColor whose red value is zero, green value is 0 and blue value is 155"
 
@@ -211,8 +209,8 @@ handled the same way. In other words, the following are equivalent:
     }
 }
 ```
-I'm not suggesting that anyone would actually encode a number in JSON in this way—I only wanted to illustrate
-that the concept can apply to all datatypes—but if you need a way
+I'm not suggesting that anyone would actually encode a number in JSON in this way—the point is to show
+that the concept works for all datatypes—but if you need a way
 to encode dates that distinguishes them from strings, this is the right way to do it in TS-JSON. If the number example
 seems unintuitive, consider that
 when you write `178` in JSON, you are really writing a reference to a number. The notation we use to write these references was
