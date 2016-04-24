@@ -47,5 +47,33 @@ The 3rd and 7th lines violate rule 1—they introduce JSON objects that have no 
 The 2nd and 6th lines violate rule 2—they introduce JSON names that are not properties of the entity on the data model  
 Line 9 violates rule 3—`birthplace` is a property name, not a value.
 
+VS-JSON defines a special JSON property whose name is `isA`. It is used to define the "type" or "kind" of an object.
+It can have more than one value, so its value can be a JSON array, but can also be a simple value.
+```JSON
+{
+ "isA": "Person",
+ "name": "Martin",
+ "birthday": "1957-01-05",
+ "birthplace": "http://www.scotland.org"
+}
+```
+
+VS-JSON allows nested objects, so it is valid to write this:
+```JSON
+{
+ "isA": "Person",
+ "name": "Martin",
+ "birthday": "1957-01-05",
+ "birthplace": "http://www.scotland.org",
+ "eyeColor": 
+    {
+     "isA": "RGBColor",
+     red: 0,
+     green: 0,
+     blue: 155
+    }
+}
+```
+
 VS-JSON defines a special JSON property whose name is `_id`. It is used to define the identity of an object.
 
