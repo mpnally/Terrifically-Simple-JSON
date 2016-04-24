@@ -79,7 +79,7 @@ It can have more than one value, so its value can be a JSON array, but can also 
 }
 ```
 
-[TS-]JSON allows nested objects, so it is valid to write this:
+JSON allows nested objects, so in TS-JSON it is valid to write this:
 ```JSON
 {
  "_isA": "Person",
