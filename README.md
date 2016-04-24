@@ -25,7 +25,7 @@ The following is a valid VS-JSON document:
 }
 ```
 
-The following JSON document is not valid VS-JSON. It violates each of the rules above. That does not necessarily mean it's a bad
+The following JSON document is not valid VS-JSON. It violates each of the rules above. That does not mean it's a bad
 representation design, just that it follows a different set of rules from "Very Simple JSON"
 ```JSON
 {
