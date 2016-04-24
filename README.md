@@ -1,16 +1,19 @@
 # VS-JSON
 
+VS-JSON stands for "Very Simple JSON". 
 VS-JSON defines an especially simple and regular way of using JSON to represent data in Web APIs. 
 The syntax of VS-JSON is exaclty the same as the syntax of JSON—no more and no less.
-VS-JSON stands for "Very Simple JSON". I'm not sure yet whether it makes sense to have a separate media type for VS-JSON.
 
-Regular [JSON](http://www.json.org/) describes as object as an unordered set of name/value pairs. It does not otherwise say what an object is.
+Regular [JSON](http://www.json.org/) describes as object as an unordered set of name/value pairs. 
+It does not otherwise say what an object is.
 This gives designers a lot of flexibility, which
-of course is part of the reason that JSON is popular. VS-JSON adds 3 restrictions to JSON:
+of course is part of the reason that JSON is popular. 
 
-1. VS-JSON objects must be meaningful objects of the conceptual data model of the API. VS-JSON does not allow 
+VS-JSON adds 3 restrictions to JSON:
+
+1. VS-JSON objects must be meaningful objects of the data model of the API. VS-JSON does not allow 
    objects that are purely syntactic, or technical
-2. The name of a name/value pair must correspond to a property or relationship in the conceptual data model
+2. The name of a name/value pair must correspond to a property or relationship in the data model
    of the API
 3. The value of a name/value pair must be the value of the property.
 
