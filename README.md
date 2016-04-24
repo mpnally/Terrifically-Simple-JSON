@@ -109,7 +109,7 @@ This example makes two independent statements:
 
 ## An explicit way of encoding URLs
 
-The following two examples are both valid TS-JSON (verify that they follow the rules)
+The following two examples are both valid TS-JSON (you can verify that they follow the rules)
 ```JSON
 {
  "_id": "http://martin-nally.name#",
