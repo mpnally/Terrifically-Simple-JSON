@@ -82,7 +82,7 @@ VS-JSON allows nested objects, so it is valid to write this:
 }
 ```
 
-VS-JSON defines a special JSON property whose name is `_id`. It is used to define the identity of an object.
+The `_id` property is used to define the identity of an object.
 Here is an example of its use:
 
 ```JSON
