@@ -95,14 +95,14 @@ The `_id` property can be used in nested objects too, like this:
  "_id": "http://martin-nally.name#",
  "bornIn": 
     {
-    "_id": "http://www.scotland.org",
+    "_id": "http://www.scotland.org#",
     "_isA": "Country"
     }
 }
 ```
 This example makes two statements:
-* http://martin-nally.name# was born in http://www.scotland.org
-* Scotland is a country
+* http://martin-nally.name# was born in http://www.scotland.org#
+* http://www.scotland.org# is a country
 
 Writing
 ```JSON
@@ -110,7 +110,7 @@ Writing
  "_id": "http://martin-nally.name#",
  "bornIn": 
     {
-    "_id": "http://www.scotland.org",
+    "_id": "http://www.scotland.org#",
     }
 }
 ```
@@ -118,7 +118,7 @@ is an alaternative to writing:
 ```JSON
 {
  "_id": "http://martin-nally.name#",
- "bornIn": "http://www.scotland.org"
+ "bornIn": "http://www.scotland.org#"
 }
 ```
 Both are valid VS-JSON—API designers using VS-JSON can choose which they prefer, or use both.
