@@ -35,7 +35,7 @@ is descriptive.
 The value of adhering to the 3 restrictions is that it creates a direct 1-1 mapping between the data of the API and the JSON.
 If you know the data model, you already know what the JSON will look like a vice versa. Other formats also have this property,
 but none of them do it as simply and directly as TS-JSON. Other formats build new concepts or structures on top of JSON, 
-while TS-JSON just uses the concepts that are already in JSON—This is why there is no media type for TS-JSON. 
+while TS-JSON just uses the concepts that are already in JSON—this is why there is no media type for TS-JSON. 
 Our ideal is that the mapping from JSON to the data is so direct, obvious and intuitive that it appears not to exist.
 
 The following is a valid TS-JSON document:
