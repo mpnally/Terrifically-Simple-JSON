@@ -12,16 +12,36 @@ of course is part of the reason that JSON is popular. VS-JSON adds 3 restriction
    objects that are purely syntactic, or technical
 1. The name of a name/value pair must correspond to a true property or relationship in the conceptual data model
    of the API
-1. The value of a name/value pair must be a conceptual value. It cannot be a property or reltionship name.
+1. The value of a name/value pair must be the value of the property.
 
 These restrictions are somewhat subjective—I will try to explain below what they mean.
 
-VS-JSON defines a special JSON property whose name is `_id`. It is used to define the identity of an object.
-
 The following is a valid VS-JSON document:
 ```JSON
-{"name": "Martin",
- "birthyear": "1957"
- "birthplace": "Scotland"
+{
+ "name": "Martin",
+ "birthday": "1957-01-05",
+ "birthplace": "http://www.scotland.org"
 }
 ```
+
+The following JSON document is not valid VS-JSON. It violates each of the rules above. Thst does not necessarily mean it's a bad
+representstion design, just tht it doesn't follow the rules of "Very Simple JDON"
+```JSON
+{
+ "properties": 
+    {
+     "name": "Martin",
+     "birthday": "1957-01-05"
+    }
+ "links": [
+    {
+     "rel": "birthplace",
+     "href": "http://www.scotland.org"
+    } 
+ ]
+}
+```
+
+VS-JSON defines a special JSON property whose name is `_id`. It is used to define the identity of an object.
+
