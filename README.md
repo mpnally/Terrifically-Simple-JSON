@@ -117,7 +117,6 @@ The following two examples are equivalent—Both are valid VS-JSON
     }
 }
 ```
-is an alternative to writing:
 ```JSON
 {
  "_id": "http://martin-nally.name#",
