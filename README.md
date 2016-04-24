@@ -25,8 +25,8 @@ The following is a valid VS-JSON document:
 }
 ```
 
-The following JSON document is not valid VS-JSON. It violates each of the rules above. Thst does not necessarily mean it's a bad
-representstion design, just tht it doesn't follow the rules of "Very Simple JDON"
+The following JSON document is not valid VS-JSON. It violates each of the rules above. That does not necessarily mean it's a bad
+representation design, just that it doesn't follow the rules of "Very Simple JDON"
 ```JSON
 {
  "properties": 
@@ -42,6 +42,10 @@ representstion design, just tht it doesn't follow the rules of "Very Simple JDON
  ]
 }
 ```
+
+The 3rd and 7th lines violate rule 1—they introduce JSON objects that have no meaning in the conceptual model
+The 2nd and 6th lines violate rule 2—they introduce JSON names that are not properties of the entity on the data model
+Line 9 violates rule 3—`birthplace` is a property name, not a value.
 
 VS-JSON defines a special JSON property whose name is `_id`. It is used to define the identity of an object.
 
