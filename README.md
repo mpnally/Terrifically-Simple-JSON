@@ -46,20 +46,20 @@ Because of TS-JSON's 3 restrictions, we know that this single JSON object with 3
 
 The following JSON document is not valid TS-JSON. It violates all 3 of the rules above. That does not mean it's a bad
 representation design, just that it follows a different set of rules from Terrifically Simple JSON.
-```JSON
-{
- "properties": 
-    {
-     "name": "Martin",
-     "bornOn": "1957-01-05"
-    },
- "links": [
-    {
-     "rel": "bornIn",
-     "href": "http://www.scotland.org#"
-    } 
- ]
-}
+```
+ 1. {
+ 2.  "properties": 
+ 3.     {
+ 4.      "name": "Martin",
+ 5.      "bornOn": "1957-01-05"
+ 6.     },
+ 7.  "links": [
+ 8.     {
+ 9.      "rel": "bornIn",
+10.     "href": "http://www.scotland.org#"
+11.     } 
+12.  ]
+13. }
 ```
 
 Lines 3 and 7 violate rule 1—they introduce JSON objects that have no correspondence in the data model.  
