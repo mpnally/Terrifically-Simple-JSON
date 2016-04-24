@@ -122,7 +122,7 @@ The following two examples are both valid TS-JSON (verify that they follow the r
 There is a subtle difference in the datatype of the value of `bornIn`—[see below](#datatypes). Viewed pedantically,
 the second says I was born in a country while the first says I was born in a string. Common sense tells us that
 the intent of the first is the same as the second. Computers are not very good at common sense, but humans are if they have some context—whether
-you use the first or second form for your API might depend on who the audience is and whether thay have context.
+you use the first or second form for your API might depend on who the audience is and whether they have context.
 
 ## _isA
 
@@ -220,7 +220,7 @@ when you write `178` in JSON, you are really writing a reference to a number. Th
 [developed over 3 millenia](https://en.wikipedia.org/wiki/History_of_the_Hindu-Arabic_numeral_system).
 When you write `true` or `false` in JSON, you are using a different reference notation—one that is specific to booleans. 
 Strings can be viewed the same way. Any datatype can be thought of as consisting of a set of pre-existing entities with a notation for writing
-references to them [and perhaps some rules for operators that can be performed on them, but operstors are out of the scope of JSON].
+references to them [and perhaps some rules for operators that can be performed on them, but operators are out of the scope of JSON].
 JSON has built-in support for the reference notations for numbers, booleans and strings.
 Lacking a built-in reference notation for other datatypes, 
 we must to state explicitly which notation we're using, or rely on out-of-band knowledge. [RDF/JSON](https://www.w3.org/TR/rdf-json/) uses a version of this idea.
