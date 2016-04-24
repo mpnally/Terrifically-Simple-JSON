@@ -218,7 +218,7 @@ handled the same way. In other words, the following are equivalent:
     }
 }
 ```
-I'm not suggesting that anyone would actually encode a number in JSON in this way—I just wanted to illustrate
+I'm not suggesting that anyone would actually encode a number in JSON in this way—I only wanted to illustrate
 that the concept can apply to all datatypes—but if you need a way
 to encode dates that distinguishes them from strings, this is the right way to do it in TS-JSON. If the number example
 seems unintuitive, consider that
