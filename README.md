@@ -56,7 +56,7 @@ representation design, just that it follows a different set of rules from "Very 
 ```
 
 The 3rd and 7th lines violate rule 1—they introduce JSON objects that have no correspondence in the data model  
-The 2nd and 6th lines violate rule 2—they introduce JSON names that are not properties of the entity in the data model  
+The 2nd, 6th, 8th and 9th lines violate rule 2—they introduce JSON names that are not properties of the entity in the data model  
 Line 9 violates rule 3—`bornIn` is a property name, not a value.
 
 `_isA` is used to define the "type" or "kind" of an object.
