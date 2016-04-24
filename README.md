@@ -65,7 +65,7 @@ of the same single entity from the data model.
 
 Humans can easily see that this example is following different rules, because we understand the data model, and we 
 can see that the mapping of the data model to the JSON is different from VS-JSON's. Unfortuntely, it is not easy to
-write a computer program to verify this. Writing a program that understands data models is hard.
+write a computer program to verify this.
 
 `_isA` is used to define the "type" or "kind" of an object.
 It can have more than one value, so its value can be a JSON array, but can also be a simple value.
