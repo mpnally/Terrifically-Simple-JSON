@@ -10,11 +10,15 @@ of course is part of the reason that JSON is popular. VS-JSON adds 3 restriction
 
 1. VS-JSON objects must be meaningful objects of the conceptual data model of the API. VS-JSON does not allow 
    objects that are purely syntactic, or technical
-1. The name of a name/value pair must correspond to a property or relationship in the conceptual data model
+2. The name of a name/value pair must correspond to a property or relationship in the conceptual data model
    of the API
-1. The value of a name/value pair must be the value of the property.
+3. The value of a name/value pair must be the value of the property.
 
-These restrictions are somewhat subjective—I will try to explain below what they mean.
+VS-JSON defines two JSON properties, `_id` and `_isA`. `_id` is used to express the identity of an object. `_isA` is used to
+express the type of an object.
+
+The 3 JSON restrictions and 2 JSON properties above comprise the complete specification of VS-JSON. There is no more. What follows
+is descriptive.
 
 The following is a valid VS-JSON document:
 ```JSON
