@@ -19,13 +19,13 @@ Terrifically Simple JSON places 3 restrictions on the use of JSON for Web APIs:
 2. The `name` of a name/value pair must refer to a property or relationship in the state of the entity.
 3. The `value` of a name/value pair must be the value of the property referenced by the name.
 
-We think these restrictions are simply enforcing the most straightforward and most natural way of using JSON. They basically say,
-"use JSON directly—don't use it to construct your own data-representation format". Since Terrifically Simple JSON is just about using JSON directly,
+The goal of these restrictions is to adhere the most straightforward and natural way of using JSON. They basically say,
+"use JSON directly—don't use it to construct your own data-representation format on top of JSON". Since Terrifically Simple JSON is just about using JSON directly,
 it does not have its own media type. 
 
 Terrifically Simple JSON also defines 3 JSON properties, `_id`, `_idRef`, `_idRefNotation`. 
 * `_id` is used to declare which data model entity a JSON object corresponds to. 
-* `_idRef` and `_idRefNotation` is used for datatypes that are not built in to JSON. 
+* `_idRef` and `_idRefNotation` are used for datatypes that are not built in to JSON. 
 
 `_id` is fundamental to Terrifically Simple JSON. `_idRef` and `_idRefNotation` form an optional-use feature. 
 
