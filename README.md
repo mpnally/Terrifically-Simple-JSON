@@ -226,7 +226,7 @@ When you write `true` or `false` in JSON, you are using a different reference no
 Strings can be viewed the same way. Any datatype can be thought of as consisting of a set of pre-existing entities with a notation for writing
 references to them [and perhaps some rules for operators for them, but operators are out of the scope of JSON].
 JSON has built-in support for the reference notations for numbers, booleans and strings.
-Lacking a built-in reference notation for other datatypes, 
+For other datatypes, 
 we must state explicitly which notation we're using, or rely on out-of-band knowledge.
 
 ## Full Disclosure
