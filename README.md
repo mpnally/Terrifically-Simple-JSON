@@ -124,7 +124,7 @@ Whether you use the first or second form in your API might depend on who the aud
 them to have context.
 The first form is easier to understand and code to if you have the required context, and the second is more precise and correct, 
 and therefore can be reliably interpreted without additional context, so there is a trade-off.
-To understand what it is like to lack the required context, imagine the entire example in Chinese characters (unless you can read Chinese).
+To understand what it is like to lack the required context, imagine both examples with only Chinese characters (unless you can read Chinese).
 
 ## _isA
 
