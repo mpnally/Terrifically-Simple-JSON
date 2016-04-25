@@ -29,7 +29,7 @@ TS-JSON also defines three JSON properties, `_id`, `_idType` and `_isA`.
 * `_isA` is used to declare the type(s) of an entity.  
 
 `_id` is fundamental to TD-JSON. `_idType` is an optional-use feature. 
-`_isA` needn't really be built into TS-JSON, but it makes it a bit easier to talk about the concepts and it is generally useful.
+`_isA` needn't really be part of TS-JSON, but it makes it a bit easier to talk about the concepts and it is generally useful.
 
 ## Tutorial
 
