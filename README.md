@@ -31,10 +31,9 @@ TS-JSON also defines three JSON properties, `_id`, `_idType` and `_isA`.
 `_id` is fundamental to TD-JSON. `_idType` is an optional-use feature. 
 `_isA` needn't really be part of TS-JSON, but it makes it a bit easier to talk about the concepts and it is generally useful.
 
-## Tutorial
+The 3 JSON restrictions and 3 JSON properties above comprise the complete specification of TS-JSON. There is no more. 
 
-The 3 JSON restrictions and 3 JSON properties above comprise the complete specification of TS-JSON. There is no more. What follows
-is descriptive.
+## Tutorial
 
 The value of adhering to the 3 restrictions is that it creates a direct 1-1 mapping between the data of the API and the JSON.
 If you know the data model, you already know what the JSON will look like a vice versa. Other formats also have this property,
