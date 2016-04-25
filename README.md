@@ -31,7 +31,7 @@ Terrifically Simple JSON also defines three JSON properties, `_id`, `_idType` an
 * `_idType` is used for datatypes that are not built in to JSON. 
 * `_isA` is used to declare the type(s) of an entity.  
 
-`_id` is fundamental to TD-JSON. `_idType` is an optional-use feature. 
+`_id` is fundamental to Terrifically Simple JSON. `_idType` is an optional-use feature. 
 `_isA` needn't really be part of Terrifically Simple JSON, but it makes it a bit easier to talk about the concepts and it is generally useful.
 
 The 3 JSON restrictions and 3 JSON properties above comprise the complete specification of Terrifically Simple JSON. There is no more. 
