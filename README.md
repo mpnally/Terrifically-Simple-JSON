@@ -7,7 +7,7 @@ Terrifically Simple JSON is to define the simplest and most regular way possible
 The syntax of Terrifically Simple JSON is exaclty the same as the syntax of regular JSON—Terrifically Simple JSON concerns 
 itself only with how you use JSON.
 
-[Regular JSON](http://www.json.org/) describes an object as "an unordered set of name/value pairs". 
+[Regular JSON](http://www.json.org/) describes an object as "an unordered set of name/value pairs"<a href="#footnote1"><sup>1</sup></a>. 
 It does not otherwise say what an object is, what a name is or what a value is (beyond defining basic datatypes).
 This gives designers a lot of flexibility, which
 of course is part of the reason that JSON is popular, but it also allows them to make complex JSON, which they often do. 
@@ -249,3 +249,7 @@ because it is just part of the data,
 but it would be reasonable to say that `_id` and `_idNotation` together constitute the definition of a media type.
 For `_id`, you could possibly argue that it is just part of the data, and therefore doesn't warrent a media type,
 but it's hard to make that case for `_idNotation`.
+
+<a name="footnote1"><sup>1</sup></a> Although this is what the spec says, it is not what is generally implemented for JSON.
+What is implemented is "an unordered set of names, each with an associated value". The definition as written would seem to
+imply that there can be more than one name/value pairs with the same name.
