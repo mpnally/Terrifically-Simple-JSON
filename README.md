@@ -23,13 +23,11 @@ We think these restrictions are simply enforcing the most straightforward and mo
 "use JSON directly—don't use it to construct your own data-representation format". Since Terrifically Simple JSON is just about using JSON directly,
 it does not have its own media type. 
 
-Terrifically Simple JSON also defines three JSON properties, `_id`, `_idNotation` and `_isA`. 
+Terrifically Simple JSON also defines 3 JSON properties, `_id`, `_idRef`, `_idRefNotation`. 
 * `_id` is used to declare which data model entity a JSON object corresponds to. 
-* `_idNotation` is used for datatypes that are not built in to JSON. 
-* `_isA` is used to declare the type(s) of an entity.  
+* `_idRef` and `_idRefNotation` is used for datatypes that are not built in to JSON. 
 
-`_id` is fundamental to Terrifically Simple JSON. `_idNotation` is an optional-use feature. 
-`_isA` needn't really be part of Terrifically Simple JSON, but it makes it a bit easier to talk about the concepts and it is generally useful.
+`_id` is fundamental to Terrifically Simple JSON. `_idRef` and `_idRefNotation` form an optional-use feature. 
 
 The 3 JSON restrictions and 3 JSON properties above comprise the complete specification of Terrifically Simple JSON. There is no more. 
 
@@ -120,42 +118,29 @@ The following two examples are both Terrifically Simple JSON (you can verify tha
 Interpreted strictly,
 the second says I was born in a country while the first says I was born in a string. Common sense tells us that
 the intent of the first is the same as that of the second. Computers are not very good at common sense, but humans are if they have some context.
-Whether you use the first or second form in your API might depend on who the audience is and whether you want to require 
+Whether you use the first or second form (or both) in your API might depend on who the audience is and whether you want to require 
 them to have context.
-The first form is easier to understand and code to if you have the required context, and the second is more precise and correct, 
+The first form is easier to understand and code to if you have the required context, and the second is more precise and correct 
 and therefore can be reliably interpreted without additional context, so there is a trade-off.
-To understand what it is like to lack the required context, imagine both examples with all names and values in Chinese characters (unless you can read Chinese).
-
-## _isA
-
-`_isA` is used to define the "type" or "kind" of an object.
-It can have more than one value, so its value can be a JSON array, but can also be a simple value.
-```JSON
-{
- "_isA": "Person",
- "name": "Martin"
-}
-```
-
-JSON allows nested objects, so in Terrifically Simple JSON it is valid to write this:
-```JSON
-{
- "_isA": "Person",
- "name": "Martin",
- "eyeColor": 
-    {
-     "_isA": "RGBColor",
-     "red": 0,
-     "green": 0,
-     "blue": 155
-    }
-}
-```
+To understand what it is like to lack the required context, imagine both examples with all names and values in Chinese characters (unless you can read Chinese, in which case try Cryllic or Arabic).
 
 ## When `_id` is missing
 
 When the `_id` property of a Terrifically Simple JSON object is missing, as in the previous example, the object still must correspond to an 
-entity in the API data model. A JSON object with no `_id` should be read as a noun clause that references an entity. The previous example
+entity in the API data model. A JSON object with no `_id` should be read as a noun clause that references an entity. This example
+```JSON
+{
+ "isA": "Person",
+ "name": "Martin",
+ "eyeColor": 
+    {
+     "isA": "RGBColor",
+     "red": 0,
+     "green": 0,
+     "blue": 155
+    }
+}```
+
 should be read as meaning,
 "The eyeColor of that Person whose name is Martin is that RGBColor whose red value is zero, green value is 0 and blue value is 155"
 
@@ -167,31 +152,32 @@ The two most common
 datatypes in Web API programming that are not covered by JSON are date and URI. Unless you are willing to invent extensions or
 conventions on top of JSON, the best you can do is to encode them as strings. The [example above](#explicit-urls) shows how the `_id` property
 can be used in Terrifically Simple JSON to encode URLs more precisely, at some cost to simplicity and ease-of-programming. 
-This idea can be extended to other datatypes. The idea is that this JSON:
+This idea can be extended to other datatypes. This Terrifically Simple JSON:
 ```JSON
 {
  "_id": "http://martin-nally.name#",
  "bornIn": {"_id": "http://www.scotland.org#"}
 }
 ```
-is really a shorthand for this:
+is equivalent to this:
 ```JSON
 {
  "_id": "http://martin-nally.name#",
  "bornIn": {
-    "_id": "http://www.scotland.org#",
-    "_idNotation": "URI"
+    "_idRef": "http://www.scotland.org#",
+    "_idRefNotation": "URI"
     }
 }
 ```
-The `_idNotation` value tells you what the notation is of the reference in the `_id` field. 
-The value for `_idNotation` can be overridden, so this pattern can be used for other datatypes, e.g. dates, like this:
+The `_idRefNotation` value tells you what the notation is of the reference in the `_idRef` field.
+The `_id` property is a convenience syntax for references whose _idRefNotation is URI.  
+Other values for `_idRefNotation` can be used, so this pattern can be used for other datatypes, e.g. dates, like this:
 ```JSON
 {
  "_id": "http://martin-nally.name#",
  "bornOn": {
-    "_id": "1957-01-05",
-    "_idNotation": "ISO8601"
+    "_idRef": "1957-01-05",
+    "_idRefNotation": "ISO8601"
     }
 }
 ```
@@ -208,8 +194,8 @@ handled the same way. In other words, the following are equivalent:
 {
  "_id": "http://martin-nally.name#",
  "heightInCM": {
-    "_id": "178",
-    "_idNotation": "JSONnumberNotation"
+    "_idRef": "178",
+    "_idRefNotation": "JSONNumberNotation"
     }
 }
 ```
@@ -221,10 +207,12 @@ you can represent dates as simple strings.
 
 If the number example
 seems unintuitive, consider that
-when you write `178` in JSON, you are really writing a reference to a number. The notation we use to write this reference was
+when you write `178` in JSON, you are really writing a reference to an existing number—the number 178 has been around a lot longer than your JSON. 
+The notation we are using to write this reference was
 [developed over 3 millenia](https://en.wikipedia.org/wiki/History_of_the_Hindu-Arabic_numeral_system).
 When you write `true` or `false` in JSON, you are using a different reference notation—one that is specific to booleans. 
-Strings can be viewed the same way. Any datatype can be thought of as consisting of a pre-defined set of entities with a notation for writing
+Strings can be viewed the same way, although it takes a little more thought to see why this is true. 
+Any datatype can be thought of as consisting of a pre-defined set of entities with a notation for writing
 references to them [and perhaps some operators on them, but operators are out of the scope of JSON].
 JSON has built-in support for the reference notations for numbers, booleans and strings.
 For other datatypes, 
@@ -244,11 +232,10 @@ of RDF, especially JSON-LD, whose complexity is likely to be fatal in my opinion
 
 ## Not a media type? Really?
 
-I may be on shaky ground here. I do not think the 3 constraints indicate a new media type and neither does the `_isA` property,
-because it is just part of the data,
-but it would be reasonable to say that `_id` and `_idNotation` together constitute the definition of a media type.
+I may be on shaky ground here. I do not think the 3 constraints indicate a new media type
+but it would be reasonable to say that `_id`, `_idRef` and `_idRefNotation` together constitute the definition of a media type.
 For `_id`, you could possibly argue that it is just part of the data, and therefore doesn't warrent a media type,
-but it's hard to make that case for `_idNotation`.
+but it's hard to make that case for `_idRefNotation`.
 
 ## _
 
