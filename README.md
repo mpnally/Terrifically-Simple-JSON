@@ -227,8 +227,7 @@ Strings can be viewed the same way. Any datatype can be thought of as consisting
 references to them [and perhaps some rules for operators that can be performed on them, but operators are out of the scope of JSON].
 JSON has built-in support for the reference notations for numbers, booleans and strings.
 Lacking a built-in reference notation for other datatypes, 
-we must state explicitly which notation we're using, or rely on out-of-band knowledge. 
-[RDF/JSON](https://www.w3.org/TR/rdf-json/) uses a version of this idea—that is where I learned it.
+we must state explicitly which notation we're using, or rely on out-of-band knowledge.
 
 ## Full Disclosure
 
@@ -240,4 +239,4 @@ Having done a couple of projects using a strict interpretation of the RDF model,
 I've seen that those particular features cause significant friction in practical API programming, and that neither API providers nor consumers are
 willing to accept that friction. I believe those features may be important for RDF's ambitions as an internet-scale information model but are not
 important for most API programming needs. Those features also contribute significantly to the complexity of standard JSON representations
-of RDF, especially JSON-LD, whose complexity is likely to be fatal in my opinion, but also RDF/JSON. Hence my need for Terrifically Simple JSON.
+of RDF, especially JSON-LD, whose complexity is likely to be fatal in my opinion, but also RDF/JSON. Hence the need for Terrifically Simple JSON.
