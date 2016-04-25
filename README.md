@@ -20,7 +20,7 @@ TS-JSON places 3 restrictions on the use of JSON for Web APIs:
 3. The `value` of a name/value pair must be the value of the property referenced by the name.
 
 We think these restrictions are simply enforcing the most obvious and most natural way of using JSON. They basically say,
-"use JSON directly—don't use it to construct your own data-representtion format".
+"use JSON directly—don't use it to construct your own data-representation format".
 
 TS-JSON also defines three JSON properties, `_id`, `_idType` and `_isA`. 
 * `_id` is used to declare the URL of the data model entity corresponding to a JSON object. 
