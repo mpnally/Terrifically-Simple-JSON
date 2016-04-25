@@ -24,7 +24,7 @@ We think these restrictions are simply enforcing the most straightforward and mo
 it does not have its own media type. 
 
 Terrifically Simple JSON also defines three JSON properties, `_id`, `_idNotation` and `_isA`. 
-* `_id` is used to declare which data model entity corresponds to a JSON object. 
+* `_id` is used to declare which data model entity a JSON object corresponds to. 
 * `_idNotation` is used for datatypes that are not built in to JSON. 
 * `_isA` is used to declare the type(s) of an entity.  
 
