@@ -157,12 +157,12 @@ JSON allows nested objects, so in Terrifically Simple JSON it is valid to write 
 
 When the `_id` property of a Terrifically Simple JSON object is missing, as in the previous example, the object still must correspond to an 
 entity in the API data model. A JSON object with no `_id` should be read as a noun clause that references an entity. The previous example
-should be read as meaning
+should be read as meaning,
 "The eyeColor of that Person whose name is Martin is that RGBColor whose red value is zero, green value is 0 and blue value is 155"
 
 ## <a name="datatypes"></a>Datatypes
 
-One of the challenges of JSON is that it only supports 3 datatypes: number, string, and boolean (possibly the null value should be 
+One of the challenges of JSON is that it only supports 3 useful datatypes: number, string, and boolean (the null value should probably be 
 considered the unique member of a 4th datatype). 
 The two most common
 datatypes in Web API programming that are not covered by JSON are date and URI. Unless you are willing to invent extensions or
