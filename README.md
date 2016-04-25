@@ -19,7 +19,7 @@ TS-JSON places 3 restrictions on the use of JSON for Web APIs:
 2. The `name` of a name/value pair must correspond to a property or relationship in the state of the entity.
 3. The `value` of a name/value pair must be the value of the property referenced by the name.
 
-We think these restrictions are simply enforcing the most obvious and most natural way of using JSON. They basically say,
+We think these restrictions are simply enforcing the most straightforward and most natural way of using JSON. They basically say,
 "use JSON directly—don't use it to construct your own data-representation format". Since TS-JSON is just about using JSON directly,
 it does not have its own media type.
 
