@@ -243,7 +243,7 @@ of RDF, especially JSON-LD, whose complexity is likely to be fatal in my opinion
 
 I may be on shaky ground here. I do not think the 3 constraints constitute a media type and neither does the `_isA` property,
 because it is just part of the data,
-but it would be reasonable to say that `_id` and `idNotation` together constitute the definition of a media type.
+but it would be reasonable to say that `_id` and `_idNotation` together constitute the definition of a media type.
 For `_id`, you could possibly argue that it is just part of the data, and therefore doesn't warrent a media type,
 but it's hard to make that case for `idNotation`.
 If I were to introduce a media type, I would make a smaller document for the media type that only documented `_id` and `_idNotation`
