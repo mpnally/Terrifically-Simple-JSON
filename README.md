@@ -105,7 +105,7 @@ This example makes two independent statements:
 * http://martin-nally.name# was born in http://www.scotland.org#
 * The Gaelic name for http://www.scotland.org# is Alba
 
-## An explicit way of encoding URLs
+## <a name="explicit-urls"></a>An explicit way of encoding URLs
 
 The following two examples are both valid TS-JSON (you can verify that they follow the rules)
 ```JSON
@@ -166,7 +166,7 @@ One of the challenges of JSON is that it only supports 3 datatypes: number, stri
 considered the unique member of a 4th datatype). 
 The two most common
 datatypes in Web API programming that are not covered by JSON are date and URI. Unless you are willing to invent extensions or
-conventions on top of JSON, the best you can do is to encode them as strings. The examples above show how the `_id` property
+conventions on top of JSON, the best you can do is to encode them as strings. The [example above](#explicit-urls) shows how the `_id` property
 can be used in TS-JSON to encode URLs more explicitly, at some cost to simplicity and ease-of-programming. 
 This idea can be extended to other datatypes. The idea is that this JSON:
 ```JSON
