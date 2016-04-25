@@ -221,7 +221,7 @@ we must state explicitly which notation we're using, or rely on out-of-band know
 
 ## Not a media type? Really?
 
-I may be on shaky ground here. I do not think the 3 constraints indicate a new media type—the opposite, actually, they emphasize using JSON directly instead of using it to build your own media type—
+I may be on shaky ground here. I do not think the 3 constraints indicate a new media type—they emphasize using JSON directly instead of using it to build your own media type—
 but it would be reasonable to say that `_id`, `_idRef` and `_idRefNotation` together constitute the definition of a media type.
 For `_id`, I might be able to argue that it is just part of the data, not the representation format, and therefore doesn't warrent a media type,
 but it's hard to make that case for `_idRefNotation`.
