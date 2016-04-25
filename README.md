@@ -238,6 +238,6 @@ identified with URLs. It also gives up the ability to express multi-valued prope
 considering it more important to exploit JSON's array feature for list-valued properties.
 Why make my own interpretation? Having done a couple of projects using a strict interpretation of the RDF model, 
 I've seen that those particular features cause significant friction in practical API programming, and that most programming teams are
-unwilling to accept that friction. Those features are important for RDF's ambitions as an internet-scale information model but are not
+unwilling to accept that friction. I believe those features are important for RDF's ambitions as an internet-scale information model but are not
 important for most API programming needs. Those features also contribute significantly to the complexity of standard JSON representations
 of RDF, especially JSON-LD, whose complexity is likely to be fatal in my opinion, but also RDF/JSON. Hence my need for Terrifically Simple JSON.
