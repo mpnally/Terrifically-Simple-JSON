@@ -35,10 +35,10 @@ The 3 JSON restrictions and 3 JSON properties above comprise the complete specif
 
 ## Tutorial
 
-The value of adhering to the 3 restrictions is that it creates a direct 1-1 mapping between the data of the API and the JSON.
-If you know the data model, you already know what the JSON will look like a vice versa. Other formats also have this property,
-but none of them do it as simply and directly as TS-JSON. Other formats build new concepts or structures on top of JSON, 
-while TS-JSON just uses the concepts that are already in JSON. 
+The value of adhering to the 3 restrictions is that it creates a direct 1-1 correspondence between the data of the API and the JSON.
+Other formats build new concepts or structures on top of JSON, requiring a mapping thst needs to be learned betyween the
+structure of the JSON and the data of the API. Comparatively, TS-JSON is simpler to learn and understand, which is one
+of the primry reasons for JSON's popularity on the first place. 
 Our ideal is that the mapping from JSON to the data is so direct, obvious and intuitive that it appears not to exist.
 
 The following is a valid TS-JSON document:
@@ -49,8 +49,8 @@ The following is a valid TS-JSON document:
  "bornIn": "http://www.scotland.org#"
 }
 ```
-Because of TS-JSON's 3 restrictions, we know that this single JSON object with 3 name/value pairs represents 3 property values of 
-a single entity in the API data model.
+Because of TS-JSON's 3 restrictions, we know that this single JSON object with 3 name/value pairs represents a single entity 
+in the API data model with 3 property values.
 
 The following JSON document is not valid TS-JSON. It violates all 3 of the rules above. That does not mean it's a bad
 representation design, just that it follows a different set of rules from Terrifically Simple JSON.
