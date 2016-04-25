@@ -250,6 +250,8 @@ but it would be reasonable to say that `_id` and `_idNotation` together constitu
 For `_id`, you could possibly argue that it is just part of the data, and therefore doesn't warrent a media type,
 but it's hard to make that case for `_idNotation`.
 
-<a name="footnote1"><sup>1</sup></a> Although this is what the spec says, it is not what is generally implemented for JSON.
-What is implemented is "an unordered set of names, each with an associated value". The definition as written would seem to
-imply that there can be more than one name/value pairs with the same name.
+<a name="footnote1"><sup>1</sup></a> Although this is what the JSON site says, it is not what is generally implemented for JSON.
+What is implemented is "an unordered set of names, each with an associated value". The definition as written
+implies that there can be more than one name/value pair with the same name. Most implementations accept input
+with more than one pair of the same name, but throw away all but one of them. The [full IETF spec for JSON](http://www.ietf.org/rfc/rfc4627.txt?number=4627)
+says that "The names within an object SHOULD be unique".
