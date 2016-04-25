@@ -22,9 +22,6 @@ Terrifically Simple JSON places 3 restrictions on the use of JSON for Web APIs:
 We think these restrictions are simply enforcing the most straightforward and most natural way of using JSON. They basically say,
 "use JSON directly—don't use it to construct your own data-representation format". Since Terrifically Simple JSON is just about using JSON directly,
 it does not have its own media type. 
-Other formats build new concepts or structures on top of JSON, requiring a mapping that needs to be learned between the
-JSON and the data of the API. 
-Our ideal is that the mapping from JSON to the data is so direct, obvious and intuitive that it appears not to exist.
 
 Terrifically Simple JSON also defines three JSON properties, `_id`, `_idNotation` and `_isA`. 
 * `_id` is used to declare which data model entity corresponds to a JSON object. 
