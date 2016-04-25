@@ -76,7 +76,7 @@ Humans can easily see that this example is following different rules, because we
 can see that the mapping of the data model to the JSON is different from TS-JSON's. Unfortunately, it is not easy to
 write a computer program to verify this.
 
-## _id
+## _id<sup>1</sup>
 
 The value of the `_id` property is the identifier of the data model entity corresponding to the JSON object. 
 By default, its value is always a URI (possibly relative).
@@ -228,7 +228,8 @@ Strings can be viewed the same way. Any datatype can be thought of as consisting
 references to them [and perhaps some rules for operators that can be performed on them, but operators are out of the scope of JSON].
 JSON has built-in support for the reference notations for numbers, booleans and strings.
 Lacking a built-in reference notation for other datatypes, 
-we must state explicitly which notation we're using, or rely on out-of-band knowledge. [RDF/JSON](https://www.w3.org/TR/rdf-json/) uses a version of this idea.
+we must state explicitly which notation we're using, or rely on out-of-band knowledge. 
+[RDF/JSON](https://www.w3.org/TR/rdf-json/) uses a version of this idea—that is where I learned it.
 
 ## Full Disclosure
 
