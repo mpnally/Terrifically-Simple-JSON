@@ -79,7 +79,7 @@ write a computer program to verify this.
 ## _id
 
 The value of the `_id` property identifies the data model entity corresponding to the JSON object. 
-By default, its value is always a URI (possibly relative). See the section on [datatypes](#datatypes) for the non-default case.
+By default, its value is always a URI (possibly relative). [See the section on [datatypes](#datatypes) for the non-default case.]
 Here is an example of its use:
 
 ```JSON
