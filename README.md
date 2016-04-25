@@ -22,7 +22,7 @@ TS-JSON places 3 restrictions on the use of JSON for Web APIs:
 We think these restrictions are simply enforcing the most straightforward and most natural way of using JSON. They basically say,
 "use JSON directly—don't use it to construct your own data-representation format". Since TS-JSON is just about using JSON directly,
 it does not have its own media type. The value of adhering to the 3 restrictions is that it creates a direct 1-1 correspondence between the data of the API and the JSON.
-Other formats build new concepts or structures on top of JSON, requiring a mapping thst needs to be learned betyween the
+Other formats build new concepts or structures on top of JSON, requiring a mapping that needs to be learned between the
 structure of the JSON and the data of the API. Comparatively, TS-JSON is simpler to learn and understand, which is one
 of the primry reasons for JSON's popularity on the first place. 
 Our ideal is that the mapping from JSON to the data is so direct, obvious and intuitive that it appears not to exist.
