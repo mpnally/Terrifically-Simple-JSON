@@ -219,6 +219,13 @@ JSON has built-in support for the reference notations for numbers, booleans and 
 For other datatypes, 
 we must state explicitly which notation we're using, or rely on out-of-band knowledge.
 
+## Not a media type? Really?
+
+I may be on shaky ground here. I do not think the 3 constraints indicate a new media type—the opposite, actually, they emphasize using JSON directly instead of using it to build your own media type—
+but it would be reasonable to say that `_id`, `_idRef` and `_idRefNotation` together constitute the definition of a media type.
+For `_id`, I might be able to argue that it is just part of the data, not the representation format, and therefore doesn't warrent a media type,
+but it's hard to make that case for `_idRefNotation`.
+
 ## Full Disclosure
 
 If you know RDF, you will recognize that Terrifically Simple JSON is a proprietary format for a loose interpretation of the RDF data model.
@@ -230,13 +237,6 @@ I've seen that those features cause significant friction in practical API progra
 willing to accept that friction. Those features may be important for RDF's ambitions as an internet-scale information model but they are not
 important for most API programming needs. Those features also contribute significantly to the complexity of standard JSON representations
 of RDF, especially JSON-LD, whose complexity is likely to be fatal in my opinion, but also RDF/JSON. Hence the need for Terrifically Simple JSON.
-
-## Not a media type? Really?
-
-I may be on shaky ground here. I do not think the 3 constraints indicate a new media type—the opposite, actually, they emphasize using JSON directly instead of using it to build your own media type—
-but it would be reasonable to say that `_id`, `_idRef` and `_idRefNotation` together constitute the definition of a media type.
-For `_id`, I might be able to argue that it is just part of the data, not the representation format, and therefore doesn't warrent a media type,
-but it's hard to make that case for `_idRefNotation`.
 
 ## _
 
