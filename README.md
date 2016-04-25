@@ -185,8 +185,8 @@ is really a shorthand for this:
     }
 }
 ```
-The `_idNotation` value tells you what the notation is of the reference in the `_id` field.
-This pattern can be used for dates, like this:
+The `_idNotation` value tells you what the notation is of the reference in the `_id` field. 
+The default value for `_idNotation` is `URI`, but it can be overridden, so this pattern can be used for other datatypes, e.g. dates, like this:
 ```JSON
 {
  "_id": "http://martin-nally.name#",
@@ -196,7 +196,6 @@ This pattern can be used for dates, like this:
     }
 }
 ```
-The default value for `_idNotation` is `URI`, but it can be overridden. 
 
 In principle, the JSON built-in types can be
 handled the same way. In other words, the following are equivalent:
