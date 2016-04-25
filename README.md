@@ -15,11 +15,12 @@ of course is part of the reason that JSON is popular, but it also allows them to
 TS-JSON places 3 restrictions on the use of JSON for Web APIs:
 
 1. Every TS-JSON object must correspond to an entity in the data model of the API. TS-JSON does not allow 
-   objects that are purely syntactic or technical features of the representation.
+   objects that are purely syntactic or are technical features of the representation.
 2. The `name` of a name/value pair must correspond to a property or relationship in the state of the entity.
 3. The `value` of a name/value pair must be the value of the property referenced by the name.
 
-We think these restrictions are simply enforcing the most obvious and most natural way of using JSON.
+We think these restrictions are simply enforcing the most obvious and most natural way of using JSON. They basically say,
+"use JSON directly—don't use it to construct your own data-representtion format".
 
 TS-JSON also defines three JSON properties, `_id`, `_idType` and `_isA`. 
 * `_id` is used to declare the URL of the data model entity corresponding to a JSON object. 
