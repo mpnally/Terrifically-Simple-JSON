@@ -19,12 +19,12 @@ Terrifically Simple JSON places 3 restrictions on the use of JSON for Web APIs:
 2. The `name` of a name/value pair must refer to a property or relationship in the state of the entity.
 3. The `value` of a name/value pair must be the value of the property referenced by the name.
 
-The goal of these restrictions is to adhere the most straightforward and natural way of using JSON. They basically say,
+The goal of these restrictions is to adhere to the most straightforward and natural way of using JSON. They basically say,
 "use JSON directly—don't use it to construct your own data-representation format on top of JSON". Since Terrifically Simple JSON is just about using JSON directly,
 it does not have its own media type. 
 
 Terrifically Simple JSON also defines 3 JSON properties, `_id`, `_idRef`, `_idRefNotation`. 
-* `_id` is used to declare which data model entity a JSON object corresponds to. 
+* `_id` is used to declare which data model entity a particular JSON object corresponds to. 
 * `_idRef` and `_idRefNotation` are used for datatypes that are not built in to JSON. 
 
 `_id` is fundamental to Terrifically Simple JSON. `_idRef` and `_idRefNotation` form an optional-use feature. 
@@ -74,7 +74,7 @@ write a computer program to verify this.
 ## _id
 
 The value of the `_id` property identifies the data model entity corresponding to the JSON object. 
-By default, its value is always a URI (possibly relative). [See the section on [datatypes](#datatypes) for the non-default case.]
+Tts value is always a URI (possibly relative).
 Here is an example of its use:
 
 ```JSON
@@ -153,14 +153,13 @@ The two most common
 datatypes in Web API programming that are not covered by JSON are date and URI. Unless you are willing to invent extensions or
 conventions on top of JSON, the best you can do is to encode them as strings. The [example above](#explicit-urls) shows how the `_id` property
 can be used in Terrifically Simple JSON to encode URLs more precisely, at some cost to simplicity and ease-of-programming. 
-This idea can be extended to other datatypes. This Terrifically Simple JSON:
+This idea can be extended to other datatypes. The following two Terrifically Simple JSON examples are equivalent.
 ```JSON
 {
  "_id": "http://martin-nally.name#",
  "bornIn": {"_id": "http://www.scotland.org#"}
 }
 ```
-is equivalent to this:
 ```JSON
 {
  "_id": "http://martin-nally.name#",
@@ -171,7 +170,7 @@ is equivalent to this:
 }
 ```
 The `_idRefNotation` value tells you what the notation is of the reference in the `_idRef` field.
-The `_id` property is a convenience syntax for references whose _idRefNotation is URI.  
+The `_id` property is a convenience syntax for references whose _idRefNotation is URI. 
 Other values for `_idRefNotation` can be used, so this pattern can be used for other datatypes, e.g. dates, like this:
 ```JSON
 {
