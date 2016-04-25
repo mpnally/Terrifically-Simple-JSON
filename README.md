@@ -39,7 +39,7 @@ The 3 JSON restrictions and 3 JSON properties above comprise the complete specif
 ## Tutorial
 
 
-The following is a valid Terrifically Simple JSON document:
+The following is a Terrifically Simple JSON document:
 ```JSON
 {
  "name": "Martin",
