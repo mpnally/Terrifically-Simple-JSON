@@ -228,7 +228,7 @@ Strings can be viewed the same way. Any datatype can be thought of as consisting
 references to them [and perhaps some rules for operators that can be performed on them, but operators are out of the scope of JSON].
 JSON has built-in support for the reference notations for numbers, booleans and strings.
 Lacking a built-in reference notation for other datatypes, 
-we must to state explicitly which notation we're using, or rely on out-of-band knowledge. [RDF/JSON](https://www.w3.org/TR/rdf-json/) uses a version of this idea.
+we must state explicitly which notation we're using, or rely on out-of-band knowledge. [RDF/JSON](https://www.w3.org/TR/rdf-json/) uses a version of this idea.
 
 ## Full Disclosure
 
