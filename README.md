@@ -26,12 +26,12 @@ Other formats build new concepts or structures on top of JSON, requiring a mappi
 JSON and the data of the API. 
 Our ideal is that the mapping from JSON to the data is so direct, obvious and intuitive that it appears not to exist.
 
-Terrifically Simple JSON also defines three JSON properties, `_id`, `_idType` and `_isA`. 
+Terrifically Simple JSON also defines three JSON properties, `_id`, `_idNotation` and `_isA`. 
 * `_id` is used to declare the URL of the data model entity corresponding to a JSON object. 
-* `_idType` is used for datatypes that are not built in to JSON. 
+* `_idNotation` is used for datatypes that are not built in to JSON. 
 * `_isA` is used to declare the type(s) of an entity.  
 
-`_id` is fundamental to Terrifically Simple JSON. `_idType` is an optional-use feature. 
+`_id` is fundamental to Terrifically Simple JSON. `_idNotation` is an optional-use feature. 
 `_isA` needn't really be part of Terrifically Simple JSON, but it makes it a bit easier to talk about the concepts and it is generally useful.
 
 The 3 JSON restrictions and 3 JSON properties above comprise the complete specification of Terrifically Simple JSON. There is no more. 
@@ -181,22 +181,22 @@ is really a shorthand for this:
  "_id": "http://martin-nally.name#",
  "bornIn": {
     "_id": "http://www.scotland.org#",
-    "_idType": "URI"
+    "_idNotation": "URI"
     }
 }
 ```
-The `_idType` value tells you what the notation is of the reference in the `_id` field.
+The `_idNotation` value tells you what the notation is of the reference in the `_id` field.
 This pattern can be used for dates, like this:
 ```JSON
 {
  "_id": "http://martin-nally.name#",
  "bornOn": {
     "_id": "1957-01-05",
-    "_idType": "ISO8601"
+    "_idNotation": "ISO8601"
     }
 }
 ```
-The default value for `_idType` is `URL`, but it can be overridden. 
+The default value for `_idNotation` is `URL`, but it can be overridden. 
 
 In principle, the JSON built-in types can be
 handled the same way. In other words, the following are equivalent:
@@ -211,7 +211,7 @@ handled the same way. In other words, the following are equivalent:
  "_id": "http://martin-nally.name#",
  "heightInCM": {
     "_id": "178",
-    "_idType": "number"
+    "_idNotation": "number"
     }
 }
 ```
