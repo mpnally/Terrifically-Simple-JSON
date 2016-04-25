@@ -122,7 +122,7 @@ the second says I was born in a country while the first says I was born in a str
 the intent of the first is the same as that of the second. Computers are not very good at common sense, but humans are if they have some context.
 Whether you use the first or second form for your API might depend on who the audience is and whether you want to require 
 them to have context.
-The first form is easier to understand and code to if you have the required context, and the second is more correct, so there is a trade-off.
+The first form is easier to understand and code to if you have the required context, and the second is more precise and correct, so there is a trade-off.
 To understand what it is like to lack the required context, imagine the entire example in Chinese characters (unless you read Chinese).
 
 ## _isA
