@@ -4,7 +4,7 @@
 
 TS-JSON stands for Terrifically Simple JSON. The goal of
 Terrifically Simple JSON is to define the simplest and most regular way possible of using JSON to represent data in Web APIs. 
-The syntax of Terrifically Simple JSON is exaclty the same as the syntax of JSON—Terrifically Simple JSON concerns 
+The syntax of Terrifically Simple JSON is exaclty the same as the syntax of regular JSON—Terrifically Simple JSON concerns 
 itself only with how you use JSON.
 
 [Regular JSON](http://www.json.org/) describes an object as "an unordered set of name/value pairs". 
