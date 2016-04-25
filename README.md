@@ -98,7 +98,7 @@ The `_id` property can be used in nested objects too, like this:
     }
 }
 ```
-This example makes two independent statements:
+This example encodes two separate pieces of information:
 * http://martin-nally.name# was born in http://www.scotland.org#
 * The Gaelic name for http://www.scotland.org# is Alba
 
@@ -117,7 +117,7 @@ The following two examples are both Terrifically Simple JSON (you can verify tha
  "bornIn": {"_id": "http://www.scotland.org#"}
 }
 ```
-Viewed pedantically,
+Interpreted strictly,
 the second says I was born in a country while the first says I was born in a string. Common sense tells us that
 the intent of the first is the same as the second. Computers are not very good at common sense, but humans are if they have some context.
 Whether you use the first or second form for your API might depend on who the audience is and whether you want to require 
