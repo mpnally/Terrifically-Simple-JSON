@@ -27,7 +27,7 @@ JSON and the data of the API.
 Our ideal is that the mapping from JSON to the data is so direct, obvious and intuitive that it appears not to exist.
 
 Terrifically Simple JSON also defines three JSON properties, `_id`, `_idNotation` and `_isA`. 
-* `_id` is used to declare the URL of the data model entity corresponding to a JSON object. 
+* `_id` is used to declare which data model entity corresponds to a JSON object. 
 * `_idNotation` is used for datatypes that are not built in to JSON. 
 * `_isA` is used to declare the type(s) of an entity.  
 
