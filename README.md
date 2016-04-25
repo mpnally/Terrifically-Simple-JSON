@@ -139,7 +139,8 @@ entity in the API data model. A JSON object with no `_id` should be read as a no
      "green": 0,
      "blue": 155
     }
-}```
+}
+```
 
 should be read as meaning,
 "The eyeColor of that Person whose name is Martin is that RGBColor whose red value is zero, green value is 0 and blue value is 155"
