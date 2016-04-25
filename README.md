@@ -185,6 +185,7 @@ is really a shorthand for this:
     }
 }
 ```
+The `_idType` value tells you what the notation is of the reference in the `_id` field.
 This longer pattern can be used for dates, like this:
 ```JSON
 {
@@ -195,7 +196,7 @@ This longer pattern can be used for dates, like this:
     }
 }
 ```
-In other words, the rule that said that the value of `_id` is a URL is just the default—it can be overridden by setting the value of `_idType`. 
+The deafult value for `_idType` is `URL`, but it can be overridden. 
 
 In principle, the JSON built-in types can be
 handled the same way. In other words, the following are equivalent:
@@ -220,7 +221,7 @@ to encode dates that distinguishes them from strings, this is the right way to d
 
 If the number example
 seems unintuitive, consider that
-when you write `178` in JSON, you are really writing a reference to a number. The notation we use to write these references was
+when you write `178` in JSON, you are really writing a reference to a number. The notation we use to write this reference was
 [developed over 3 millenia](https://en.wikipedia.org/wiki/History_of_the_Hindu-Arabic_numeral_system).
 When you write `true` or `false` in JSON, you are using a different reference notation—one that is specific to booleans. 
 Strings can be viewed the same way. Any datatype can be thought of as consisting of a set of pre-existing entities with a notation for writing
