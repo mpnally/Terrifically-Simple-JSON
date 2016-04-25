@@ -196,7 +196,7 @@ handled the same way. In other words, the following are equivalent:
  "_id": "http://martin-nally.name#",
  "heightInCM": {
     "_idRef": "178",
-    "_idRefNotation": "JSONNumberNotation"
+    "_idRefNotation": "JSONNumber"
     }
 }
 ```
