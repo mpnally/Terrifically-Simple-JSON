@@ -238,3 +238,13 @@ I've seen that those features cause significant friction in practical API progra
 willing to accept that friction. I believe those features may be important for RDF's ambitions as an internet-scale information model but are not
 important for most API programming needs. Those features also contribute significantly to the complexity of standard JSON representations
 of RDF, especially JSON-LD, whose complexity is likely to be fatal in my opinion, but also RDF/JSON. Hence the need for Terrifically Simple JSON.
+
+## Not a media type? Really?
+
+I may be on shaky ground here. I do not think the 3 constraints constitute a media type and neither does the `_isA` property,
+because it is just part of the data,
+but it would be reasonable to say that `_id` and `idNotation` together constitute the definition of a media type.
+For `_id`, you could possibly argue that it is just part of the data, and therefore doesn't warrent a media type,
+but it's hard to make that case for `idNotation`.
+If I were to introduce a media type, I would make a smaller document for the media type that only documented `_id` and `_idNotation`
+and reference it from here. 
