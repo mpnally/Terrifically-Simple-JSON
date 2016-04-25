@@ -232,7 +232,7 @@ we must state explicitly which notation we're using, or rely on out-of-band know
 
 If you know RDF, you will recognize that Terrifically Simple JSON is a proprietary format for a loose interpretation of the RDF data model.
 Compared to the real RDF data model, Terrifically Simple JSON's interpretation drops the requirements that predicates and classes be entities 
-identified with URLs. It also gives up the ability to express multi-valued properties,
+identified with URLs and gives up the ability to express multi-valued properties,
 considering it more important to use JSON's array feature in a natural way for list-valued properties.
 Having done a couple of projects using a strict interpretation of the RDF model, 
 I've seen that those features cause significant friction in practical API programming, and that usually neither API providers nor consumers are
