@@ -7,7 +7,7 @@ Terrifically Simple JSON is to define the simplest and most regular way possible
 The syntax of Terrifically Simple JSON is exaclty the same as the syntax of regular JSON—Terrifically Simple JSON concerns 
 itself only with how you use JSON.
 
-[Regular JSON](http://www.json.org/) describes an object as "an unordered set of name/value pairs"<a href="#footnote1"><sup>1</sup></a>. 
+[Regular JSON](http://www.json.org/) describes an object as "an unordered set of name/value pairs"<a href="#footnote1" id="ref1"><sup>1</sup></a>. 
 It does not otherwise say what an object is, what a name is or what a value is (beyond defining basic datatypes).
 This gives designers a lot of flexibility, which
 of course is part of the reason that JSON is popular, but it also allows them to make complex JSON, which they often do. 
@@ -244,4 +244,4 @@ but it's hard to make that case for `_idRefNotation`.
 What is implemented is "an unordered set of names, each with an associated value". The definition as written
 implies that there can be more than one name/value pair with the same name but different values. Most implementations accept input
 with more than one pair of the same name, but throw away all but one of them. The [full IETF spec for JSON](http://www.ietf.org/rfc/rfc4627.txt?number=4627)
-says that "The names within an object SHOULD be unique".
+says that "The names within an object SHOULD be unique". <a href="#ref1">↩</a>
