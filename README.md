@@ -186,7 +186,7 @@ is really a shorthand for this:
 }
 ```
 The `_idType` value tells you what the notation is of the reference in the `_id` field.
-This longer pattern can be used for dates, like this:
+This pattern can be used for dates, like this:
 ```JSON
 {
  "_id": "http://martin-nally.name#",
