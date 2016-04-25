@@ -245,6 +245,6 @@ I may be on shaky ground here. I do not think the 3 constraints constitute a med
 because it is just part of the data,
 but it would be reasonable to say that `_id` and `_idNotation` together constitute the definition of a media type.
 For `_id`, you could possibly argue that it is just part of the data, and therefore doesn't warrent a media type,
-but it's hard to make that case for `idNotation`.
+but it's hard to make that case for `_idNotation`.
 If I were to introduce a media type, I would make a smaller document for the media type that only documented `_id` and `_idNotation`
 and reference it from here. 
