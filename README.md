@@ -1,4 +1,4 @@
-# TS-JSON
+# Terrifically Simple JSON
 
 ## Introduction
 
