@@ -215,7 +215,7 @@ handled the same way. In other words, the following are equivalent:
 ```
 I'm not suggesting that anyone would actually encode a number in JSON in this way—the point is to show
 that the concept works for all datatypes. If you need a way
-to encode dates that distinguishes them from strings, this is the right way to do it in Terrifically Simple JSON.
+to encode dates that distinguishes them from strings, this is the way to do it in Terrifically Simple JSON.
 If you don't need to distinguish dates from their stringified equivalents—you rely on the client having enough context—
 you can represent dates as simple strings.
 
