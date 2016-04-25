@@ -26,7 +26,7 @@ Other formats build new concepts or structures on top of JSON, requiring a mappi
 JSON and the data of the API. 
 Our ideal is that the mapping from JSON to the data is so direct, obvious and intuitive that it appears not to exist.
 
-TS-JSON also defines three JSON properties, `_id`<sup>1</sup>, `_idType` and `_isA`. 
+TS-JSON also defines three JSON properties, `_id`, `_idType` and `_isA`. 
 * `_id` is used to declare the URL of the data model entity corresponding to a JSON object. 
 * `_idType` is used for datatypes that are not built in to JSON. 
 * `_isA` is used to declare the type(s) of an entity.  
