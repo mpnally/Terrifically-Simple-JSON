@@ -23,7 +23,7 @@ We think these restrictions are simply enforcing the most straightforward and mo
 "use JSON directly—don't use it to construct your own data-representation format". Since TS-JSON is just about using JSON directly,
 it does not have its own media type. 
 Other formats build new concepts or structures on top of JSON, requiring a mapping that needs to be learned between the
-structure of the JSON and the data of the API. 
+JSON and the data of the API. 
 Our ideal is that the mapping from JSON to the data is so direct, obvious and intuitive that it appears not to exist.
 
 TS-JSON also defines three JSON properties, `_id`, `_idType` and `_isA`. 
