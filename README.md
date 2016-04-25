@@ -233,7 +233,7 @@ of RDF, especially JSON-LD, whose complexity is likely to be fatal in my opinion
 
 ## Not a media type? Really?
 
-I may be on shaky ground here. I do not think the 3 constraints indicate a new media type
+I may be on shaky ground here. I do not think the 3 constraints indicate a new media type—the opposite, actually, they emphasize usinf JSON directly instead of using it to build you rowen media type—
 but it would be reasonable to say that `_id`, `_idRef` and `_idRefNotation` together constitute the definition of a media type.
 For `_id`, I might be able to argue that it is just part of the data, not the representation format, and therefore doesn't warrent a media type,
 but it's hard to make that case for `_idRefNotation`.
