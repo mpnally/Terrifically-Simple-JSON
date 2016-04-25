@@ -171,7 +171,7 @@ This idea can be extended to other datatypes. The following two Terrifically Sim
 }
 ```
 The `_idRefNotation` value tells you what the notation is of the reference in the `_idRef` field.
-The `_id` property is a convenience syntax for references whose _idRefNotation is URI. 
+The `_id` property is a convenient way to express `_idRef` values for references whose _idRefNotation is URI. 
 Other values for `_idRefNotation` can be used, so this pattern can be used for other datatypes, e.g. dates, like this:
 ```JSON
 {
