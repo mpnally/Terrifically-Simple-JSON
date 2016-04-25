@@ -221,7 +221,7 @@ seems unintuitive, consider that
 when you write `178` in JSON, you are really writing a reference to a number. The notation we use to write this reference was
 [developed over 3 millenia](https://en.wikipedia.org/wiki/History_of_the_Hindu-Arabic_numeral_system).
 When you write `true` or `false` in JSON, you are using a different reference notation—one that is specific to booleans. 
-Strings can be viewed the same way. Any datatype can be thought of as consisting of a set of pre-existing entities with a notation for writing
+Strings can be viewed the same way. Any datatype can be thought of as consisting of a pre-defined set of entities with a notation for writing
 references to them [and perhaps some rules for operators for them, but operators are out of the scope of JSON].
 JSON has built-in support for the reference notations for numbers, booleans and strings.
 For other datatypes, 
@@ -241,7 +241,7 @@ of RDF, especially JSON-LD, whose complexity is likely to be fatal in my opinion
 
 ## Not a media type? Really?
 
-I may be on shaky ground here. I do not think the 3 constraints constitute a media type and neither does the `_isA` property,
+I may be on shaky ground here. I do not think the 3 constraints indicate a new media type and neither does the `_isA` property,
 because it is just part of the data,
 but it would be reasonable to say that `_id` and `_idNotation` together constitute the definition of a media type.
 For `_id`, you could possibly argue that it is just part of the data, and therefore doesn't warrent a media type,
