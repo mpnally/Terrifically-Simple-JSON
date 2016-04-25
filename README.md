@@ -196,7 +196,7 @@ This longer pattern can be used for dates, like this:
     }
 }
 ```
-The deafult value for `_idType` is `URL`, but it can be overridden. 
+The default value for `_idType` is `URL`, but it can be overridden. 
 
 In principle, the JSON built-in types can be
 handled the same way. In other words, the following are equivalent:
