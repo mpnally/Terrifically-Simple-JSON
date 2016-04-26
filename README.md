@@ -17,13 +17,15 @@ Terrifically Simple JSON requires that you to use JSON simply and directly. In p
 2. The `name` of a name/value pair must refer to a property or relationship in the state of the corresponding entity.
 3. The `value` of a name/value pair must be the value of the property referenced by the name.
 
-Together, these constraints basically say,
-"use JSON directly—don't use it to construct your own data-representation format on top of JSON". Since Terrifically Simple JSON is just about using JSON directly,
-[it does not have its own media type](#media-type).
+Together, these constraints say,
+"use JSON directly—don't use it to construct your own data-representation format on top of JSON".
 
 Terrifically Simple JSON defines a special property, `_id`, that allows you to declare which data model entity a particular JSON object corresponds to.
 
 The only requirements of Terrifically Simple JSON are that you follow the 3 constraints above, and use the `_id` property to do so explicitly. It really is that simple.
+
+Although the 3 constraints seem to imply that there is no new media type beyond JSON itself, the use of `_id` 
+implies the definition of a new media type. The media type for Terrifically Simple JSON is `application/vnd.terrifically-simple+json`.
 
 It turns out that there is a slight generalization of the `_id` concept that allows all datatypes to be expressed in JSON in a consistent fashion. 
 This generalization is expressed with the optional `_ref`, `_refNotation` properties. Terrifically Simple JSON
@@ -218,8 +220,10 @@ you can represent dates as simple strings.
 
 ## <a name="media-type"></a>Not a media type? Really?
 
-I may be on shaky ground here. The 3 constraints do not indicate a new media type—they emphasize using JSON directly instead of using it to build your own media type—
-but it may be that the use of `_id` (and optionally `_ref` and `_refNotation`) implies the definition of a new media type that should be declared. If
+I am on shaky ground here. The 3 constraints seem to imply that there is no new media type—they emphasize using 
+JSON directly instead of using it to build your own media type. However, the use of `_id` (and optionally `_ref` and `_refNotation`) 
+probably implies the definition of a new media type that should be declared. Those properties violate constraint #2, and so
+are properly considered part of the media type, not the data. If we need to declare a media
 so `application/vnd.terrifically-simple+json` might be an option.
 
 ## Prior Art and Acknowledgements
