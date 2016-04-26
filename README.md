@@ -3,11 +3,11 @@
 ## Introduction
 
 The goal of
-Terrifically Simple JSON is to define the simplest and most regular way possible of using JSON to represent data in Web APIs. 
+Terrifically Simple JSON is to define the simplest and most regular way possible of using JSON to represent data in Web APIs<a href="#footnote1" id="ref1"><sup>1</sup></a>. 
 The syntax of Terrifically Simple JSON is exaclty the same as the syntax of regular JSON—Terrifically Simple JSON concerns 
 itself only with how you use JSON.
 
-[Regular JSON](http://www.json.org/) describes an object as "an unordered set of name/value pairs"<a href="#footnote1" id="ref1"><sup>1</sup></a>. 
+[Regular JSON](http://www.json.org/) describes an object as "an unordered set of name/value pairs"<a href="#footnote2" id="ref2"><sup>1</sup></a>. 
 It does not otherwise say what an object is, what a name is or what a value is (beyond defining basic datatypes).
 This gives designers a lot of flexibility, which often leads to complex JSON. 
 
@@ -232,9 +232,10 @@ I've seen that those features cause significant friction in practical API progra
 of RDF, especially JSON-LD, whose complexity is likely to be fatal in my opinion, but also RDF/JSON. Hence the need for Terrifically Simple JSON.
 
 ## _
+<a name="footnote1"><sup>1</sup></a> Terrifically Simple JSON could also be used in other contexts where JSON is used. <a href="#ref1">↩</a>
 
-<a name="footnote1"><sup>1</sup></a> Although this is what the JSON site says, it is not what is generally implemented for JSON.
+<a name="footnote2"><sup>2</sup></a> Although this is what the JSON site says, it is not what is generally implemented for JSON.
 What is implemented is "an unordered set of names, each with an associated value". The definition as written
 implies that there can be more than one name/value pair with the same name but different values. Most implementations accept input
 with more than one pair of the same name, but throw away all but one of them. The [full IETF spec for JSON](http://www.ietf.org/rfc/rfc4627.txt?number=4627)
-says that "The names within an object SHOULD be unique". <a href="#ref1">↩</a>
+says that "The names within an object SHOULD be unique". <a href="#ref2">↩</a>
