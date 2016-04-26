@@ -25,7 +25,7 @@ Terrifically Simple JSON defines a special property, `_id`, that allows you to d
 The only requirements of Terrifically Simple JSON are that you follow the 3 constraints above, and use the `_id` property to do so explicitly. It really is that simple.
 
 Although the 3 constraints seem to imply that there is no new media type beyond JSON itself, the use of `_id` 
-implies the definition of a new media type. The media type for Terrifically Simple JSON is `application/vnd.terrifically-simple+json`.
+implies a new media type. The media type for Terrifically Simple JSON is `application/vnd.terrifically-simple+json`.
 
 It turns out that there is a slight generalization of the `_id` concept that allows all datatypes to be expressed in JSON in a consistent fashion. 
 This generalization is expressed with the optional `_ref`, `_refNotation` properties. Terrifically Simple JSON
