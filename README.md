@@ -9,8 +9,7 @@ itself only with how you use JSON.
 
 [Regular JSON](http://www.json.org/) describes an object as "an unordered set of name/value pairs"<a href="#footnote1" id="ref1"><sup>1</sup></a>. 
 It does not otherwise say what an object is, what a name is or what a value is (beyond defining basic datatypes).
-This gives designers a lot of flexibility, which
-of course is part of the reason that JSON is popular, but it also allows them to make complex JSON, which they often do. 
+This gives designers a lot of flexibility, which often leads to complex JSON. 
 
 Terrifically Simple JSON requires that you to use JSON simply and directly. In particular, it makes these 3 constraints:
 
@@ -19,7 +18,7 @@ Terrifically Simple JSON requires that you to use JSON simply and directly. In p
 2. The `name` of a name/value pair must refer to a property or relationship in the state of the corresponding entity.
 3. The `value` of a name/value pair must be the value of the property referenced by the name.
 
-These constraints basically say,
+Together, these constraints basically say,
 "use JSON directly—don't use it to construct your own data-representation format on top of JSON". Since Terrifically Simple JSON is just about using JSON directly,
 it does not have its own media type.
 
