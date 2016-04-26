@@ -226,7 +226,7 @@ Having done a couple of projects using a strict interpretation of the RDF model,
 I've seen that those features cause significant friction in practical API programming. Those features also contribute significantly to the complexity of standard JSON representations
 of RDF, especially JSON-LD, whose complexity is likely to be fatal in my opinion, but also RDF/JSON. Hence the need for Terrifically Simple JSON.
 
-Terrifically Simple JSON has few concepts, and those it has are mostly stolen from elsewhere. The value is in what was taken out, not what was put in.
+Terrifically Simple JSON has few concepts, and those it has are mostly stolen from elsewhere. The value is in what was taken out, not what was left in.
 
 ## _
 <a name="footnote1"><sup>1</sup></a> Terrifically Simple JSON could also be used in other contexts where JSON is used. <a href="#ref1">↩</a>
