@@ -26,9 +26,9 @@ Terrifically Simple JSON defines a special property, `_id`, that is used to expr
 
 Following the 3 constraints above, and using `_id` to do so explicitly, are the only requirements of Terrifically Simple JSON. It really is that simple.
 
-It turns out that there is a slight generalization of the `_id` concept that allows all datatypes to be expressed in JSON in a very regular fashion. 
+It turns out that there is a slight generalization of the `_id` concept that allows all datatypes to be expressed in JSON in a consistent fashion. 
 This generalization is expressed with the optional `_idRef`, `_idRefNotation` properties. Terrifically Simple JSON
-does not require you to use them, but they are there if you want an explcit way to handle arbitrary datatypes in JSON.
+does not require you to use them, but they are there if you want an explcit way to handle arbitrary datatypes in Terrifically Simple JSON.
 
 ## Tutorial
 
