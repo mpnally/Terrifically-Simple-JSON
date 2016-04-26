@@ -201,7 +201,7 @@ handled the same way. In other words, the following are equivalent:
 ```
 If this example
 seems unintuitive, consider that
-when you write `178` in JSON, you are writing a reference to an existing entity. The number 178 has been around a lot longer 
+when you write `178` in JSON, you are writing a reference to an entity. The number 178 has been around a lot longer 
 than your JSON—the notation you are using to write this reference was
 [developed over 3 millenia](https://en.wikipedia.org/wiki/History_of_the_Hindu-Arabic_numeral_system).
 When you write `true` or `false` in JSON, you are writing a reference using a different notation—one that is specific to booleans. 
