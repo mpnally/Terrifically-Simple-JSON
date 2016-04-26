@@ -13,8 +13,7 @@ This gives designers a lot of flexibility, which often leads to complex JSON.
 
 Terrifically Simple JSON requires that you to use JSON simply and directly. In particular, it makes these 3 constraints:
 
-1. Every Terrifically Simple JSON object must correspond to an entity in the data model of the API. Terrifically Simple JSON does not allow 
-   JSON objects that are purely syntactic or are technical features of the representation.
+1. Every Terrifically Simple JSON object must correspond to an entity in the data model of the API.
 2. The `name` of a name/value pair must refer to a property or relationship in the state of the corresponding entity.
 3. The `value` of a name/value pair must be the value of the property referenced by the name.
 
