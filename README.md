@@ -137,7 +137,7 @@ the intent of the first is the same as that of the second. Computers are not ver
 Whether you use the first or second form (or both) in your API might depend on who the audience is and whether you want to require 
 them to have context. This choice involves a trade-off between ease-of-use and precision. 
 The first form is easier to understand and code to if you have the required context—the second is more precise and correct 
-and therefore can be reliably interpreted without additional context.
+and therefore can be reliably interpreted without context.
 To understand what it is like to lack the required context, imagine both examples with all names and values in Chinese characters
 (unless you can actually read Chinese, in which case use Cryllic or Arabic).
 
