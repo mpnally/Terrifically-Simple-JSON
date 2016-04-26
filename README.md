@@ -15,7 +15,7 @@ Terrifically Simple JSON avoids complexity by adding these 3 constraints:
 
 1. Every Terrifically Simple JSON object must correspond to an entity in the data model of the API.
 2. The `name` of a name/value pair must refer to a property or relationship in the state of the corresponding entity.
-3. The `value` of a name/value pair must be the value of the property referenced by the name.
+3. The `value` of a name/value pair must be the value of the entity property referenced by the name.
 
 Together, these constraints say,
 "use JSON directly—don't use it to construct your own data-representation format on top of JSON".
