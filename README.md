@@ -17,14 +17,11 @@ Terrifically Simple JSON reduces complexity by adding these 3 constraints:
 2. The `name` of a name/value pair must refer to a property or relationship in the state of the corresponding entity.
 3. The `value` of a name/value pair must be the value of the entity property referenced by the name.
 
-Together, these constraints say,
-"Terrifically Simple JSON uses JSON directly—it doesn't define its own data-representation format on top of JSON".
-
 Terrifically Simple JSON also defines a special property, `_id`, that allows you to declare which data model entity a particular JSON object corresponds to.
 
 The only requirements of Terrifically Simple JSON are that you follow the 3 constraints above, and use the `_id` property to do so explicitly. It really is that simple.
 
-Although the 3 constraints seem to imply that the media type is just JSON, the use of `_id` 
+Although the 3 constraints seem to imply that the media type is just JSON, rather than a new data format built on top of it, the use of `_id` 
 implies a new media type, however minimal. We have not yet registered a media type—we propose `application/vnd.terrifically-simple+json`.
 
 There is a slight generalization of the `_id` concept that allows arbitrary datatypes to be expressed in JSON in a consistent fashion. 
