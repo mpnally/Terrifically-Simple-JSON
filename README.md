@@ -12,24 +12,24 @@ It does not otherwise say what an object is, what a name is or what a value is (
 This gives designers a lot of flexibility, which
 of course is part of the reason that JSON is popular, but it also allows them to make complex JSON, which they often do. 
 
-Terrifically Simple JSON places 3 restrictions on the use of JSON for Web APIs:
+Terrifically Simple JSON requires that you to use JSON simply and directly. In particular, it makes these 3 constraints:
 
 1. Every Terrifically Simple JSON object must correspond to an entity in the data model of the API. Terrifically Simple JSON does not allow 
-   objects that are purely syntactic or are technical features of the representation.
-2. The `name` of a name/value pair must refer to a property or relationship in the state of the entity.
+   JSON objects that are purely syntactic or are technical features of the representation.
+2. The `name` of a name/value pair must refer to a property or relationship in the state of the corresponding entity.
 3. The `value` of a name/value pair must be the value of the property referenced by the name.
 
-The goal of these restrictions is to adhere to the most straightforward and natural way of using JSON. They basically say,
+These constraints basically say,
 "use JSON directly—don't use it to construct your own data-representation format on top of JSON". Since Terrifically Simple JSON is just about using JSON directly,
-it does not have its own media type. 
+it does not have its own media type.
 
-Terrifically Simple JSON also defines 3 JSON properties, `_id`, `_idRef`, `_idRefNotation`. 
-* `_id` is used to declare which data model entity a particular JSON object corresponds to. 
-* `_idRef` and `_idRefNotation` are used for datatypes that are not built in to JSON. 
+Terrifically Simple JSON defines a special property, `_id`, that is used to satify Rule #1 above. `_id` allows you to declare which data model entity a particular JSON object corresponds to.
 
-`_id` is fundamental to Terrifically Simple JSON. `_idRef` and `_idRefNotation` form an optional-use feature. 
+Following the 3 constraints above, and using `_id` to do so explicitly, are the only requirements of Terrifically Simple JSON. It really is that simple.
 
-The 3 JSON restrictions and 3 JSON properties above comprise the complete specification of Terrifically Simple JSON. There is no more. 
+It turns out that there is a slight generalization of the `_id` concept that allows all datatypes to be expressed in JSON in a very regular fashion. 
+This generalization is expressed with the optional `_idRef`, `_idRefNotation` properties. Terrifically Simple JSON
+does not require you to use them, but they are there if you want an explcit way to handle arbitrary datatypes in JSON.
 
 ## Tutorial
 
@@ -72,8 +72,9 @@ write a computer program to verify this.
 
 ## _id
 
-The value of the `_id` property identifies the data model entity corresponding to the JSON object. 
-Tts value is always a URI (possibly relative).
+The use of the `_id` property is fundamental to Terrifically Simple JSON. Rule #1 of Terrifically Simple JSON is that every JSON object
+corresponds to some entiry in the API data model. The `_id` property provides a direct way of saying which entity it is.
+Its value is the URL of the corresponding data model entity for the JSON object that inbcludes it. 
 Here is an example of its use:
 
 ```JSON
@@ -83,7 +84,7 @@ Here is an example of its use:
 }
 ```
 This example says simply that the entity whose id is http://martin-nally.name# has the first name Martin.
-Standard JSON tells us that the first name is Martin. the `_id` property tells us which API entity we are talking about.
+Standard JSON tells us that the first name is Martin. The `_id` property tells us which API entity we are talking about.
 
 The `_id` property can be used in nested objects too, like this:
 ```JSON
@@ -99,31 +100,6 @@ The `_id` property can be used in nested objects too, like this:
 This example encodes two separate pieces of information:
 * http://martin-nally.name# was born in http://www.scotland.org#
 * The Gaelic name for http://www.scotland.org# is Alba
-
-## <a name="explicit-urls"></a>An explicit way of encoding URLs
-
-The following two examples are both Terrifically Simple JSON (you can verify that they follow the rules)
-```JSON
-{
- "_id": "http://martin-nally.name#",
- "bornIn": "http://www.scotland.org#"
-}
-```
-```JSON
-{
- "_id": "http://martin-nally.name#",
- "bornIn": {"_id": "http://www.scotland.org#"}
-}
-```
-Interpreted strictly,
-the second says I was born in a country while the first says I was born in a string. Common sense tells us that
-the intent of the first is the same as that of the second. Computers are not very good at common sense, but humans are if they have some context.
-Whether you use the first or second form (or both) in your API might depend on who the audience is and whether you want to require 
-them to have context.
-The first form is easier to understand and code to if you have the required context, and the second is more precise and correct 
-and therefore can be reliably interpreted without additional context, so there is a trade-off.
-To understand what it is like to lack the required context, imagine both examples with all names and values in Chinese characters
-(unless you can actually read Chinese, in which case try Cryllic or Arabic).
 
 ## When `_id` is missing
 
@@ -146,8 +122,34 @@ entity in the API data model. A JSON object with no `_id` should be read as a no
 should be read as meaning,
 "The eyeColor of that Person whose name is Martin is that RGBColor whose red value is zero, green value is 0 and blue value is 155"
 
+## <a name="explicit-urls"></a>An explicit way of encoding URLs
+
+The following two examples are both Terrifically Simple JSON (you can verify that they follow the rules)
+```JSON
+{
+ "_id": "http://martin-nally.name#",
+ "bornIn": "http://www.scotland.org#"
+}
+```
+```JSON
+{
+ "_id": "http://martin-nally.name#",
+ "bornIn": {"_id": "http://www.scotland.org#"}
+}
+```
+Interpreted strictly,
+the second says I was born in a country while the first says I was born in a string. Common sense tells us that
+the intent of the first is the same as that of the second. Computers are not very good at common sense, but humans are if they have some context.
+Whether you use the first or second form (or both) in your API might depend on who the audience is and whether you want to require 
+them to have context. This choice involves a trade-off between ease-of-use and precision. 
+The first form is easier to understand and code to if you have the required context—the second is more precise and correct 
+and therefore can be reliably interpreted without additional context.
+To understand what it is like to lack the required context, imagine both examples with all names and values in Chinese characters
+(unless you can actually read Chinese, in which case use Cryllic or Arabic).
+
 ## <a name="datatypes"></a>Datatypes
 
+Terrifically Simple JSON offers an optional generalization of the `_id` concept for handling any datatype that is not built into JSON. 
 One of the challenges of JSON is that it only supports 3 useful datatypes: number, string, and boolean (the null value should probably be 
 considered the unique member of a 4th datatype). 
 The two most common
@@ -202,7 +204,7 @@ handled the same way. In other words, the following are equivalent:
 ```
 I'm not suggesting that anyone would actually encode a number in JSON in this way—the point is to show
 that the concept works for all datatypes. If you need a way
-to encode dates that distinguishes them from strings, this is the way to do it in Terrifically Simple JSON.
+to encode dates that distinguishes them from strings, this is the way you should do it in Terrifically Simple JSON.
 If you don't need to distinguish dates from their stringified equivalents—you rely on the client having enough context—
 you can represent dates as simple strings.
 
@@ -212,25 +214,22 @@ when you write `178` in JSON, you are really writing a reference to an existing 
 The notation we are using to write this reference was
 [developed over 3 millenia](https://en.wikipedia.org/wiki/History_of_the_Hindu-Arabic_numeral_system).
 When you write `true` or `false` in JSON, you are using a different reference notation—one that is specific to booleans. 
-Strings can be viewed the same way, although it takes a little more thought to see why this is true. 
+Strings can be viewed the same way, although it may take a little more thought to see why this is true (think of different notions for designating the same string). 
 Any datatype can be thought of as consisting of a pre-defined set of entities with a notation for writing
 references to them [and perhaps some operators on them, but operators are out of the scope of JSON].
-JSON has built-in support for the reference notations for numbers, booleans and strings.
-For other datatypes, 
-we must state explicitly which notation we're using, or rely on out-of-band knowledge.
+JSON has built-in notations for referencing numbers, booleans and strings.
+For other datatypes, we must state explicitly which notation we're using, or rely on out-of-band knowledge.
 
 ## Not a media type? Really?
 
 I may be on shaky ground here. I do not think the 3 constraints indicate a new media type—they emphasize using JSON directly instead of using it to build your own media type—
-but it would be reasonable to say that `_id`, `_idRef` and `_idRefNotation` together constitute the definition of a new media type.
-I might be able to argue that `_id` is just part of the data, not the representation format—and therefore doesn't warrant a media type—but
-it's hard to make that case for `_idRefNotation`.
+but it may be that the use of `_id` (and optionally `_idRef` and `_idRefNotation`) constitutes the definition of a new media type.
 
 ## Full Disclosure
 
 If you know RDF, you will recognize that Terrifically Simple JSON is a proprietary format for a loose interpretation of the RDF data model.
 Adding an `_id` property to a JSON object converts JSON's name/value pairs to RDF triples, with the value of the `_id` property providing the subject.
-JSON objects without an `_id` property are intereted as blank nodes.
+JSON objects without an `_id` property are interpreted as blank nodes.
 Compared to the real RDF data model, Terrifically Simple JSON's interpretation drops the requirements that predicates and classes be entities 
 identified with URLs and gives up the ability to express multi-valued properties,
 considering it more important to use JSON's array feature in a natural way for list-valued properties.
