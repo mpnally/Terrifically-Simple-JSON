@@ -18,7 +18,7 @@ Terrifically Simple JSON reduces complexity by adding these 3 constraints:
 3. The `value` of a name/value pair must be the value of the entity property referenced by the name.
 
 Together, these constraints say,
-"use JSON directly—don't use it to construct your own data-representation format on top of JSON".
+"Terrifically Simple JSON uses JSON directly—it doesn't define its own data-representation format on top of JSON".
 
 Terrifically Simple JSON defines a special property, `_id`, that allows you to declare which data model entity a particular JSON object corresponds to.
 
