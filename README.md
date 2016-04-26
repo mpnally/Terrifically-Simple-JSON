@@ -68,6 +68,7 @@ Line 9 violates rule 3—`bornIn` is a property (or relationship) name in the da
 
 Rule #1 of Terrifically Simple JSON is that every JSON object
 corresponds to an entity in the API data model. The `_id` property provides a direct way of specifying which entity. 
+Its value is always a URL.
 Here is an example of its use:
 
 ```JSON
