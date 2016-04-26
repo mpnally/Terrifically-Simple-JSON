@@ -65,10 +65,6 @@ Lines 3 and 8 violate rule 1—they introduce JSON objects that have no correspo
 Lines 2, 7, 9 and 10 violate rule 2—they introduce JSON names that are not properties of an entity in the data model.  
 Line 9 violates rule 3—`bornIn` is a property (or relationship) name in the data model, not a value.
 
-Humans can easily see that this example is following different rules, because we understand the data model, and we 
-can see that the mapping of the data model to the JSON is different from Terrifically Simple JSON's. Unfortunately, it is not easy to
-write a computer program to verify this.
-
 ## _id
 
 The use of the `_id` property is fundamental to Terrifically Simple JSON. Rule #1 of Terrifically Simple JSON is that every JSON object
