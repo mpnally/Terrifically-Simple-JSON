@@ -137,9 +137,7 @@ the intent of the first is the same as that of the second. Computers are not ver
 Whether you use the first or second form (or both) in your API might depend on who the audience is and whether you want to require 
 them to have context. This choice involves a trade-off between ease-of-use and precision. 
 The first form is easier to understand and code to if you have the required context—the second is more precise and correct 
-and therefore can be reliably interpreted without context.
-To understand what it is like to lack the required context, imagine both examples with all names and values in Chinese characters
-(unless you can actually read Chinese, in which case use Cryllic or Arabic).
+and therefore can be reliably interpreted without context<a href="#footnote3" id="ref3"><sup>3</sup></a>.
 
 ### The end
 
@@ -235,6 +233,8 @@ Having done a couple of projects using a strict interpretation of the RDF model,
 I've seen that those features cause significant friction in practical API programming. Those features also contribute significantly to the complexity of standard JSON representations
 of RDF, especially JSON-LD, whose complexity is likely to be fatal in my opinion, but also RDF/JSON. Hence the need for Terrifically Simple JSON.
 
+Terrifically Simple JSON has few concepts, but those it has are mostly stolen from elsewhere. The original contribution is in what I took out, not what I left in.
+
 ## _
 <a name="footnote1"><sup>1</sup></a> Terrifically Simple JSON could also be used in other contexts where JSON is used. <a href="#ref1">↩</a>
 
@@ -243,3 +243,6 @@ What is implemented is an unordered set of names, each with an associated value.
 implies that there can be more than one name/value pair with the same name but different values. Most implementations accept input
 with more than one pair of the same name, but throw away all but one of them. The [full IETF spec for JSON](http://www.ietf.org/rfc/rfc4627.txt?number=4627)
 says that "The names within an object SHOULD be unique". <a href="#ref2">↩</a>
+
+<a name="footnote3"><sup>3</sup></a> To understand what it is like to lack the required context, imagine both examples with all names and values in Chinese characters
+(unless you can actually read Chinese, in which case use Cryllic or Arabic). <a href="#ref3">↩</a>
