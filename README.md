@@ -23,7 +23,7 @@ it does not have its own media type.
 
 Terrifically Simple JSON defines a special property, `_id`, that is used to express Rule #1 above. `_id` allows you to declare which data model entity a particular JSON object corresponds to.
 
-Following the 3 constraints above, and using `_id` to do so explicitly, are the only requirements of Terrifically Simple JSON. It really is that simple.
+The only requirements of Terrifically Simple JSON are that you follow the 3 constraints above, and use `_id` to do so explicitly. It really is that simple.
 
 It turns out that there is a slight generalization of the `_id` concept that allows all datatypes to be expressed in JSON in a consistent fashion. 
 This generalization is expressed with the optional `_idRef`, `_idRefNotation` properties. Terrifically Simple JSON
