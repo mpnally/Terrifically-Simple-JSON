@@ -96,7 +96,7 @@ This example encodes two separate pieces of information:
 
 ### When `_id` is missing
 
-When the `_id` property of a Terrifically Simple JSON object is missing, as in the previous example, the object still must correspond to an 
+When the `_id` property of a Terrifically Simple JSON object is missing, the object still must correspond to an 
 entity in the API data model. A JSON object with no `_id` should be read as a noun clause that references an entity. This example
 ```JSON
 {
