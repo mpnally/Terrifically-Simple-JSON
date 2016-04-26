@@ -219,7 +219,8 @@ you can represent dates as simple strings.
 ## Not a media type? Really?
 
 I may be on shaky ground here. The 3 constraints do not indicate a new media type—they emphasize using JSON directly instead of using it to build your own media type—
-but it may be that the use of `_id` (and optionally `_ref` and `_refNotation`) implies the definition of a new media type that should be declared.
+but it may be that the use of `_id` (and optionally `_ref` and `_refNotation`) implies the definition of a new media type that should be declared. If
+so application/vnd.terrifically-simple+json might be an option.
 
 ## Prior Art and Acknowledgements
 
