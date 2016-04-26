@@ -141,6 +141,10 @@ and therefore can be reliably interpreted without context.
 To understand what it is like to lack the required context, imagine both examples with all names and values in Chinese characters
 (unless you can actually read Chinese, in which case use Cryllic or Arabic).
 
+### The end
+
+That is it for the required part of Terrifically Simple JSON. There follows a description of an optional extension.
+
 ### <a name="datatypes"></a>Datatypes
 
 Terrifically Simple JSON offers an optional generalization of the `_id` concept for handling any datatype that is not built into JSON. 
