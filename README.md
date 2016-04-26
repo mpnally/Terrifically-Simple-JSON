@@ -19,7 +19,7 @@ Terrifically Simple JSON requires that you to use JSON simply and directly. In p
 
 Together, these constraints basically say,
 "use JSON directly—don't use it to construct your own data-representation format on top of JSON". Since Terrifically Simple JSON is just about using JSON directly,
-it does not have its own media type.
+[it does not have its own media type](#media-type).
 
 Terrifically Simple JSON defines a special property, `_id`, that is used to express Rule #1 above. `_id` allows you to declare which data model entity a particular JSON object corresponds to.
 
@@ -216,11 +216,11 @@ to encode dates and other dataypes that distinguishes them from strings, this is
 If you don't need to distinguish dates from their stringified equivalents—that is, you rely on the client having enough context—
 you can represent dates as simple strings.
 
-## Not a media type? Really?
+## <a name="media-type"></a>Not a media type? Really?
 
 I may be on shaky ground here. The 3 constraints do not indicate a new media type—they emphasize using JSON directly instead of using it to build your own media type—
 but it may be that the use of `_id` (and optionally `_ref` and `_refNotation`) implies the definition of a new media type that should be declared. If
-so application/vnd.terrifically-simple+json might be an option.
+so `application/vnd.terrifically-simple+json` might be an option.
 
 ## Prior Art and Acknowledgements
 
