@@ -26,7 +26,7 @@ Terrifically Simple JSON defines a special property, `_id`, that is used to expr
 The only requirements of Terrifically Simple JSON are that you follow the 3 constraints above, and use the `_id` property to do so explicitly. It really is that simple.
 
 It turns out that there is a slight generalization of the `_id` concept that allows all datatypes to be expressed in JSON in a consistent fashion. 
-This generalization is expressed with the optional `_idRef`, `_idRefNotation` properties. Terrifically Simple JSON
+This generalization is expressed with the optional `_ref`, `_refNotation` properties. Terrifically Simple JSON
 does not require you to use them, but they are there if you want an explcit way to handle arbitrary datatypes in Terrifically Simple JSON.
 
 ## Tutorial
@@ -162,20 +162,20 @@ This idea can be extended to other datatypes. The following two Terrifically Sim
 {
  "_id": "http://martin-nally.name#",
  "bornIn": {
-    "_idRef": "http://www.scotland.org#",
-    "_idRefNotation": "URI"
+    "_ref": "http://www.scotland.org#",
+    "_refNotation": "URI"
     }
 }
 ```
-The `_idRefNotation` value tells you what the notation is of the reference in the `_idRef` field.
-The `_id` property is a convenient way to express `_idRef` values for references whose `_idRefNotation` is `URI`. 
-Other values for `_idRefNotation` can be used for other datatypes, e.g. dates, like this:
+The `_refNotation` value tells you what the notation is of the reference in the `_ref` field.
+The `_id` property is a convenient way to express `_ref` values for references whose `_refNotation` is `URI`. 
+Other values for `_refNotation` can be used for other datatypes, e.g. dates, like this:
 ```JSON
 {
  "_id": "http://martin-nally.name#",
  "bornOn": {
-    "_idRef": "1957-01-05",
-    "_idRefNotation": "ISO8601"
+    "_ref": "1957-01-05",
+    "_refNotation": "http://www.w3.org/2001/XMLSchema#dateTime"
     }
 }
 ```
@@ -192,18 +192,12 @@ handled the same way. In other words, the following are equivalent:
 {
  "_id": "http://martin-nally.name#",
  "heightInCM": {
-    "_idRef": "178",
-    "_idRefNotation": "JSONNumber"
+    "_ref": "178",
+    "_refNotation": "http://www.json.org/#number"
     }
 }
 ```
-I'm not suggesting that anyone would actually encode a number in JSON in this way—the point is to show
-that the concept works for all datatypes. If you need a way
-to encode dates that distinguishes them from strings, this is the way you should do it in Terrifically Simple JSON.
-If you don't need to distinguish dates from their stringified equivalents—that is, you rely on the client having enough context—
-you can represent dates as simple strings.
-
-If the number example
+If this example
 seems unintuitive, consider that
 when you write `178` in JSON, you are writing a reference to an existing entity. The number 178 has been around a lot longer 
 than your JSON—the notation you are using to write this reference was
@@ -214,25 +208,32 @@ Any datatype can be thought of as consisting of a pre-defined set of entities wi
 references to them [and perhaps some operators on them, but operators are outside of the scope of JSON].
 JSON has built-in notations for referencing numbers, booleans and strings—for other datatypes, 
 we must state explicitly which notation we're using, or rely on out-of-band knowledge.
+This view of datatypes says that in Terrifically Simple JSON, values as well as objects, must correspond to entities in the API model.
+
+I'm not suggesting that anyone would actually encode a number in JSON in this way—the point is to show
+that the concept works for all datatypes. If you need a way
+to encode dates and other dataypes that distinguishes them from strings, this is the way you should do it in Terrifically Simple JSON.
+If you don't need to distinguish dates from their stringified equivalents—that is, you rely on the client having enough context—
+you can represent dates as simple strings.
 
 ## Not a media type? Really?
 
-I may be on shaky ground here. I do not think the 3 constraints indicate a new media type—they emphasize using JSON directly instead of using it to build your own media type—
-but it may be that the use of `_id` (and optionally `_idRef` and `_idRefNotation`) constitutes the definition of a new media type.
+I may be on shaky ground here. The 3 constraints do not indicate a new media type—they emphasize using JSON directly instead of using it to build your own media type—
+but it may be that the use of `_id` (and optionally `_ref` and `_refNotation`) implies the definition of a new media type that should be declared.
 
-## Full Disclosure
+## Prior Art and Acknowledgements
 
-If you know RDF, you will recognize that Terrifically Simple JSON is a proprietary format for a loose interpretation of the RDF data model.
+If you know RDF, you will recognize that Terrifically Simple JSON is a representation format for a loose interpretation of the RDF data model.
 Adding an `_id` property to a JSON object converts JSON's name/value pairs to RDF triples, with the value of the `_id` property providing the subject.
 JSON objects without an `_id` property are interpreted as blank nodes.
 Compared to the real RDF data model, Terrifically Simple JSON's interpretation drops the requirements that predicates and classes be entities 
 identified with URLs and gives up the ability to express multi-valued properties,
-considering it more important to use JSON's array feature in a natural way for list-valued properties.
+considering it more important to use JSON's array feature in a natural way to express list-valued properties.
 Having done a couple of projects using a strict interpretation of the RDF model, 
 I've seen that those features cause significant friction in practical API programming. Those features also contribute significantly to the complexity of standard JSON representations
 of RDF, especially JSON-LD, whose complexity is likely to be fatal in my opinion, but also RDF/JSON. Hence the need for Terrifically Simple JSON.
 
-Terrifically Simple JSON has few concepts, but those it has are mostly stolen from elsewhere. The original contribution is in what I took out, not what I left in.
+Terrifically Simple JSON has few concepts, but those it has are mostly stolen from elsewhere. The value is in what was left out, not what was left in.
 
 ## _
 <a name="footnote1"><sup>1</sup></a> Terrifically Simple JSON could also be used in other contexts where JSON is used. <a href="#ref1">↩</a>
