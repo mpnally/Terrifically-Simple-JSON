@@ -65,7 +65,7 @@ Lines 3 and 8 violate rule 1—they introduce JSON objects that have no correspo
 Lines 2, 7, 9 and 10 violate rule 2—they introduce JSON names that are not properties of an entity in the data model.  
 Line 9 violates rule 3—`bornIn` is a property (or relationship) name in the data model, not a value.
 
-## _id
+### _id
 
 The use of the `_id` property is fundamental to Terrifically Simple JSON. Rule #1 of Terrifically Simple JSON is that every JSON object
 corresponds to some entiry in the API data model. The `_id` property provides a direct way of saying which entity it is.
@@ -96,7 +96,7 @@ This example encodes two separate pieces of information:
 * http://martin-nally.name# was born in http://www.scotland.org#
 * The Gaelic name for http://www.scotland.org# is Alba
 
-## When `_id` is missing
+### When `_id` is missing
 
 When the `_id` property of a Terrifically Simple JSON object is missing, as in the previous example, the object still must correspond to an 
 entity in the API data model. A JSON object with no `_id` should be read as a noun clause that references an entity. This example
@@ -117,7 +117,7 @@ entity in the API data model. A JSON object with no `_id` should be read as a no
 should be read as meaning,
 "The eyeColor of that Person whose name is Martin is that RGBColor whose red value is zero, green value is 0 and blue value is 155"
 
-## <a name="explicit-urls"></a>An explicit way of encoding URLs
+### <a name="explicit-urls"></a>An explicit way of encoding URLs
 
 The following two examples are both Terrifically Simple JSON (you can verify that they follow the rules)
 ```JSON
@@ -142,7 +142,7 @@ and therefore can be reliably interpreted without additional context.
 To understand what it is like to lack the required context, imagine both examples with all names and values in Chinese characters
 (unless you can actually read Chinese, in which case use Cryllic or Arabic).
 
-## <a name="datatypes"></a>Datatypes
+### <a name="datatypes"></a>Datatypes
 
 Terrifically Simple JSON offers an optional generalization of the `_id` concept for handling any datatype that is not built into JSON. 
 One of the challenges of JSON is that it only supports 3 useful datatypes: number, string, and boolean (the null value should probably be 
