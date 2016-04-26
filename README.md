@@ -21,7 +21,7 @@ Together, these constraints basically say,
 "use JSON directly—don't use it to construct your own data-representation format on top of JSON". Since Terrifically Simple JSON is just about using JSON directly,
 [it does not have its own media type](#media-type).
 
-Terrifically Simple JSON defines a special property, `_id`, that is used to express Rule #1 above. `_id` allows you to declare which data model entity a particular JSON object corresponds to.
+Terrifically Simple JSON defines a special property, `_id`, that is used to express constraint #1 above. `_id` allows you to declare which data model entity a particular JSON object corresponds to.
 
 The only requirements of Terrifically Simple JSON are that you follow the 3 constraints above, and use the `_id` property to do so explicitly. It really is that simple.
 
@@ -42,7 +42,7 @@ The following is a Terrifically Simple JSON document:
 Because of Terrifically Simple JSON's 3 constraints, we know that this single JSON object with 3 name/value pairs represents a single entity 
 in the API data model with 3 property values.
 
-The following JSON document encodes the same information in a different style. It is not Terrifically Simple JSON—it violates all 3 of the rules above. That does not mean it's a bad
+The following JSON document encodes the same information in a different style. It is not Terrifically Simple JSON—it violates all 3 of the constraints above. That does not mean it's a bad
 design, just that it follows a different set of rules from Terrifically Simple JSON. It is its own media type.
 ```
  1. {
@@ -60,13 +60,13 @@ design, just that it follows a different set of rules from Terrifically Simple J
 13. }
 ```
 
-Lines 3 and 8 violate rule 1—they introduce JSON objects that have no correspondence in the data model.  
-Lines 2, 7, 9 and 10 violate rule 2—they introduce JSON names that are not properties of an entity in the data model.  
-Line 9 violates rule 3—`bornIn` is a property (or relationship) name in the data model, not a value.
+Lines 3 and 8 violate constraint 1—they introduce JSON objects that have no correspondence in the data model.  
+Lines 2, 7, 9 and 10 violate constraint 2—they introduce JSON names that are not properties of an entity in the data model.  
+Line 9 violates constraint 3—`bornIn` is a property (or relationship) name in the data model, not a value.
 
 ### _id
 
-Rule #1 of Terrifically Simple JSON is that every JSON object
+Constraint #1 of Terrifically Simple JSON is that every JSON object
 corresponds to an entity in the API data model. The `_id` property provides a direct way of specifying which entity. 
 Its value is always a URL.
 Here is an example of its use:
@@ -118,7 +118,7 @@ should be read as meaning,
 
 ### <a name="explicit-urls"></a>An explicit way of encoding URLs
 
-The following two examples are both Terrifically Simple JSON (you can verify that they follow the rules).
+The following two examples are both Terrifically Simple JSON (you can verify that they follow the constraints).
 ```JSON
 {
  "_id": "http://martin-nally.name#",
