@@ -145,8 +145,7 @@ That is it for the required part of Terrifically Simple JSON. There follows a de
 ### <a name="datatypes"></a>Datatypes
 
 Terrifically Simple JSON offers an optional generalization of the `_id` concept for handling any datatype that is not built into JSON. 
-One of the challenges of JSON is that it only supports 3 useful datatypes: number, string, and boolean (the null value should probably be 
-considered the unique member of a 4th datatype). 
+One of the challenges of JSON is that it only supports 3 useful datatypes: number, string, and boolean (the null value is the unique member of a 4th datatype). 
 The two most common
 datatypes in Web API programming that are not covered by JSON are date and URI. Unless you are willing to invent extensions or
 conventions on top of JSON, the best you can do is to encode them as strings. The [example above](#explicit-urls) shows how the `_id` property
