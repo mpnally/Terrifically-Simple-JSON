@@ -44,7 +44,7 @@ Because of Terrifically Simple JSON's 3 restrictions, we know that this single J
 in the API data model with 3 property values.
 
 The following JSON document encodes the same information in a different style. It is not Terrifically Simple JSON—it violates all 3 of the rules above. That does not mean it's a bad
-representation design, just that it follows a different set of rules from Terrifically Simple JSON. It is its own media type.
+design, just that it follows a different set of rules from Terrifically Simple JSON. It is its own media type.
 ```
  1. {
  2.  "properties": 
