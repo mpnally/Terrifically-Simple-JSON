@@ -114,11 +114,11 @@ entity in the API data model. A JSON object with no `_id` should be read as a no
 ```
 
 should be read as meaning,
-"The eyeColor of that Person whose name is Martin is that RGBColor whose red value is zero, green value is 0 and blue value is 155"
+"The eyeColor of that Person whose name is Martin is that RGBColor whose red value is zero, green value is 0 and blue value is 155".
 
 ### <a name="explicit-urls"></a>An explicit way of encoding URLs
 
-The following two examples are both Terrifically Simple JSON (you can verify that they follow the rules)
+The following two examples are both Terrifically Simple JSON (you can verify that they follow the rules).
 ```JSON
 {
  "_id": "http://martin-nally.name#",
@@ -141,14 +141,14 @@ and therefore can be reliably interpreted without context<a href="#footnote3" id
 
 ### The end
 
-That is it for the required part of Terrifically Simple JSON. There follows a description of an optional extension.
+That is it for the required part of Terrifically Simple JSON. The next section describes an optional extension.
 
 ### <a name="datatypes"></a>Datatypes
 
 Terrifically Simple JSON offers an optional generalization of the `_id` concept for handling any datatype that is not built into JSON. 
-One of the challenges of JSON is that it only supports 3 useful datatypes: number, string, and boolean (the null value is the unique member of a 4th datatype). 
+One of the challenges of JSON is that it only supports 3 major datatypes: number, string, and boolean (the null value is the unique member of a 4th datatype). 
 The two most common
-datatypes in Web API programming that are not covered by JSON are date and URI. Unless you are willing to invent extensions or
+datatypes in Web API programming that are not covered by JSON are date/time and URI. Unless you are willing to invent extensions or
 conventions on top of JSON, the best you can do is to encode them as strings. The [example above](#explicit-urls) shows how the `_id` property
 can be used in Terrifically Simple JSON to encode URLs more precisely, at some cost to simplicity and ease-of-programming. 
 This idea can be extended to other datatypes. The following two Terrifically Simple JSON examples are equivalent.
@@ -208,7 +208,7 @@ Any datatype can be thought of as consisting of a pre-defined set of entities wi
 references to them [and perhaps some operators on them, but operators are outside of the scope of JSON].
 JSON has built-in notations for referencing numbers, booleans and strings—for other datatypes, 
 we must state explicitly which notation we're using, or rely on out-of-band knowledge.
-This view of datatypes says that in Terrifically Simple JSON, values as well as objects, must correspond to entities in the API model.
+This view of datatypes says that in Terrifically Simple JSON, values as well as objects must correspond to entities in the API model.
 
 I'm not suggesting that anyone would actually encode a number in JSON in this way—the point is to show
 that the concept works for all datatypes. If you need a way
