@@ -7,7 +7,7 @@ Terrifically Simple JSON is to define the simplest and most regular way possible
 The syntax of Terrifically Simple JSON is exaclty the same as the syntax of regular JSON—Terrifically Simple JSON concerns 
 itself only with how you use JSON.
 
-[Regular JSON](http://www.json.org/) describes an object as "an unordered set of name/value pairs"<a href="#footnote2" id="ref2"><sup>1</sup></a>. 
+[Regular JSON](http://www.json.org/) describes an object as "an unordered set of name/value pairs"<a href="#footnote2" id="ref2"><sup>2</sup></a>. 
 It does not otherwise say what an object is, what a name is or what a value is (beyond defining basic datatypes).
 This gives designers a lot of flexibility, which often leads to complex JSON. 
 
