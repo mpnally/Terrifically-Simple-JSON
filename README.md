@@ -116,7 +116,7 @@ entity in the API data model. A JSON object with no `_id` should be read as a no
 ```
 
 should be read as meaning,
-"**that Person whose name is Martin** has eyes colored **that RGBColor whose red value is zero, green value is 0 and blue value is 155**".
+"**the Person whose name is Martin** has eyes colored **the RGBColor whose red value is zero, green value is 0 and blue value is 155**".
 
 ### <a name="explicit-urls"></a>An explicit way of encoding URLs
 
