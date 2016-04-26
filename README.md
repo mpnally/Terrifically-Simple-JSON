@@ -78,7 +78,7 @@ Here is an example of its use:
 }
 ```
 This example says simply that the entity whose id is http://martin-nally.name# has the first name Martin.
-Standard JSON tells us that the first name is Martin—the `_id` property tells us which API entity we are talking about.
+Standard JSON tells us that the first name is Martin and the `_id` property tells us which API entity we are talking about.
 
 The `_id` property can be used in nested objects too, like this:
 ```JSON
