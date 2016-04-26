@@ -207,7 +207,7 @@ seems unintuitive, consider that
 when you write `178` in JSON, you are writing a reference to an existing entity. The number 178 has been around a lot longer 
 than your JSON—the notation you are using to write this reference was
 [developed over 3 millenia](https://en.wikipedia.org/wiki/History_of_the_Hindu-Arabic_numeral_system).
-When you write `true` or `false` in JSON, you are using a different reference notation—one that is specific to booleans. 
+When you write `true` or `false` in JSON, you are writing a reference using a different notation—one that is specific to booleans. 
 Strings can be viewed the same way, although it may take a little more thought to see why this is true (think of different notions for designating the same string). 
 Any datatype can be thought of as consisting of a pre-defined set of entities with a notation for writing
 references to them [and perhaps some operators on them, but operators are out of the scope of JSON].
