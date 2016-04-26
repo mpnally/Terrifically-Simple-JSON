@@ -11,7 +11,7 @@ itself only with how you use JSON.
 It does not otherwise say what an object is, what a name is or what a value is (beyond defining basic datatypes).
 This gives designers a lot of flexibility, which often leads to complex JSON. 
 
-Terrifically Simple JSON requires that you to use JSON simply and directly. In particular, it makes these 3 constraints:
+Terrifically Simple JSON adds these 3 constraints:
 
 1. Every Terrifically Simple JSON object must correspond to an entity in the data model of the API.
 2. The `name` of a name/value pair must refer to a property or relationship in the state of the corresponding entity.
