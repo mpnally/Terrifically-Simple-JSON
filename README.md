@@ -21,7 +21,7 @@ Together, these constraints basically say,
 "use JSON directly—don't use it to construct your own data-representation format on top of JSON". Since Terrifically Simple JSON is just about using JSON directly,
 [it does not have its own media type](#media-type).
 
-Terrifically Simple JSON defines a special property, `_id`, that is used to express constraint #1 above. `_id` allows you to declare which data model entity a particular JSON object corresponds to.
+Terrifically Simple JSON defines a special property, `_id`, that allows you to declare which data model entity a particular JSON object corresponds to.
 
 The only requirements of Terrifically Simple JSON are that you follow the 3 constraints above, and use the `_id` property to do so explicitly. It really is that simple.
 
