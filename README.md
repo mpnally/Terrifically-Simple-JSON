@@ -40,7 +40,7 @@ The following is a Terrifically Simple JSON document:
  "bornIn": "http://www.scotland.org#"
 }
 ```
-Because of Terrifically Simple JSON's 3 restrictions, we know that this single JSON object with 3 name/value pairs represents a single entity 
+Because of Terrifically Simple JSON's 3 constraints, we know that this single JSON object with 3 name/value pairs represents a single entity 
 in the API data model with 3 property values.
 
 The following JSON document encodes the same information in a different style. It is not Terrifically Simple JSON—it violates all 3 of the rules above. That does not mean it's a bad
