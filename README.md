@@ -211,8 +211,8 @@ When you write `true` or `false` in JSON, you are writing a reference using a di
 Strings can be viewed the same way, although it may take a little more thought to see why this is true (think of different notions for designating the same string). 
 Any datatype can be thought of as consisting of a pre-defined set of entities with a notation for writing
 references to them [and perhaps some operators on them, but operators are outside of the scope of JSON].
-JSON has built-in notations for referencing numbers, booleans and strings.
-For other datatypes, we must state explicitly which notation we're using, or rely on out-of-band knowledge.
+JSON has built-in notations for referencing numbers, booleans and strings—for other datatypes, 
+we must state explicitly which notation we're using, or rely on out-of-band knowledge.
 
 ## Not a media type? Really?
 
