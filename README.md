@@ -228,9 +228,7 @@ Compared to the real RDF data model, Terrifically Simple JSON's interpretation d
 identified with URLs and gives up the ability to express multi-valued properties,
 considering it more important to use JSON's array feature in a natural way for list-valued properties.
 Having done a couple of projects using a strict interpretation of the RDF model, 
-I've seen that those features cause significant friction in practical API programming, and that usually neither API providers nor consumers are
-willing to accept that friction. Those features may be important for RDF's ambitions as an internet-scale information model but they are not
-important for most API programming needs. Those features also contribute significantly to the complexity of standard JSON representations
+I've seen that those features cause significant friction in practical API programming. Those features also contribute significantly to the complexity of standard JSON representations
 of RDF, especially JSON-LD, whose complexity is likely to be fatal in my opinion, but also RDF/JSON. Hence the need for Terrifically Simple JSON.
 
 ## _
