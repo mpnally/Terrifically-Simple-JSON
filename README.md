@@ -230,7 +230,7 @@ Terrifically Simple JSON has very few concepts, and those it has are mostly stol
 The `_id` property of Terrifically Simple JSON corresponds fairly exactly to the `@id` property from JSON-LD. This is the only concept found in JSON-LD that also appears in Terrifically Simple JSON. 
 We chose `_id` instead of `@id` because `@id` is awkward for Javascript programming.
 `_ref` and `_refNotation` correspond to `value` and `type` from RDF/JSON. In RDF/JSON, those appear in a place where conflict with names from the data model
-cannot happen. The analogs in Terrifically Simple JSON appear in a place where conflict is possible. We could have, perhaps should have, used `_value` and `_type`.
+cannot happen, while the analogs in Terrifically Simple JSON appear in a place where conflict is possible. We could have—perhaps should have—used `_value` and `_type`.
 
 ## _
 <a name="footnote1"><sup>1</sup></a> Terrifically Simple JSON could also be used in other contexts where JSON is used. <a href="#ref1">↩</a>
