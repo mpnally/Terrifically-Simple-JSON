@@ -224,7 +224,7 @@ identified with URLs and gives up the ability to express multi-valued properties
 considering it more important to use JSON's array feature in a natural way to express list-valued properties.
 Having done a couple of projects using a strict interpretation of the RDF model, 
 I've seen that those features cause significant friction in practical API programming. Those features also contribute significantly to the complexity of standard JSON representations
-of RDF, especially JSON-LD, whose complexity is likely to be fatal in my opinion, but also RDF/JSON. Hence the need for Terrifically Simple JSON.
+of RDF, especially [JSON-LD](http://json-ld.org/), whose complexity is likely to be fatal in my opinion, but also [RDF/JSON](https://www.w3.org/TR/rdf-json/). Hence the need for Terrifically Simple JSON.
 
 Terrifically Simple JSON has very few concepts, and those it has are mostly stolen from elsewhere. The value is in what was taken out, not what was left in.
 The `_id` property of Terrifically Simple JSON corresponds fairly exactly to the `@id` property of JSON-LD. This is the only concept found in JSON-LD that also appears in Terrifically Simple JSON. 
@@ -244,5 +244,5 @@ says that "The names within an object SHOULD be unique". <a href="#ref2">↩</a>
 <a name="footnote3"><sup>3</sup></a> To understand what it is like to lack the required context, imagine both examples with all names and values in Chinese characters
 (unless you can actually read Chinese, in which case use Cryllic or Arabic). <a href="#ref3">↩</a>
 
-<a name="footnote4"><sup>4</sup></a> [RDF/JSON](https://dvcs.w3.org/hg/rdf/raw-file/default/rdf-json/index.html) encodes even types for which JSON has built-in support this way.
+<a name="footnote4"><sup>4</sup></a> [RDF/JSON](https://www.w3.org/TR/rdf-json/) encodes even types for which JSON has built-in support this way.
 Perhaps they didn't want to depend on JSON's notations for basic types, preferring those defined by RDF, XML Schema and other standards. <a href="#ref4">↩</a>
