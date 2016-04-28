@@ -218,7 +218,7 @@ you can represent dates as simple strings.
 
 If you know RDF, you will recognize that Terrifically Simple JSON is a representation format for a loose interpretation of the RDF data model.
 Adding an `_id` property to a JSON object converts JSON's name/value pairs to RDF triples, with the value of the `_id` property providing the subject.
-JSON objects without an `_id` property are blank nodes.
+JSON objects without an `_id` property are RDF blank nodes.
 Compared to the real RDF data model, Terrifically Simple JSON's interpretation drops the requirements that predicates and classes be entities 
 identified with URLs and gives up the ability to express multi-valued properties,
 considering it more important to use JSON's array feature in a natural way to express list-valued properties.
