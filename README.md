@@ -25,7 +25,7 @@ The 3 constraints seem to imply that the media type is "just JSON", rather than 
 implies a new media type, however minimal. Registration is pending for `application/vnd.terrifically-simple+json`.
 
 There is a slight generalization of the `_id` concept that allows arbitrary datatypes to be expressed in JSON in a consistent fashion. 
-This generalization is expressed with the optional `_ref`, `_refNotation` properties. Terrifically Simple JSON
+This generalization is expressed with the optional `_ref` and `_refNotation` properties. Terrifically Simple JSON
 does not require you to use them, but they are there if you want an explcit way to handle arbitrary datatypes in Terrifically Simple JSON.
 
 ## Tutorial
