@@ -227,7 +227,7 @@ I've seen that those features cause significant friction in practical API progra
 of RDF, especially JSON-LD, whose complexity is likely to be fatal in my opinion, but also RDF/JSON. Hence the need for Terrifically Simple JSON.
 
 Terrifically Simple JSON has very few concepts, and those it has are mostly stolen from elsewhere. The value is in what was taken out, not what was left in.
-The `_id` property of Terrifically Simple JSON corresponds fairly exactly to the `@id` property from JSON-LD. This is the only concept from JSON-LD that appears in Terrifically Simple JSON. 
+The `_id` property of Terrifically Simple JSON corresponds fairly exactly to the `@id` property from JSON-LD. This is the only concept found in JSON-LD that appears in Terrifically Simple JSON. 
 We chose `_id` instead of `@id` because `@id` is awkward for Javascript programming.
 `_ref` and `_refNotation` correspond to `value` and `type` from RDF/JSON. In RDF/JSON, those appear in a place where conflict with names from the data model
 cannot happen. The analogs in Terrifically Simple JSON appear in a place where conflict is possible. We could have chosen `_value` and `_type`.
