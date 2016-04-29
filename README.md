@@ -17,14 +17,14 @@ Terrifically Simple JSON reduces complexity by adding these 3 constraints:
 2. The `name` of a name/value pair must refer to a property or relationship in the state of the corresponding entity.
 3. The `value` of a name/value pair must be the value of the entity property referenced by the name.
 
-Terrifically Simple JSON also defines a special property, `_id`, that allows you to declare which data model entity a particular JSON object corresponds to.
+Terrifically Simple JSON also defines a special property, `_self`, that allows you to declare which data model entity a particular JSON object corresponds to.
 
-The only requirements of Terrifically Simple JSON are that you follow the 3 constraints above, and use the `_id` property to express constraint #1 explicitly.
+The only requirements of Terrifically Simple JSON are that you follow the 3 constraints above, and use the `_self` property to express constraint #1 explicitly.
 
-The 3 constraints seem to imply that the media type is "just JSON", rather than a new data format built on top of it, but the use of `_id` 
+The 3 constraints seem to imply that the media type is "just JSON", rather than a new data format built on top of it, but the use of `_self` 
 implies a new media type, however minimal. Registration is pending for `application/vnd.terrifically-simple+json`.
 
-There is a slight generalization of the `_id` concept that allows arbitrary datatypes to be expressed in JSON in a consistent fashion. 
+There is a slight generalization of the `_self` concept that allows arbitrary datatypes to be expressed in JSON in a consistent fashion. 
 This generalization is expressed with the optional `_ref` and `_refNotation` properties. Terrifically Simple JSON
 does not require you to use them, but they are there if you want an explcit way to handle arbitrary datatypes in Terrifically Simple JSON.
 
@@ -63,29 +63,29 @@ Lines 3 and 8 violate constraint 1—they introduce JSON objects that have no co
 Lines 2, 7, 9 and 10 violate constraint 2—they introduce JSON names that are not properties of an entity in the data model.  
 Line 9 violates constraint 3—`bornIn` is a property (or relationship) name in the data model, not a value.
 
-### _id
+### _self
 
 Constraint #1 of Terrifically Simple JSON is that every JSON object
-corresponds to an entity in the API data model. The `_id` property provides a direct way of specifying which entity. 
+corresponds to an entity in the API data model. The `_self` property provides a direct way of specifying which entity. 
 Its value is always a URL.
 Here is an example of its use:
 
 ```JSON
 {
- "_id": "http://martin-nally.name#",
+ "_self": "http://martin-nally.name#",
  "firstName": "Martin"
 }
 ```
 This example says simply that the entity whose id is http://martin-nally.name# has the first name Martin.
-Standard JSON tells us that the first name is Martin and the `_id` property tells us which API entity we are talking about.
+Standard JSON tells us that the first name is Martin and the `_self` property tells us which API entity we are talking about.
 
-The `_id` property can be used in nested objects too, like this:
+The `_self` property can be used in nested objects too, like this:
 ```JSON
 {
- "_id": "http://martin-nally.name#",
+ "_self": "http://martin-nally.name#",
  "bornIn": 
     {
-    "_id": "http://www.scotland.org#",
+    "_self": "http://www.scotland.org#",
     "gaelicName": "Alba"
     }
 }
@@ -94,10 +94,10 @@ This example encodes two separate pieces of information:
 * http://martin-nally.name# was born in http://www.scotland.org#
 * The Gaelic name for http://www.scotland.org# is Alba
 
-### When `_id` is missing
+### When `_self` is missing
 
-When the `_id` property of a Terrifically Simple JSON object is missing, the object still must correspond to an 
-entity in the API data model. A JSON object with no `_id` should be read as a noun clause that references an entity. This example
+When the `_self` property of a Terrifically Simple JSON object is missing, the object still must correspond to an 
+entity in the API data model. A JSON object with no `_self` should be read as a noun clause that references an entity. This example
 ```JSON
 {
  "isA": "Person",
@@ -120,14 +120,14 @@ should be read as meaning,
 The following two examples are both Terrifically Simple JSON (you can verify that they follow the constraints).
 ```JSON
 {
- "_id": "http://martin-nally.name#",
+ "_self": "http://martin-nally.name#",
  "bornIn": "http://www.scotland.org#"
 }
 ```
 ```JSON
 {
- "_id": "http://martin-nally.name#",
- "bornIn": {"_id": "http://www.scotland.org#"}
+ "_self": "http://martin-nally.name#",
+ "bornIn": {"_self": "http://www.scotland.org#"}
 }
 ```
 Interpreted strictly,
@@ -147,18 +147,18 @@ That is it for the required part of Terrifically Simple JSON. The next section d
 One of the challenges of JSON is that it only supports 3 major datatypes: number, string, and boolean (the null value is the unique member of a 4th datatype). 
 The two most common
 datatypes in Web API programming that are not covered by JSON are URL and date/time. Unless you are willing to invent extensions or
-conventions on top of JSON, the best you can do is to encode them as strings. The [example above](#explicit-urls) shows how the `_id` property
+conventions on top of JSON, the best you can do is to encode them as strings. The [example above](#explicit-urls) shows how the `_self` property
 can be used in Terrifically Simple JSON to encode URLs more precisely, at some cost to simplicity and ease-of-programming. 
 This idea can be extended to other datatypes. The following two Terrifically Simple JSON examples are equivalent.
 ```JSON
 {
- "_id": "http://martin-nally.name#",
- "bornIn": {"_id": "http://www.scotland.org#"}
+ "_self": "http://martin-nally.name#",
+ "bornIn": {"_self": "http://www.scotland.org#"}
 }
 ```
 ```JSON
 {
- "_id": "http://martin-nally.name#",
+ "_self": "http://martin-nally.name#",
  "bornIn": {
     "_ref": "http://www.scotland.org#",
     "_refNotation": "URI"
@@ -166,11 +166,11 @@ This idea can be extended to other datatypes. The following two Terrifically Sim
 }
 ```
 The `_refNotation` value tells you what the notation is of the reference in the `_ref` field.
-The `_id` property is a convenient way to express `_ref` values for references whose `_refNotation` is `URI`. 
+The `_self` property is a convenient way to express `_ref` values for references whose `_refNotation` is `URI`. 
 Other values for `_refNotation` can be used for other datatypes, e.g. dates, like this:
 ```JSON
 {
- "_id": "http://martin-nally.name#",
+ "_self": "http://martin-nally.name#",
  "bornOn": {
     "_ref": "1957-01-05",
     "_refNotation": "http://www.w3.org/2001/XMLSchema#dateTime"
@@ -182,13 +182,13 @@ In principle, the JSON built-in types can be
 handled the same way. In other words, the following are equivalent:
 ```JSON
 {
- "_id": "http://martin-nally.name#",
+ "_self": "http://martin-nally.name#",
  "heightInCM": 178
 }
 ```
 ```JSON
 {
- "_id": "http://martin-nally.name#",
+ "_self": "http://martin-nally.name#",
  "heightInCM": {
     "_ref": "178",
     "_refNotation": "http://www.json.org/#number"
@@ -217,8 +217,8 @@ you can represent dates as simple strings.
 ## Prior Art and Acknowledgements
 
 If you know RDF, you will recognize that Terrifically Simple JSON is a representation format for a loose interpretation of the RDF data model.
-Adding an `_id` property to a JSON object converts JSON's name/value pairs to RDF triples, with the value of the `_id` property providing the subject.
-JSON objects without an `_id` property are RDF blank nodes.
+Adding an `_self` property to a JSON object converts JSON's name/value pairs to RDF triples, with the value of the `_self` property providing the subject.
+JSON objects without an `_self` property are RDF blank nodes.
 Compared to the real RDF data model, Terrifically Simple JSON's interpretation drops the requirements that predicates and classes be entities 
 identified with URLs and gives up the ability to express multi-valued properties,
 considering it more important to use JSON's array feature in a natural way to express list-valued properties.
@@ -227,8 +227,8 @@ I've seen that those features cause significant friction in practical API progra
 of RDF, especially [JSON-LD](http://json-ld.org/), whose complexity is likely to be fatal in my opinion, but also [RDF/JSON](https://www.w3.org/TR/rdf-json/). Hence the need for Terrifically Simple JSON.
 
 Terrifically Simple JSON has very few concepts, and those it has are mostly stolen from elsewhere. The value is in what was taken out, not what was left in.
-The `_id` property of Terrifically Simple JSON corresponds fairly exactly to the `@id` property of JSON-LD. This is the only concept found in JSON-LD that also appears in Terrifically Simple JSON. 
-We chose `_id` instead of `@id` because `@id` is awkward for Javascript programming. `_self` was an alternative we considered.
+The `_self` property of Terrifically Simple JSON corresponds fairly exactly to the `@id` property of JSON-LD. This is the only concept found in JSON-LD that also appears in Terrifically Simple JSON. 
+We chose `_self` instead of `@id` because `@id` is awkward for Javascript programming, and `self` is used by others.
 `_ref` and `_refNotation` perform the same functions as `value`, `type` and `datatype` from RDF/JSON. We could have used `_value` and `_type` (only 2 are needed)
 instead of `_ref` and `_refNotation`.
 
