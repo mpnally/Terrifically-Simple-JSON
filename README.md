@@ -244,7 +244,8 @@ instead of `_self_` and `_self_notation` might have increased familiarity but re
 What is implemented is an unordered set of names, each with an associated value. The definition as written
 implies that there can be more than one name/value pair with the same name but different values. Most implementations accept input
 with more than one pair of the same name, but throw away all but one of them. The [full IETF spec for JSON](http://www.ietf.org/rfc/rfc4627.txt?number=4627)
-says that "The names within an object SHOULD be unique". <a href="#ref2">↩</a>
+says that "The names within an object SHOULD be unique". This restriction allows JSON to map simply to common programming language constructs,
+which is the primary value of JSON and reason for its success.<a href="#ref2">↩</a>
 
 <a name="footnote3"><sup>3</sup></a> To understand what it is like to lack the required context, imagine both examples with all names and values in Chinese characters
 (unless you can actually read Chinese, in which case use Cryllic or Arabic). <a href="#ref3">↩</a>
