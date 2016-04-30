@@ -17,9 +17,9 @@ Terrifically Simple JSON reduces complexity by adding these 3 constraints:
 2. The `name` of a name/value pair must refer to a property or relationship in the state of the corresponding entity.
 3. The `value` of a name/value pair must be the value of the entity property referenced by the name.
 
-Terrifically Simple JSON also defines a special property, `_self`, that allows you to declare which data model entity a particular JSON object corresponds to.
+Terrifically Simple JSON also defines a special property, `_self`, that allows you to declare explicitly which data model entity a particular JSON object corresponds to.
 
-The only requirements of Terrifically Simple JSON are that you follow the 3 constraints above, and use the `_self` property to express constraint #1 explicitly.
+The only requirements of Terrifically Simple JSON are that you follow the 3 constraints above, and use the `_self` property to express constraint #1 explicitly<a href="#footnote3" id="ref3"><sup>3</sup></a>.
 
 The 3 constraints seem to imply that the media type is "just JSON", but the use of `_self` 
 implies a new media type, however minimal. Registration is pending for `application/vnd.terrifically-simple+json`.
@@ -138,7 +138,7 @@ the intent of the first is the same as that of the second. Computers are not ver
 Whether you use the first or second form (or both) in your API might depend on who the audience is and whether you want to require 
 them to have context. This choice involves a trade-off between ease-of-use and precision. 
 The first form is simpler to understand and code to if you have the required context—the second is more precise and correct 
-and therefore can be reliably interpreted without context<a href="#footnote3" id="ref3"><sup>3</sup></a>.
+and therefore can be reliably interpreted without context<a href="#footnote4" id="ref4"><sup>4</sup></a>.
 
 ### The end
 
@@ -197,7 +197,7 @@ handled the same way. In other words, the following are equivalent:
     }
 }
 ```
-[<a href="#footnote4" id="ref4"><sup>4</sup></a>] If this example
+[<a href="#footnote5" id="ref5"><sup>5</sup></a>] If this example
 seems unintuitive, consider that
 when you write `178` in JSON, you are writing a reference to an entity. The number 178 has been around a lot longer 
 than JSON—the notation you are using to write this reference was
@@ -211,7 +211,7 @@ JSON has built-in notations for referencing numbers, booleans and strings—for 
 we must state explicitly which notation we're using, or rely on contextual knowledge.
 This view of datatypes says that in Terrifically Simple JSON, values as well as objects must correspond to entities in the API model.
 
-I'm not suggesting that anyone would actually encode a number in JSON in this way<a href="#footnote5" id="ref5"><sup>5</sup></a>—the point is to show
+I'm not suggesting that anyone would actually encode a number in JSON in this way<a href="#footnote6" id="ref6"><sup>6</sup></a>—the point is to show
 that the concept works for all datatypes. If you need a way
 to encode dates and other dataypes that distinguishes them from strings, this is the way you should do it in Terrifically Simple JSON.
 If you don't need to distinguish dates from their stringified equivalents—that is, you rely on the client having enough context—
@@ -246,10 +246,14 @@ implies that there can be more than one name/value pair with the same name but d
 says that "The names within an object SHOULD be unique". This restriction allows JSON to map simply to common programming language constructs,
 which is the primary value of JSON and reason for its success.<a href="#ref2">↩</a>
 
-<a name="footnote3"><sup>3</sup></a> To understand what it is like to lack the required context, imagine both examples with all names and values in Chinese characters
-(unless you can actually read Chinese, in which case use Cryllic or Arabic). <a href="#ref3">↩</a>
+<a name="footnote3"><sup>3</sup></a> Since it is part of the media type, the `_self` JSON
+property is exempt from Rule #2, although you can think of an entity's identity as being one of its properties if you prefer. 
+`_self_` and `_self_notation` are also part of the media type and thus exempt from Rule#2.<a href="#ref3">↩</a>
 
-<a name="footnote4"><sup>4</sup>I invented this URL for the JSON number notation—I'm not aware of an official one.</a><a href="#ref4">↩</a>
+<a name="footnote4"><sup>4</sup></a> To understand what it is like to lack the required context, imagine both examples with all names and values in Chinese characters
+(unless you can actually read Chinese, in which case use Cryllic or Arabic). <a href="#ref4">↩</a>
 
-<a name="footnote5"><sup>5</sup></a> [RDF/JSON](https://www.w3.org/TR/rdf-json/) encodes even types for which JSON has built-in support this way.
-Perhaps they didn't want to depend on JSON's notations for basic types, preferring those defined by RDF, XML Schema and other standards. <a href="#ref5">↩</a>
+<a name="footnote5"><sup>5</sup>I invented this URL for the JSON number notation—I'm not aware of an official one.</a><a href="#ref5">↩</a>
+
+<a name="footnote6"><sup>6</sup></a> [RDF/JSON](https://www.w3.org/TR/rdf-json/) encodes even types for which JSON has built-in support this way.
+Perhaps they didn't want to depend on JSON's notations for basic types, preferring those defined by RDF, XML Schema and other standards. <a href="#ref6">↩</a>
