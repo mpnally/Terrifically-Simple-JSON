@@ -168,7 +168,7 @@ This idea can be extended to other datatypes. The following two Terrifically Sim
 }
 ```
 The `_datatype` value tells you what datatype is (and by inference the notation) of the reference in the `_value` field. 
-The `_self` property is a shorthand way to express a `_value` for references whose `_datatype`] is `Web-resource` and hence whose notaton is [URI](https://tools.ietf.org/html/rfc3986). 
+The `_self` property is a shorthand way to express a `_value` for references whose `_datatype` is `Web-resource` and hence whose notaton is [URI](https://tools.ietf.org/html/rfc3986). 
 Other values for `_datatype` can be used for other datatypes, e.g. dates, like this:
 ```JSON
 {
