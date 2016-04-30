@@ -155,7 +155,7 @@ This idea can be extended to other datatypes. The following two Terrifically Sim
 ```JSON
 {
  "_self": "http://martin-nally.name#",
- "bornIn": {"_self": "http://www.scotland.org#"}
+ "bornIn": {"_self": "http://www.scotland.org#"<a href="#footnote3" id="ref3"><sup>3</sup></a>}
 }
 ```
 ```JSON
