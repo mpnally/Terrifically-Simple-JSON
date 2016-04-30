@@ -168,7 +168,7 @@ This idea can be extended to other datatypes. The following two Terrifically Sim
 }
 ```
 The `_type` value tells you what the notation is of the reference in the `_value` field<a href="#footnote5" id="ref5"><sup>5</sup></a>. 
-The `_self` property is a convenient way to express `_value` values for references whose `_type` is `URI`. 
+The `_self` property is a shorthand way to express a `_value` for references whose notation [`_type`] is `URI`. 
 Other values for `_type` can be used for other datatypes, e.g. dates, like this:
 ```JSON
 {
