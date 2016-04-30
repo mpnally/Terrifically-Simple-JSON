@@ -219,7 +219,7 @@ you can represent dates as simple strings.
 If you know RDF, you will recognize that Terrifically Simple JSON is a representation format for a data model that is loosely related to RDF.
 Adding a `_self` property to a JSON object converts JSON's name/value pairs into triples, with the value of the `_self` property providing the subject.
 JSON objects without a `_self` property are like RDF blank nodes.
-Terrifically Simple JSON is not trying to define a new RDF format or a new data model—the only goal of Terrifically Simple JSON is
+Terrifically Simple JSON is not trying to define a new RDF format or a new data model—its only goal is
 to build minimally on JSON to make Web API design and implementation easier.
 
 Compared to the RDF data model, Terrifically Simple JSON lacks the requirements that predicates and classes be entities 
