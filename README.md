@@ -155,7 +155,7 @@ This idea can be extended to other datatypes. The following two Terrifically Sim
 ```JSON
 {
  "_self": "http://martin-nally.name#",
- "bornIn": {"_self": "http://www.scotland.org#"<a href="#footnote3" id="ref3"><sup>3</sup></a>}
+ "bornIn": {"_self": "http://www.scotland.org#"}
 }
 ```
 ```JSON
@@ -197,7 +197,7 @@ handled the same way. In other words, the following are equivalent:
     }
 }
 ```
-If this example
+[<a href="#footnote4" id="ref4"><sup>4</sup></a>] If this example
 seems unintuitive, consider that
 when you write `178` in JSON, you are writing a reference to an entity. The number 178 has been around a lot longer 
 than JSON—the notation you are using to write this reference was
@@ -210,7 +210,7 @@ JSON has built-in notations for referencing numbers, booleans and strings—for 
 we must state explicitly which notation we're using, or rely on contextual knowledge.
 This view of datatypes says that in Terrifically Simple JSON, values as well as objects must correspond to entities in the API model.
 
-I'm not suggesting that anyone would actually encode a number in JSON in this way<a href="#footnote4" id="ref4"><sup>4</sup></a>—the point is to show
+I'm not suggesting that anyone would actually encode a number in JSON in this way<a href="#footnote5" id="ref5"><sup>5</sup></a>—the point is to show
 that the concept works for all datatypes. If you need a way
 to encode dates and other dataypes that distinguishes them from strings, this is the way you should do it in Terrifically Simple JSON.
 If you don't need to distinguish dates from their stringified equivalents—that is, you rely on the client having enough context—
@@ -248,5 +248,7 @@ says that "The names within an object SHOULD be unique". <a href="#ref2">↩</a>
 <a name="footnote3"><sup>3</sup></a> To understand what it is like to lack the required context, imagine both examples with all names and values in Chinese characters
 (unless you can actually read Chinese, in which case use Cryllic or Arabic). <a href="#ref3">↩</a>
 
-<a name="footnote4"><sup>4</sup></a> [RDF/JSON](https://www.w3.org/TR/rdf-json/) encodes even types for which JSON has built-in support this way.
-Perhaps they didn't want to depend on JSON's notations for basic types, preferring those defined by RDF, XML Schema and other standards. <a href="#ref4">↩</a>
+<a name="footnote4"><sup>4</sup>I invented this URL for the JSON number notation—I'm not aware of an official one.</a><a href="#ref4">↩</a>
+
+<a name="footnote5"><sup>5</sup></a> [RDF/JSON](https://www.w3.org/TR/rdf-json/) encodes even types for which JSON has built-in support this way.
+Perhaps they didn't want to depend on JSON's notations for basic types, preferring those defined by RDF, XML Schema and other standards. <a href="#ref5">↩</a>
