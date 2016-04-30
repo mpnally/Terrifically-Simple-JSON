@@ -167,8 +167,7 @@ This idea can be extended to other datatypes. The following two Terrifically Sim
     }
 }
 ```
-The `_type` value tells you what the notation is of the reference in the `_value` field. 
-[We make the simplifying assumption that types and notations are 1-1.]
+The `_type` value tells you what the notation is of the reference in the `_value` field<a href="#footnote5" id="ref5"><sup>5</sup></a>. 
 The `_self` property is a convenient way to express `_value` values for references whose `_type` is `URI`. 
 Other values for `_type` can be used for other datatypes, e.g. dates, like this:
 ```JSON
@@ -198,7 +197,7 @@ handled the same way. In other words, the following are equivalent:
     }
 }
 ```
-[<a href="#footnote5" id="ref5"><sup>5</sup></a>] If this example
+[<a href="#footnote6" id="ref6"><sup>6</sup></a>] If this example
 seems unintuitive, consider that
 when you write `178` in JSON, you are writing a reference to an entity. The number 178 has been around a lot longer 
 than JSON—the notation you are using to write this reference was
@@ -212,7 +211,7 @@ JSON has built-in notations for referencing numbers, booleans and strings—for 
 we must state explicitly which notation we're using, or rely on contextual knowledge.
 This view of datatypes says that in Terrifically Simple JSON, values as well as objects must correspond to entities in the API model.
 
-I'm not suggesting that anyone would actually encode a number in JSON in this way<a href="#footnote6" id="ref6"><sup>6</sup></a>—the point is to show
+I'm not suggesting that anyone would actually encode a number in JSON in this way<a href="#footnote7" id="ref7"><sup>7</sup></a>—the point is to show
 that the concept works for all datatypes. If you need a way
 to encode dates and other dataypes that distinguishes them from strings, this is the way you should do it in Terrifically Simple JSON.
 If you don't need to distinguish dates from their stringified equivalents—that is, you rely on the client having enough context—
@@ -254,7 +253,10 @@ property is exempt from constraint #2, although you can think of an entity's ide
 <a name="footnote4"><sup>4</sup></a> To understand what it is like to lack the required context, imagine both examples with all names and values in Chinese characters
 (unless you can actually read Chinese, in which case use Cryllic or Arabic). <a href="#ref4">↩</a>
 
-<a name="footnote5"><sup>5</sup>I invented this URL for the JSON number notation—I'm not aware of an official one.</a><a href="#ref5">↩</a>
+<a name="footnote5"><sup>5</sup>`_notation` would have been a more logical name for the concept, since there could in principle be more than one notation for a given [data]type
+but it is not conventional to make the distinction.</a><a href="#ref5">↩</a>
 
-<a name="footnote6"><sup>6</sup></a> [RDF/JSON](https://www.w3.org/TR/rdf-json/) encodes even types for which JSON has built-in support this way.
-Perhaps they didn't want to depend on JSON's notations for basic types, preferring those defined by RDF, XML Schema and other standards. <a href="#ref6">↩</a>
+<a name="footnote6"><sup>6</sup>I invented this URL for the JSON number notation—I'm not aware of an official one.</a><a href="#ref6">↩</a>
+
+<a name="footnote7"><sup>7</sup></a> [RDF/JSON](https://www.w3.org/TR/rdf-json/) encodes even types for which JSON has built-in support this way.
+Perhaps they didn't want to depend on JSON's notations for basic types, preferring those defined by RDF, XML Schema and other standards. <a href="#ref7">↩</a>
