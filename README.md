@@ -247,8 +247,8 @@ says that "The names within an object SHOULD be unique". This restriction allows
 which is the primary value of JSON and reason for its success.<a href="#ref2">↩</a>
 
 <a name="footnote3"><sup>3</sup></a> Since it is part of the media type, the `_self` JSON
-property is exempt from Rule #2, although you can think of an entity's identity as being one of its properties if you prefer. 
-`_self_` and `_self_notation` are also part of the media type and thus exempt from Rule#2.<a href="#ref3">↩</a>
+property is exempt from constraint #2, although you can think of an entity's identity as being one of its properties if you prefer. 
+`_self_` and `_self_notation` are also part of the media type and thus exempt from constraint #2.<a href="#ref3">↩</a>
 
 <a name="footnote4"><sup>4</sup></a> To understand what it is like to lack the required context, imagine both examples with all names and values in Chinese characters
 (unless you can actually read Chinese, in which case use Cryllic or Arabic). <a href="#ref4">↩</a>
