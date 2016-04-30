@@ -216,21 +216,24 @@ you can represent dates as simple strings.
 
 ## Prior Art and Acknowledgements
 
-If you know RDF, you will recognize that Terrifically Simple JSON is a representation format for a loose interpretation of the RDF data model.
-Adding an `_self` property to a JSON object converts JSON's name/value pairs to RDF triples, with the value of the `_self` property providing the subject.
-JSON objects without an `_self` property are RDF blank nodes.
-Compared to the real RDF data model, Terrifically Simple JSON's interpretation drops the requirements that predicates and classes be entities 
-identified with URLs and gives up the ability to express multi-valued properties,
-considering it more important to use JSON's array feature in a natural way to express list-valued properties.
+If you know RDF, you will recognize that Terrifically Simple JSON is a representation format for a data model that is loosely related to RDF.
+Adding a `_self` property to a JSON object converts JSON's name/value pairs to RDF triples, with the value of the `_self` property providing the subject.
+JSON objects without a `_self` property are like RDF blank nodes.
+Terrifically Simple JSON is not trying to define a new RDF format or redefine the RDF data model. The goal of Terrifically Simple JSON is
+to minimally extend JSON to make Web API design and implementation easier. Parallels to RDF spring from the basic concepts of entities, properties and relationships
+it expresses were known to the ancient Greeks.
+
+Compared to the RDF data model, Terrifically Simple JSON lacks the requirements that predicates and classes be entities 
+identified with URLs and lacks the ability to express multi-valued properties—JSON's array feature expresses list-valued properties.
 Having done a couple of projects using a strict interpretation of the RDF model, 
-I've seen that those features cause significant friction in practical API programming. Those features also contribute significantly to the complexity of standard JSON representations
-of RDF, especially [JSON-LD](http://json-ld.org/), whose complexity is likely to be fatal in my opinion, but also [RDF/JSON](https://www.w3.org/TR/rdf-json/). Hence the need for Terrifically Simple JSON.
+we've seen that those features cause significant friction in practical API programming. Those features also contribute significantly to the complexity of standard JSON representations
+of RDF, especially [JSON-LD](http://json-ld.org/), whose complexity is likely to be fatal in my opinion, but also [RDF/JSON](https://www.w3.org/TR/rdf-json/).
 
 Terrifically Simple JSON has very few concepts, and those it has are mostly stolen from elsewhere. The value is in what was taken out, not what was left in.
 The `_self` property of Terrifically Simple JSON corresponds fairly exactly to the `@id` property of JSON-LD. This is the only concept found in JSON-LD that also appears in Terrifically Simple JSON. 
 We chose `_self` instead of `@id` because `@id` is awkward for Javascript programming, and `self` is used by others (standardized by [ATOM](https://tools.ietf.org/html/rfc4287), and often copied).
 `_self_` and `_self_notation` perform the same functions as `value`, `type` and `datatype` from RDF/JSON. Using `_value` and `_type` (only 2 are needed)
-instead of `_self_` and `_self_notation` would have improved familiarity and reduced conceptual clarity.
+instead of `_self_` and `_self_notation` might have increased familiarity but reduced conceptual clarity.
 
 ## _
 <a name="footnote1"><sup>1</sup></a> Terrifically Simple JSON could also be used in other contexts where JSON is used. <a href="#ref1">↩</a>
