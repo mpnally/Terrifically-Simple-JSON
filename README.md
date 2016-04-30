@@ -42,7 +42,7 @@ Because of Terrifically Simple JSON's 3 constraints, we know that this single JS
 in the API data model with 3 property values.
 
 The following JSON document encodes the same information in a different style. It is not Terrifically Simple JSON—it violates all 3 of the constraints above. That does not mean it's a bad
-design, just that it follows a different set of rules from Terrifically Simple JSON. It is its own media type.
+design, just that it follows a different set of rules than Terrifically Simple JSON. It is its own media type.
 ```
  1. {
  2.  "properties": 
