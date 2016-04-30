@@ -19,10 +19,10 @@ Terrifically Simple JSON reduces complexity by adding these 3 constraints:
 
 Terrifically Simple JSON also defines a special property, `_self`, that allows you to declare explicitly which data model entity a particular JSON object corresponds to.
 
-The only requirements of Terrifically Simple JSON are that you follow the 3 constraints above, and use the `_self` property to express constraint #1 explicitly<a href="#footnote3" id="ref3"><sup>3</sup></a>.
+The only requirements of Terrifically Simple JSON are that you follow the 3 constraints above, and use the `_self` property to express constraint #1 explicitly.
 
 The 3 constraints seem to imply that the media type is "just JSON", but the use of `_self` 
-implies a new media type, however minimal. Registration is pending for `application/vnd.terrifically-simple+json`.
+implies a new media type<a href="#footnote3" id="ref3"><sup>3</sup></a>, however minimal. Registration is pending for `application/vnd.terrifically-simple+json`.
 
 There is a generalization of the `_self` concept that allows arbitrary datatypes to be expressed in JSON in a consistent fashion. 
 This generalization is expressed with the optional `_self_` and `_self_notation` properties. Terrifically Simple JSON
