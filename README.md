@@ -21,7 +21,7 @@ Terrifically Simple JSON also defines a special property, `_self`, that allows y
 
 The only requirements of Terrifically Simple JSON are that you follow the 3 constraints above, and use the `_self` property to express constraint #1 explicitly.
 
-The 3 constraints seem to imply that the media type is "just JSON", rather than a new data format built on top of it, but the use of `_self` 
+The 3 constraints seem to imply that the media type is "just JSON", but the use of `_self` 
 implies a new media type, however minimal. Registration is pending for `application/vnd.terrifically-simple+json`.
 
 There is a slight generalization of the `_self` concept that allows arbitrary datatypes to be expressed in JSON in a consistent fashion. 
