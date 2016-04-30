@@ -24,7 +24,7 @@ The only requirements of Terrifically Simple JSON are that you follow the 3 cons
 The 3 constraints seem to imply that the media type is "just JSON", but the use of `_self` 
 implies a new media type, however minimal. Registration is pending for `application/vnd.terrifically-simple+json`.
 
-There is a slight generalization of the `_self` concept that allows arbitrary datatypes to be expressed in JSON in a consistent fashion. 
+There is a generalization of the `_self` concept that allows arbitrary datatypes to be expressed in JSON in a consistent fashion. 
 This generalization is expressed with the optional `_self_` and `_self_notation` properties. Terrifically Simple JSON
 does not require you to use them, but they are there if you want an explcit way to handle arbitrary datatypes in Terrifically Simple JSON.
 
