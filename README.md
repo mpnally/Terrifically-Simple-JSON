@@ -25,7 +25,7 @@ The 3 constraints seem to imply that the media type is "just JSON", but the use 
 implies a new media type<a href="#footnote3" id="ref3"><sup>3</sup></a>, however minimal. Registration is pending for `application/vnd.terrifically-simple+json`.
 
 There is a generalization of the `_self` concept that allows arbitrary datatypes to be expressed in JSON in a consistent fashion. 
-This generalization is expressed with the optional `_value` and `_type` properties. Terrifically Simple JSON
+This generalization is expressed with the optional `_value` and `_datatype` properties. Terrifically Simple JSON
 does not require you to use them, but they are there if you want an explcit way to handle arbitrary datatypes in Terrifically Simple JSON.
 
 ## Tutorial
@@ -163,19 +163,19 @@ This idea can be extended to other datatypes. The following two Terrifically Sim
  "_self": "http://martin-nally.name#",
  "bornIn": {
     "_value": "http://www.scotland.org#",
-    "_type": "URI"
+    "_datatype": "Web-resource"
     }
 }
 ```
-The `_type` value tells you what the notation is of the reference in the `_value` field<a href="#footnote5" id="ref5"><sup>5</sup></a>. 
-The `_self` property is a shorthand way to express a `_value` for references whose notation [`_type`] is `URI`. 
-Other values for `_type` can be used for other datatypes, e.g. dates, like this:
+The `_datatype` value tells you what datatype is (and by inference the notation) of the reference in the `_value` field. 
+The `_self` property is a shorthand way to express a `_value` for references whose `_datatype`] is `Web-resource` and hence whose notaton is [URI](https://tools.ietf.org/html/rfc3986). 
+Other values for `_datatype` can be used for other datatypes, e.g. dates, like this:
 ```JSON
 {
  "_self": "http://martin-nally.name#",
  "bornOn": {
     "_value": "1957-01-05",
-    "_type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    "_datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
     }
 }
 ```
@@ -193,11 +193,11 @@ handled the same way. In other words, the following are equivalent:
  "_self": "http://martin-nally.name#",
  "heightInCM": {
     "_value": "178",
-    "_type": "http://www.json.org/#number"
+    "_datatype": "http://www.json.org/#number"
     }
 }
 ```
-[<a href="#footnote6" id="ref6"><sup>6</sup></a>] If this example
+[<a href="#footnote5" id="ref5"><sup>5</sup></a>] If this example
 seems unintuitive, consider that
 when you write `178` in JSON, you are writing a reference to an entity. The number 178 has been around a lot longer 
 than JSON—the notation you are using to write this reference was
@@ -211,7 +211,7 @@ JSON has built-in notations for referencing numbers, booleans and strings—for 
 we must state explicitly which notation we're using, or rely on contextual knowledge.
 This view of datatypes says that in Terrifically Simple JSON, values as well as objects must correspond to entities in the API model.
 
-I'm not suggesting that anyone would actually encode a number in JSON in this way<a href="#footnote7" id="ref7"><sup>7</sup></a>—the point is to show
+I'm not suggesting that anyone would actually encode a number in JSON in this way<a href="#footnote6" id="ref6"><sup>6</sup></a>—the point is to show
 that the concept works for all datatypes. If you need a way
 to encode dates and other dataypes that distinguishes them from strings, this is the way you should do it in Terrifically Simple JSON.
 If you don't need to distinguish dates from their stringified equivalents—that is, you rely on the client having enough context—
@@ -234,7 +234,7 @@ of RDF, especially [JSON-LD](http://json-ld.org/), whose complexity is likely to
 Terrifically Simple JSON has very few concepts, and those it has are mostly stolen from elsewhere. The value is in what was left out, not what was put in.
 The `_self` property of Terrifically Simple JSON corresponds fairly exactly to the `@id` property of JSON-LD. This is the only concept found in JSON-LD that also appears in Terrifically Simple JSON. 
 We chose `_self` instead of `@id` because `@id` is awkward for Javascript programming, and `self` is used by others (standardized by [ATOM](https://tools.ietf.org/html/rfc4287), and often copied).
-`_value` and `_type` perform the same functions as `value`, `type` and `datatype` from RDF/JSON. We use `_value` and `_type` (only 2 are needed)
+`_value` and `_datatype` perform the same functions as `value`, `type` and `datatype` from RDF/JSON. We use `_value` and `_datatype` (only 2 are needed)
 to reduce the likelihood of collisions.
 
 ## _
@@ -248,15 +248,12 @@ which is the primary value of JSON and reason for its success.<a href="#ref2">�
 
 <a name="footnote3"><sup>3</sup></a> Since it is part of the media type, the `_self` JSON
 property is exempt from constraint #2, although you can think of an entity's identity as being one of its properties if you prefer. 
-`_value` and `_type` are also part of the media type and thus exempt from constraint #2.<a href="#ref3">↩</a>
+`_value` and `_datatype` are also part of the media type and thus exempt from constraint #2.<a href="#ref3">↩</a>
 
 <a name="footnote4"><sup>4</sup></a> To understand what it is like to lack the required context, imagine both examples with all names and values in Chinese characters
 (unless you can actually read Chinese, in which case use Cryllic or Arabic). <a href="#ref4">↩</a>
 
-<a name="footnote5"><sup>5</sup>`_notation` would have been a more logical name for the concept, since there could in principle be more than one notation for a given [data]type
-but it is not conventional to make the distinction.</a><a href="#ref5">↩</a>
+<a name="footnote5"><sup>5</sup>I invented this URL for the JSON number notation—I'm not aware of an official one.</a><a href="#ref5">↩</a>
 
-<a name="footnote6"><sup>6</sup>I invented this URL for the JSON number notation—I'm not aware of an official one.</a><a href="#ref6">↩</a>
-
-<a name="footnote7"><sup>7</sup></a> [RDF/JSON](https://www.w3.org/TR/rdf-json/) encodes even types for which JSON has built-in support this way.
-Perhaps they didn't want to depend on JSON's notations for basic types, preferring those defined by RDF, XML Schema and other standards. <a href="#ref7">↩</a>
+<a name="footnote6"><sup>6</sup></a> [RDF/JSON](https://www.w3.org/TR/rdf-json/) encodes even types for which JSON has built-in support this way.
+Perhaps they didn't want to depend on JSON's notations for basic types, preferring those defined by RDF, XML Schema and other standards. <a href="#ref6">↩</a>
