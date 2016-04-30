@@ -217,16 +217,15 @@ you can represent dates as simple strings.
 ## Prior Art and Acknowledgements
 
 If you know RDF, you will recognize that Terrifically Simple JSON is a representation format for a data model that is loosely related to RDF.
-Adding a `_self` property to a JSON object converts JSON's name/value pairs to RDF triples, with the value of the `_self` property providing the subject.
+Adding a `_self` property to a JSON object converts JSON's name/value pairs into triples, with the value of the `_self` property providing the subject.
 JSON objects without a `_self` property are like RDF blank nodes.
-Terrifically Simple JSON is not trying to define a new RDF format or a new data model. The goal of Terrifically Simple JSON is
-to minimally extend JSON to make Web API design and implementation easier. Parallels to RDF spring from the basic concepts of entities, properties and relationships
-that were known to the ancient Greeks.
+Terrifically Simple JSON is not trying to define a new RDF format or a new data model—the goal of Terrifically Simple JSON is only
+to build on JSON to make Web API design and implementation easier.
 
 Compared to the RDF data model, Terrifically Simple JSON lacks the requirements that predicates and classes be entities 
 identified with URLs and lacks the ability to express multi-valued properties—JSON's array feature expresses list-valued properties.
 Having done a couple of projects using a strict interpretation of the RDF model, 
-we've seen that those features cause significant friction in practical API programming. Those features also contribute significantly to the complexity of standard JSON representations
+we've seen that those RDF features cause significant friction in practical API programming. Those features also contribute significantly to the complexity of standard JSON representations
 of RDF, especially [JSON-LD](http://json-ld.org/), whose complexity is likely to be fatal in my opinion, but also [RDF/JSON](https://www.w3.org/TR/rdf-json/).
 
 Terrifically Simple JSON has very few concepts, and those it has are mostly stolen from elsewhere. The value is in what was taken out, not what was left in.
