@@ -25,7 +25,7 @@ The 3 constraints seem to imply that the media type is "just JSON", but the use 
 implies a new media type<a href="#footnote3" id="ref3"><sup>3</sup></a>, however minimal. Registration is pending for `application/vnd.terrifically-simple+json`.
 
 There is a generalization of the `_self` concept that allows arbitrary datatypes to be expressed in JSON in a consistent fashion. 
-This generalization is expressed with the optional `_self_` and `_self_notation` properties. Terrifically Simple JSON
+This generalization is expressed with the optional `_value` and `_type` properties. Terrifically Simple JSON
 does not require you to use them, but they are there if you want an explcit way to handle arbitrary datatypes in Terrifically Simple JSON.
 
 ## Tutorial
@@ -162,20 +162,21 @@ This idea can be extended to other datatypes. The following two Terrifically Sim
 {
  "_self": "http://martin-nally.name#",
  "bornIn": {
-    "_self_": "http://www.scotland.org#",
-    "_self_notation": "URI"
+    "_value": "http://www.scotland.org#",
+    "_type": "URI"
     }
 }
 ```
-The `_self_notation` value tells you what the notation is of the reference in the `_self_` field.
-The `_self` property is a convenient way to express `_self_` values for references whose `_self_notation` is `URI`. 
-Other values for `_self_notation` can be used for other datatypes, e.g. dates, like this:
+The `_type` value tells you what the notation is of the reference in the `_value` field. 
+[We make the simplifying assumption that types and notations are 1-1.]
+The `_self` property is a convenient way to express `_value` values for references whose `_type` is `URI`. 
+Other values for `_type` can be used for other datatypes, e.g. dates, like this:
 ```JSON
 {
  "_self": "http://martin-nally.name#",
  "bornOn": {
-    "_self_": "1957-01-05",
-    "_self_notation": "http://www.w3.org/2001/XMLSchema#dateTime"
+    "_value": "1957-01-05",
+    "_type": "http://www.w3.org/2001/XMLSchema#dateTime"
     }
 }
 ```
@@ -192,8 +193,8 @@ handled the same way. In other words, the following are equivalent:
 {
  "_self": "http://martin-nally.name#",
  "heightInCM": {
-    "_self_": "178",
-    "_self_notation": "http://www.json.org/#number"
+    "_value": "178",
+    "_type": "http://www.json.org/#number"
     }
 }
 ```
@@ -234,8 +235,8 @@ of RDF, especially [JSON-LD](http://json-ld.org/), whose complexity is likely to
 Terrifically Simple JSON has very few concepts, and those it has are mostly stolen from elsewhere. The value is in what was left out, not what was put in.
 The `_self` property of Terrifically Simple JSON corresponds fairly exactly to the `@id` property of JSON-LD. This is the only concept found in JSON-LD that also appears in Terrifically Simple JSON. 
 We chose `_self` instead of `@id` because `@id` is awkward for Javascript programming, and `self` is used by others (standardized by [ATOM](https://tools.ietf.org/html/rfc4287), and often copied).
-`_self_` and `_self_notation` perform the same functions as `value`, `type` and `datatype` from RDF/JSON. Using `_value` and `_type` (only 2 are needed)
-instead of `_self_` and `_self_notation` might have increased familiarity but reduced conceptual clarity.
+`_value` and `_type` perform the same functions as `value`, `type` and `datatype` from RDF/JSON. We use `_value` and `_type` (only 2 are needed)
+to reduce the likelihood of collisions.
 
 ## _
 <a name="footnote1"><sup>1</sup></a> Terrifically Simple JSON could also be used in other contexts where JSON is used. <a href="#ref1">↩</a>
@@ -248,7 +249,7 @@ which is the primary value of JSON and reason for its success.<a href="#ref2">�
 
 <a name="footnote3"><sup>3</sup></a> Since it is part of the media type, the `_self` JSON
 property is exempt from constraint #2, although you can think of an entity's identity as being one of its properties if you prefer. 
-`_self_` and `_self_notation` are also part of the media type and thus exempt from constraint #2.<a href="#ref3">↩</a>
+`_value` and `_type` are also part of the media type and thus exempt from constraint #2.<a href="#ref3">↩</a>
 
 <a name="footnote4"><sup>4</sup></a> To understand what it is like to lack the required context, imagine both examples with all names and values in Chinese characters
 (unless you can actually read Chinese, in which case use Cryllic or Arabic). <a href="#ref4">↩</a>
