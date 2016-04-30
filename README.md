@@ -228,7 +228,7 @@ Having done a couple of projects using a strict interpretation of the RDF model,
 I've seen that those RDF features cause significant friction in practical API programming. Those features also contribute significantly to the complexity of standard JSON representations
 of RDF, especially [JSON-LD](http://json-ld.org/), whose complexity is likely to be fatal in my opinion, but also [RDF/JSON](https://www.w3.org/TR/rdf-json/).
 
-Terrifically Simple JSON has very few concepts, and those it has are mostly stolen from elsewhere. The value is in what was taken out, not what was left in.
+Terrifically Simple JSON has very few concepts, and those it has are mostly stolen from elsewhere. The value is in what was left out, not what was put in.
 The `_self` property of Terrifically Simple JSON corresponds fairly exactly to the `@id` property of JSON-LD. This is the only concept found in JSON-LD that also appears in Terrifically Simple JSON. 
 We chose `_self` instead of `@id` because `@id` is awkward for Javascript programming, and `self` is used by others (standardized by [ATOM](https://tools.ietf.org/html/rfc4287), and often copied).
 `_self_` and `_self_notation` perform the same functions as `value`, `type` and `datatype` from RDF/JSON. Using `_value` and `_type` (only 2 are needed)
