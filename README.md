@@ -226,7 +226,7 @@ that are exposed using the normal rules of Terrifically Simple JSON. Here is an 
 {"_self": "http://scotland.org/native-sons",
  "contents": [
     {"_self": "http://martin-nally.name#"},
-    # many more
+    {"many": "more here"}
     ]
 }
 ```
@@ -234,7 +234,7 @@ that are exposed using the normal rules of Terrifically Simple JSON. Here is an 
 It would be even simpler to write:
 ```JSON
 [   {"_self": "http://martin-nally.name#"},
-    # many more
+    {"many": "more here"}
 ]
 ```
 We wouldn't consider this wrong, but it does not express the fact that "http://scotland.org/native-sons" is itself an entity with a URL
