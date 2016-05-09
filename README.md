@@ -237,7 +237,7 @@ It would be even simpler to write:
     {"many": "more here"}
 ]
 ```
-We wouldn't consider this wrong, but it does not express the fact that "http://scotland.org/native-sons" is itself an entity with a URL
+We wouldn't consider this option to be wrong, but it does not express the fact that "http://scotland.org/native-sons" is itself an entity with a URL
 and potentially properties.
 
 In summary, we think that standardization of collection representations is better handled as a data modelling (ontology) problem
