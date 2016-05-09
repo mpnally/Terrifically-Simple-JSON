@@ -217,6 +217,32 @@ to encode dates and other dataypes that distinguishes them from strings, this is
 If you don't need to distinguish dates from their stringified equivalents—that is, you rely on the client having enough context—
 you can represent dates as simple strings.
 
+## No Collections?
+
+Many media types include special support for collections. Terrifically Simple JSON considers collections to be simply entities of the data model of the API
+that are exposed using the normal rules of Terrifically Simple JSON. Here is an exanmple:
+
+```JSON
+{"_self": "http://scotland.org/native-sons",
+ "contents": [
+    {"_self": "http://martin-nally.name#"},
+    # many more
+    ]
+}
+```
+
+It would be even simpler to write:
+```JSON
+[   {"_self": "http://martin-nally.name#"},
+    # many more
+]
+```
+We wouldn't consider this wrong, but it does not express the fact that "http://scotland.org/native-sons" is itself an entity with a URL
+and potentially properties.
+
+In summary, we think that standardization of collection representations is better handled as a data modelling (ontology) problem
+than a media-type problem.
+
 ## Prior Art and Acknowledgements
 
 If you know RDF, you will recognize that Terrifically Simple JSON is a representation format for a data model that is loosely related to RDF.
