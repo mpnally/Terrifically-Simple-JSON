@@ -151,7 +151,7 @@ The two most common
 datatypes in Web API programming that are not covered by JSON are URL and date/time. Unless you are willing to invent extensions or
 conventions on top of JSON, the best you can do is to encode them as strings. The [example above](#explicit-urls) shows how the `_self` property
 can be used in Terrifically Simple JSON to encode URLs more precisely, at some cost to simplicity and ease-of-programming. 
-This idea can be extended to other datatypes. The following two Terrifically Simple JSON examples are equivalent.
+This idea can be extended to other datatypes by declaring the following two Terrifically Simple JSON examples to be equivalent.
 ```JSON
 {
  "_self": "http://martin-nally.name#",
@@ -167,7 +167,7 @@ This idea can be extended to other datatypes. The following two Terrifically Sim
     }
 }
 ```
-The `_datatype` value tells you what datatype is of the entity referenced in the `_value` field, and by inference the notation of the reference itself. 
+The `_datatype` value tells you the datatype of the entity referenced in the `_value` field, and by inference the notation of the reference itself. 
 The `_self` property is a shorthand way to express a `_value` for entities whose `_datatype` is `resource` and hence whose reference notaton is [URI](https://tools.ietf.org/html/rfc3986). 
 
 Other values for `_datatype` can be used for other datatypes, e.g. dates, like this:
