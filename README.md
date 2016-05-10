@@ -221,7 +221,7 @@ you can represent dates as simple strings.
 ## No Collections?
 
 Many media types include special support for collections. Terrifically Simple JSON considers collections to be simply entities
-that are exposed using the normal rules of Terrifically Simple JSON. Here is an exanmple:
+that are exposed using the normal rules of Terrifically Simple JSON. Here is an example:
 
 ```JSON
 {"_self": "http://scotland.org/native-sons",
