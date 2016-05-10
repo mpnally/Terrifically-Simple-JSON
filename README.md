@@ -140,7 +140,7 @@ them to have context. This choice involves a trade-off between ease-of-use and p
 The first form is simpler to understand and code to if you have the required context—the second is more precise and correct 
 and therefore can be reliably interpreted without context<a href="#footnote4" id="ref4"><sup>4</sup></a>.
 
-### The end
+### That's it
 
 That is it for the required part of Terrifically Simple JSON. The next section describes an optional extension.
 
