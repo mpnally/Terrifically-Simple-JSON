@@ -234,7 +234,7 @@ that are exposed using the normal rules of Terrifically Simple JSON. Here is an 
 It would be even simpler to write:
 ```JSON
 [   {"_self": "http://martin-nally.name#"},
-    {"_self": "many more lie this"}
+    {"_self": "many more like this"}
 ]
 ```
 This second option may not be wrong, but it does not express the fact that "http://scotland.org/native-sons" is itself an 
