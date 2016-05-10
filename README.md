@@ -219,7 +219,7 @@ you can represent dates as simple strings.
 
 ## No Collections?
 
-Many media types include special support for collections. Terrifically Simple JSON considers collections to be simply entities of the data model of the API
+Many media types include special support for collections. Terrifically Simple JSON considers collections to be simply entities
 that are exposed using the normal rules of Terrifically Simple JSON. Here is an exanmple:
 
 ```JSON
