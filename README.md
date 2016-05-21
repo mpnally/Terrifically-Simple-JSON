@@ -33,7 +33,6 @@ does not require you to use them, but they are there if you want an explcit way 
 The following is a Terrifically Simple JSON document:
 ```JSON
 {
- "_self": "http://martin-nally.name#",
  "name": "Martin",
  "bornOn": "1957-01-05",
  "bornIn": "http://www.scotland.org#"
@@ -55,17 +54,13 @@ design, just that it follows a different set of rules than Terrifically Simple J
  8.     {
  9.      "rel": "bornIn",
 10.      "href": "http://www.scotland.org#"
-11.     }, 
-12.     {
-13.      "rel": "self",
-14.      "href": "http://martin-nally.name#"
-15.     } 
-16.  ]
-17. }
+11.     } 
+12.  ]
+13. }
 ```
 
-Lines 3-6, 8-11 and 12-15 violate constraint 1—these JSON objects have no corresponding entity in the data model.  
-Lines 2, 7, 9, 10, 13 and 14 violate constraint 2—these JSON names are not properties of a corresponding entity.  
+Lines 3-6 and 8-11 violate constraint 1—these JSON objects have no corresponding entity in the data model.  
+Lines 2, 7, 9, and 10 violate constraint 2—these JSON names are not properties of a corresponding entity.  
 Line 9 violates constraint 3—`bornIn` is a property (or relationship) name in the data model, not a value.
 
 ### _self
