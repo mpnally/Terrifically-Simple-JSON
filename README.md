@@ -64,8 +64,8 @@ design, just that it follows a different set of rules than Terrifically Simple J
 17. }
 ```
 
-Lines 3 and 8 violate constraint 1—they introduce JSON objects that have no correspondence in the data model.  
-Lines 2, 7, 9, 10, 13 and 14 violate constraint 2—they introduce JSON names that are not properties of a corresponding entity.  
+Lines 3, 8 and 12 violate constraint 1—these JSON objects have no correspondence in the data model.  
+Lines 2, 7, 9, 10, 13 and 14 violate constraint 2—the JSON names are not properties of a corresponding entity.  
 Line 9 violates constraint 3—`bornIn` is a property (or relationship) name in the data model, not a value.
 
 ### _self
