@@ -11,7 +11,7 @@ itself only with how you use JSON.
 It does not otherwise say what an object is, what a name is or what a value is (beyond defining basic datatypes).
 This gives designers a lot of flexibility, which often leads to complex JSON. 
 
-Terrifically Simple JSON reduces complexity by adding these 3 constraints:
+Terrifically Simple JSON reduces complexity by adding 3 constraints:
 
 1. Every Terrifically Simple JSON object must correspond to an entity in the data model of the API.
 2. The `name` of a name/value pair must refer to a property or relationship in the state of the corresponding entity.
@@ -67,7 +67,7 @@ Line 9 violates constraint 3—`bornIn` is a property (or relationship) name in 
 
 Constraint #1 of Terrifically Simple JSON is that every JSON object
 corresponds to an entity in the API data model. The `_self` property provides a direct way of specifying which entity. 
-Its value is always a URL.
+Its value is always a URI.
 Here is an example of its use:
 
 ```JSON
