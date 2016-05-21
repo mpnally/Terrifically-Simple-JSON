@@ -154,7 +154,7 @@ That is it for the required part of Terrifically Simple JSON. The next section d
 One of the challenges of JSON is that it only supports 3 major datatypes: number, string, and boolean (the null value is the unique member of a 4th datatype). 
 The two most common
 datatypes in Web API programming that are not covered by JSON are URL and date/time. Unless you are willing to invent extensions or
-conventions on top of JSON, the best you can do is to encode them as strings. The [example above](#explicit-urls) shows how the `_self` property
+conventions on top of JSON—in other words, a new media type—the best you can do is to encode them as strings. The [example above](#explicit-urls) shows how the `_self` property
 can be used in Terrifically Simple JSON to encode URLs more precisely, at some cost to simplicity and ease-of-programming. 
 This idea can be extended to other datatypes by defining the following two Terrifically Simple JSON examples to be equivalent.
 ```JSON
