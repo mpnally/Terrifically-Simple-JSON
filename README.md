@@ -135,7 +135,7 @@ The following two examples are both Terrifically Simple JSON (you can verify tha
 Interpreted strictly,
 the second says I was born in a country while the first says I was born in a string. Common sense tells us that
 the intent of the first is the same as that of the second. Computers are not very good at common sense, but humans are if they have some context.
-Whether you use the first or second form (or both) in your API might depend on who the audience is and whether you want to require 
+Whether you use the first or second form in your API might depend on who the audience is and whether you want to require 
 them to have context. This choice involves a trade-off between ease-of-use and precision. 
 The first form is simpler to read and code to if you have the required context—the second is more precise and correct 
 and therefore can be reliably interpreted without context<a href="#footnote4" id="ref4"><sup>4</sup></a>.
