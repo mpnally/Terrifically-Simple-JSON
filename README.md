@@ -78,7 +78,7 @@ Here is an example of its use:
 }
 ```
 This example says simply that the entity whose id is http://martin-nally.name# has the first name Martin.
-Standard JSON tells us that the first name is Martin and the `_self` property tells us which API entity we are talking about.
+Constraints 2 and 3 tell us that the first name is Martin and the `_self` property tells us which API entity we are talking about.
 This is the primary idea in Terrifically Simple JSON—if you have understood this idea, you have understood most of what
 is valuable in Terrifically Simple JSON.
 
