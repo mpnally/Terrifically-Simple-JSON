@@ -138,7 +138,7 @@ the second says I was born in a country while the first says I was born in a str
 the intent of the first is the same as that of the second. Computers are not very good at common sense, but humans are if they have some context.
 Whether you use the first or second form in your API might depend on who the audience is and whether you want to require 
 them to have context. This choice involves a trade-off between ease-of-use and precision—
-the first form is simpler to read and code to if you have the required context and the second form is more precise and correct 
+the first form is simpler to read and code for a human who has the required context and the second form is more precise and correct 
 and therefore can be reliably interpreted without context <a href="#footnote4" id="ref4"><sup>4</sup></a>.
 
 ### That's it
