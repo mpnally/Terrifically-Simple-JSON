@@ -235,15 +235,6 @@ that are exposed using the normal rules of Terrifically Simple JSON. Here is an 
 }
 ```
 
-It would be even simpler to write:
-```JSON
-[   {"self": "http://martin-nally.name#"},
-    {"self": "many more like this"}
-]
-```
-This second option may not be wrong, but it does not express the fact that "http://scotland.org/native-sons" is itself an 
-entity with a URL and potentially properties.
-
 In summary, we think that standardization of collection representations is better handled as a data modelling (ontology) problem
 than a media-type problem.
 
