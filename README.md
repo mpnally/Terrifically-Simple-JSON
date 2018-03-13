@@ -17,16 +17,16 @@ Terrifically Simple JSON reduces complexity by adding 3 constraints:
 2. The `name` of a name/value pair must refer to a property or relationship in the state of the corresponding entity.
 3. The `value` of a name/value pair must be the value of the entity property referenced by the name.
 
-Terrifically Simple JSON defines a special property, `_self`, that allows you to declare explicitly which data model entity a particular JSON object corresponds to.
-Its value is always a URI, encoded as a JSON string.
+Terrifically Simple JSON defines a special name/value pair whose name is `self`, that allows you to declare explicitly which data model entity a particular JSON object corresponds to.
+Its value is always a URI, encoded as a JSON string. `self` is not a property of the object, it specifies the identity of the resource whose property values are specified by the other name/value pairs in the same JSON object.
 
-The only requirements of Terrifically Simple JSON are that you follow the 3 constraints above, and use the `_self` property to express constraint #1 explicitly.
+The only requirements of Terrifically Simple JSON are that you follow the 3 constraints above, and use the `self` property to express constraint #1 explicitly.
 
-The 3 constraints seem to imply that the media type is "just JSON", but the use of `_self` 
-implies a new media type<a href="#footnote3" id="ref3"><sup>3</sup></a>, however minimal. Registration is pending for `application/vnd.terrifically-simple+json`.
+The 3 constraints seem to imply that the media type is "just JSON", but the use of `self` 
+suggests a new media type<a href="#footnote3" id="ref3"><sup>3</sup></a>, however minimal. There is no registered media type for Terrifically Simple JSON — we just use `application/json`.
 
-There is a generalization of the `_self` concept that allows arbitrary datatypes to be expressed in JSON in a consistent fashion. 
-This generalization is expressed with the optional `_value` and `_datatype` properties. Terrifically Simple JSON
+There is a generalization of the `self` concept that allows arbitrary datatypes to be expressed in JSON in a consistent fashion. 
+This generalization is expressed with the optional `_value` and `_datatype` name/value pairs. Terrifically Simple JSON
 does not require you to use them, but they are there if you want an explcit way to handle arbitrary datatypes in Terrifically Simple JSON.
 
 ## Tutorial
@@ -64,31 +64,31 @@ Lines 3-6 and 8-11 violate constraint 1—these JSON objects have no correspondi
 Lines 2, 7, 9, and 10 violate constraint 2—these JSON names are not properties of a corresponding entity.  
 Line 9 violates constraint 3—`bornIn` is a property (or relationship) name in the data model, not a value.
 
-### _self
+### self
 
 Constraint #1 of Terrifically Simple JSON is that every JSON object
-corresponds to an entity in the API data model. The `_self` property provides a direct way of specifying which entity. 
+corresponds to an entity in the API data model. The `self` name/value pair provides a direct way of specifying which entity. 
 Its value is always a URI.
 Here is an example of its use:
 
 ```JSON
 {
- "_self": "http://martin-nally.name#",
+ "self": "http://martin-nally.name#",
  "firstName": "Martin"
 }
 ```
 This example says simply that the entity whose id is http://martin-nally.name# has the first name Martin.
-Constraints 2 and 3 tell us that the first name is Martin and the `_self` property tells us which API entity we are talking about.
+Constraints 2 and 3 tell us that the first name of the entity is Martin and the `self` property tells us which entity we are talking about.
 This is the primary idea in Terrifically Simple JSON—if you have understood this idea, you have understood most of what
 is valuable in Terrifically Simple JSON.
 
-The `_self` property can be used in nested objects too, like this:
+The `self` name/value pair can be used in nested objects too, like this:
 ```JSON
 {
- "_self": "http://martin-nally.name#",
+ "self": "http://martin-nally.name#",
  "bornIn": 
     {
-    "_self": "http://www.scotland.org#",
+    "self": "http://www.scotland.org#",
     "gaelicName": "Alba"
     }
 }
@@ -97,10 +97,10 @@ This example encodes two separate pieces of information:
 * http://martin-nally.name# was born in http://www.scotland.org#
 * The Gaelic name for http://www.scotland.org# is Alba
 
-### When `_self` is missing
+### When `self` is missing
 
-When the `_self` property of a Terrifically Simple JSON object is missing, the object still must correspond to an 
-entity in the API data model. A JSON object with no `_self` should be read as a noun clause that references an entity. This example
+When the `self` property of a Terrifically Simple JSON object is missing, the object still must correspond to an 
+entity in the API data model. A JSON object with no `self` should be read as a noun clause that references an entity. This example
 ```JSON
 {
  "isA": "Person",
@@ -123,14 +123,14 @@ should be read as meaning,
 The following two examples are both Terrifically Simple JSON (you can verify that they follow the constraints).
 ```JSON
 {
- "_self": "http://martin-nally.name#",
+ "self": "http://martin-nally.name#",
  "bornIn": "http://www.scotland.org#"
 }
 ```
 ```JSON
 {
- "_self": "http://martin-nally.name#",
- "bornIn": {"_self": "http://www.scotland.org#"}
+ "self": "http://martin-nally.name#",
+ "bornIn": {"self": "http://www.scotland.org#"}
 }
 ```
 Interpreted strictly,
@@ -150,18 +150,18 @@ That is it for the required part of Terrifically Simple JSON. The next section d
 One of the challenges of JSON is that it only supports 3 useful datatypes: number, string, and boolean (the `null` value is the unique member of a 4th datatype). 
 The two most common
 datatypes in Web API programming that are not covered by JSON are URL and date/time. Unless you are willing to invent extensions or
-conventions on top of JSON—in other words, a new media type—the best you can do is to encode them as strings. The [example above](#explicit-urls) shows how the `_self` property
+conventions on top of JSON—in other words, a new media type—the best you can do is to encode them as strings. The [example above](#explicit-urls) shows how the `self` name/value pair
 can be used in Terrifically Simple JSON to encode URLs more precisely, at some cost to simplicity and ease-of-programming. 
 This idea can be extended to other datatypes by defining the following two Terrifically Simple JSON examples to be equivalent.
 ```JSON
 {
- "_self": "http://martin-nally.name#",
- "bornIn": {"_self": "http://www.scotland.org#"}
+ "self": "http://martin-nally.name#",
+ "bornIn": {"self": "http://www.scotland.org#"}
 }
 ```
 ```JSON
 {
- "_self": "http://martin-nally.name#",
+ "self": "http://martin-nally.name#",
  "bornIn": {
     "_value": "http://www.scotland.org#",
     "_datatype": "resource"
@@ -170,16 +170,16 @@ This idea can be extended to other datatypes by defining the following two Terri
 ```
 The `_datatype` value tells you the datatype of the entity referenced in the `_value` field, and by inference the notation of the reference itself. 
 `_datatype` and `_value` must both appear in an object, or neither must appear.
-A Terrifically Simple JSON object may have `_self` or `_value`, but not both.
-The `_self` property is a shorthand way to express a `_value` for entities whose `_datatype` is `resource` and hence whose reference notaton is [URI](https://tools.ietf.org/html/rfc3986). 
+A Terrifically Simple JSON object may have `self` or `_value`, but not both.
+The `self` property is a shorthand way to express a `_value` for entities whose `_datatype` is `resource` and hence whose reference notaton is [URI](https://tools.ietf.org/html/rfc3986). 
 
 Other values for `_datatype` can be used for other datatypes, e.g. dates, like this:
 ```JSON
 {
- "_self": "http://martin-nally.name#",
+ "self": "http://martin-nally.name#",
  "bornOn": {
     "_value": "1957-01-05",
-    "_datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+    "_datatype": "https://tools.ietf.org/html/rfc3339"
     }
 }
 ```
@@ -188,13 +188,13 @@ In principle, the JSON built-in types can be
 handled the same way. In other words, the following are equivalent:
 ```JSON
 {
- "_self": "http://martin-nally.name#",
+ "self": "http://martin-nally.name#",
  "heightInCM": 178
 }
 ```
 ```JSON
 {
- "_self": "http://martin-nally.name#",
+ "self": "http://martin-nally.name#",
  "heightInCM": {
     "_value": "178",
     "_datatype": "http://www.json.org/#number"
@@ -227,18 +227,18 @@ Many media types include special support for collections. Terrifically Simple JS
 that are exposed using the normal rules of Terrifically Simple JSON. Here is an example:
 
 ```JSON
-{"_self": "http://scotland.org/native-sons",
+{"self": "http://scotland.org/native-sons",
  "contents": [
-    {"_self": "http://martin-nally.name#"},
-    {"_self": "many more like this"}
+    {"self": "http://martin-nally.name#"},
+    {"self": "many more like this"}
     ]
 }
 ```
 
 It would be even simpler to write:
 ```JSON
-[   {"_self": "http://martin-nally.name#"},
-    {"_self": "many more like this"}
+[   {"self": "http://martin-nally.name#"},
+    {"self": "many more like this"}
 ]
 ```
 This second option may not be wrong, but it does not express the fact that "http://scotland.org/native-sons" is itself an 
@@ -250,8 +250,8 @@ than a media-type problem.
 ## Prior Art and Acknowledgements
 
 If you know RDF, you will recognize that Terrifically Simple JSON is a representation format for a data model that is loosely related to RDF.
-Adding a `_self` property to a JSON object converts JSON's name/value pairs into triples, with the value of the `_self` property providing the subject.
-Terrifically Simple JSON objects without a `_self` property are like RDF blank nodes.
+Adding a `self` property to a JSON object converts JSON's name/value pairs into triples, with the value of the `self` property providing the subject.
+Terrifically Simple JSON objects without a `self` property are like RDF blank nodes.
 Terrifically Simple JSON is not trying to define a new RDF format or a new data model—its goal is
 to build minimally on JSON to make Web API design and implementation easier.
 
@@ -261,13 +261,13 @@ Having done a couple of projects using a strict interpretation of the RDF model,
 we've seen that those RDF features cause significant friction in practical API programming. 
 Those features also contribute significantly to the complexity of standard JSON representations
 of RDF, especially [JSON-LD](http://json-ld.org/), whose complexity is likely to be fatal in our opinion, 
-but also [RDF/JSON](https://www.w3.org/TR/rdf-json/).
+but also, to a lesser degree, [RDF/JSON](https://www.w3.org/TR/rdf-json/).
 
 Terrifically Simple JSON has very few concepts, and those it has are mostly stolen from elsewhere. The value is in what was left out, not what was put in.
-The `_self` property of Terrifically Simple JSON corresponds fairly exactly to the `@id` property of JSON-LD. This is the only concept found in JSON-LD that also appears in Terrifically Simple JSON. 
-We chose `_self` instead of `@id` because `@id` is awkward for Javascript programming, and `self` is used by others (standardized by [ATOM](https://tools.ietf.org/html/rfc4287), and often copied).
+The `self` name/value pair of Terrifically Simple JSON corresponds fairly exactly to the `@id` property of JSON-LD. This is the only concept found in JSON-LD that also appears in Terrifically Simple JSON. 
+We chose `self` instead of `@id` because `@id` is awkward for Javascript programming, and `self` is used by others (standardized by [ATOM](https://tools.ietf.org/html/rfc4287), and often copied).
 `_value` and `_datatype` perform the same functions as `value`, `type` and `datatype` from RDF/JSON. We use `_value` and `_datatype` (only 2 are needed)
-to reduce the likelihood of collisions.
+to reduce the likelihood of collisions with property names.
 
 ## _
 <a name="footnote1"><sup>1</sup></a> Terrifically Simple JSON could also be used in other contexts where JSON is used. <a href="#ref1">↩</a>
@@ -278,9 +278,9 @@ implies that there can be more than one name/value pair with the same name but d
 says that "The names within an object SHOULD be unique". This restriction allows JSON to map simply to common programming language constructs,
 which is the primary value of JSON and reason for its success.<a href="#ref2">↩</a>
 
-<a name="footnote3"><sup>3</sup></a> Since it is part of the media type, the `_self` JSON
+<a name="footnote3"><sup>3</sup></a> Since it is conceptually part of the media type, the `self` JSON
 property is exempt from constraint #2, although you can think of an entity's identity as being one of its properties if you prefer. 
-`_value` and `_datatype` are also part of the media type and thus exempt from constraint #2.<a href="#ref3">↩</a>
+`_value` and `_datatype` are also conceptually part of the media type and thus exempt from constraint #2.<a href="#ref3">↩</a>
 
 <a name="footnote4"><sup>4</sup></a> To understand what it is like to lack the required context, imagine both examples with all names and values in Chinese characters
 (unless you can actually read Chinese, in which case use Cryllic or Arabic). <a href="#ref4">↩</a>
