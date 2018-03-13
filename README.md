@@ -18,16 +18,16 @@ Terrifically Simple JSON reduces complexity by adding 3 constraints:
 3. The `value` of a name/value pair must be the value of the entity property referenced by the name.
 
 Terrifically Simple JSON defines a special name/value pair whose name is `self`, that allows you to declare explicitly which data model entity a particular JSON object corresponds to.
-Its value is always a URI, encoded as a JSON string. `self` is not a property of the object, it specifies the identity of the resource whose property values are specified by the other name/value pairs in the same JSON object.
+Its value is always a URI, encoded as a JSON string. `self` is not a property of the object; it specifies the identity of the entity whose property values are given by the other name/value pairs in the same JSON object.
 
-The only requirements of Terrifically Simple JSON are that you follow the 3 constraints above, and use the `self` property to express constraint #1 explicitly.
-
-The 3 constraints seem to imply that the media type is "just JSON", but the use of `self` 
-suggests a new media type<a href="#footnote3" id="ref3"><sup>3</sup></a>, however minimal. There is no registered media type for Terrifically Simple JSON — we just use `application/json`.
+The only requirements of Terrifically Simple JSON are that you follow the 3 constraints above, and use the `self` name/value pair to express constraint #1 explicitly.
 
 There is a generalization of the `self` concept that allows arbitrary datatypes to be expressed in JSON in a consistent fashion. 
 This generalization is expressed with the optional `_value` and `_datatype` name/value pairs. Terrifically Simple JSON
 does not require you to use them, but they are there if you want an explcit way to handle arbitrary datatypes in Terrifically Simple JSON.
+
+The special meanings assigned to `self`, `_value` and `_datatype`
+suggest a new media type<a href="#footnote3" id="ref3"><sup>3</sup></a>, however minimal. There is no registered media type for Terrifically Simple JSON — just use `application/json`.
 
 ## Tutorial
 
@@ -43,7 +43,7 @@ Because of Terrifically Simple JSON's 3 constraints, we know that this single JS
 in the API data model with 3 property values.
 
 The following JSON document encodes the same information in a different style. It is not Terrifically Simple JSON—it violates all 3 of the constraints above. That does not mean it's a bad
-design, just that it follows a different set of rules than Terrifically Simple JSON. It is its own media type.
+design, just that it follows a different set of rules than Terrifically Simple JSON; it is its own media type.
 ```
  1. {
  2.  "properties": 
