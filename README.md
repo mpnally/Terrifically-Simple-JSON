@@ -215,7 +215,7 @@ JSON has built-in notations for referencing numbers, booleans and strings—for 
 we must state explicitly which datatype and notation we're using, or rely on contextual knowledge.
 This view of datatypes says that in Terrifically Simple JSON, values as well as objects must correspond to entities in the API model.
 
-I'm not suggesting that anyone would actually encode a number in JSON in this way<a href="#footnote5" id="ref5"><sup>6</sup></a>—the point is to show
+I'm not suggesting that anyone would actually encode a number in JSON in this way<a href="#footnote5" id="ref5"><sup>5</sup></a>—the point is to show
 that the concept works for all datatypes. If you need a way
 to encode dates and other dataypes that distinguishes them from strings, this is the way you should do it in Terrifically Simple JSON.
 If you don't need to distinguish dates from their stringified equivalents—that is, you rely on the client having enough context—
