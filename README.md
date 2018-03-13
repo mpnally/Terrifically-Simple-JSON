@@ -27,7 +27,7 @@ This generalization is expressed with the optional `_value` and `_datatype` name
 does not require you to use them, but they are there if you want an explcit way to handle arbitrary datatypes in Terrifically Simple JSON.
 
 The special meanings assigned to `self`, `_value` and `_datatype`
-suggest a new media type<a href="#footnote3" id="ref3"><sup>3</sup></a>, however minimal. There is no registered media type for Terrifically Simple JSON — just use `application/json`. Since they are conceptually part of the media type, the self, _value and _datatype JSON name/value pairs are exempt from constraint #2.
+suggest a new media type, however minimal. There is no registered media type for Terrifically Simple JSON — just use `application/json`. Since they are conceptually part of the media type, the self, _value and _datatype JSON name/value pairs are exempt from constraint #2.
 
 ## Tutorial
 
@@ -139,7 +139,7 @@ the intent of the first is the same as that of the second. Computers are not ver
 Whether you use the first or second form in your API might depend on who the audience is and whether you want to require 
 them to have context. This choice involves a trade-off between ease-of-use and precision—
 the first form is simpler to read and code for a human who has the required context and the second form is more precise and correct 
-and therefore can be reliably interpreted without context <a href="#footnote4" id="ref4"><sup>4</sup></a>.
+and therefore can be reliably interpreted without context <a href="#footnote3" id="ref3"><sup>4</sup></a>.
 
 ### That's it
 
@@ -201,7 +201,7 @@ handled the same way. In other words, the following are equivalent:
     }
 }
 ```
-[<a href="#footnote5" id="ref5"><sup>5</sup></a>] If this example
+[<a href="#footnote4" id="ref4"><sup>5</sup></a>] If this example
 seems unintuitive, consider that
 when you write `178` in JSON, you are writing a reference to an entity. The number 178 has been around a lot longer 
 than JSON—the notation you are using to write this reference was
@@ -215,7 +215,7 @@ JSON has built-in notations for referencing numbers, booleans and strings—for 
 we must state explicitly which datatype and notation we're using, or rely on contextual knowledge.
 This view of datatypes says that in Terrifically Simple JSON, values as well as objects must correspond to entities in the API model.
 
-I'm not suggesting that anyone would actually encode a number in JSON in this way<a href="#footnote6" id="ref6"><sup>6</sup></a>—the point is to show
+I'm not suggesting that anyone would actually encode a number in JSON in this way<a href="#footnote5" id="ref5"><sup>6</sup></a>—the point is to show
 that the concept works for all datatypes. If you need a way
 to encode dates and other dataypes that distinguishes them from strings, this is the way you should do it in Terrifically Simple JSON.
 If you don't need to distinguish dates from their stringified equivalents—that is, you rely on the client having enough context—
@@ -278,14 +278,10 @@ implies that there can be more than one name/value pair with the same name but d
 says that "The names within an object SHOULD be unique". This restriction allows JSON to map simply to common programming language constructs,
 which is the primary value of JSON and reason for its success.<a href="#ref2">↩</a>
 
-<a name="footnote3"><sup>3</sup></a> Since it is conceptually part of the media type, the `self` JSON
-property is exempt from constraint #2, although you can think of an entity's identity as being one of its properties if you prefer. 
-`_value` and `_datatype` are also conceptually part of the media type and thus exempt from constraint #2.<a href="#ref3">↩</a>
+<a name="footnote3"><sup>3</sup></a> To understand what it is like to lack the required context, imagine both examples with all names and values in Chinese characters
+(unless you can actually read Chinese, in which case use Cryllic or Arabic). <a href="#ref3">↩</a>
 
-<a name="footnote4"><sup>4</sup></a> To understand what it is like to lack the required context, imagine both examples with all names and values in Chinese characters
-(unless you can actually read Chinese, in which case use Cryllic or Arabic). <a href="#ref4">↩</a>
+<a name="footnote4"><sup>4</sup>I invented this URL for the JSON number notation—I'm not aware of an official one.</a><a href="#ref4">↩</a>
 
-<a name="footnote5"><sup>5</sup>I invented this URL for the JSON number notation—I'm not aware of an official one.</a><a href="#ref5">↩</a>
-
-<a name="footnote6"><sup>6</sup></a> [RDF/JSON](https://www.w3.org/TR/rdf-json/) encodes even types for which JSON has built-in support this way.
-Perhaps they didn't want to depend on JSON's notations for basic types, preferring those defined by RDF, XML Schema and other standards. <a href="#ref6">↩</a>
+<a name="footnote5"><sup>5</sup></a> [RDF/JSON](https://www.w3.org/TR/rdf-json/) encodes even types for which JSON has built-in support this way.
+Perhaps they didn't want to depend on JSON's notations for basic types, preferring those defined by RDF, XML Schema and other standards. <a href="#ref5">↩</a>
