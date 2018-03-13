@@ -235,8 +235,7 @@ that are exposed using the normal rules of Terrifically Simple JSON. Here is an 
 }
 ```
 
-In summary, we think that standardization of collection representations is better handled as a data modelling (ontology) problem
-than a media-type problem.
+In summary, Terrifically Simple JSON considers that standardization of collection representations is a data modelling (ontology) problem, not a media-type problem.
 
 ## Prior Art and Acknowledgements
 
