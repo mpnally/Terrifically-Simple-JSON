@@ -27,7 +27,7 @@ This generalization is expressed with the optional `_value` and `_datatype` name
 does not require you to use them, but they are there if you want an explcit way to handle arbitrary datatypes in Terrifically Simple JSON.
 
 The special meanings assigned to `self`, `_value` and `_datatype`
-suggest a new media type<a href="#footnote3" id="ref3"><sup>3</sup></a>, however minimal. There is no registered media type for Terrifically Simple JSON — just use `application/json`.
+suggest a new media type<a href="#footnote3" id="ref3"><sup>3</sup></a>, however minimal. There is no registered media type for Terrifically Simple JSON — just use `application/json`. Since they are conceptually part of the media type, the self, _value and _datatype JSON name/value pairs are exempt from constraint #2.
 
 ## Tutorial
 
