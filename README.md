@@ -243,7 +243,7 @@ If you know RDF, you will recognize that Terrifically Simple JSON is a represent
 Adding a `self` property to a JSON object converts JSON's name/value pairs into triples, with the value of the `self` property providing the subject.
 Terrifically Simple JSON objects without a `self` property are like RDF blank nodes.
 Terrifically Simple JSON is not trying to define a new RDF format or a new data model—its goal is
-to build minimally on JSON to make Web API design and implementation easier.
+to constrain the patterns of use of JSON to make Web API design easier.
 
 Compared to the RDF data model, Terrifically Simple JSON lacks the requirements that predicates and classes be entities 
 identified with URLs and lacks the ability to express multi-valued properties—JSON's array feature expresses list-valued properties.
