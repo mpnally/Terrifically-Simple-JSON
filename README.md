@@ -18,7 +18,7 @@ Terrifically Simple JSON reduces complexity by adding 3 constraints:
 3. The `value` of a name/value pair must be the value of the entity property referenced by the name.
 
 Terrifically Simple JSON defines a special name/value pair whose name is `self`, that allows you to declare explicitly which data model entity a particular JSON object corresponds to.
-Its value is always a URI, encoded as a JSON string. `self` is not a property of the object; it specifies the identity of the entity whose property values are given by the other name/value pairs in the same JSON object.
+Its value is always a URI, encoded as a JSON string. `self` is not a property of the entity; it specifies the identity of the entity whose property values are given by the other name/value pairs in the same JSON object.
 
 The only requirements of Terrifically Simple JSON are that you follow the 3 constraints above, and use the `self` name/value pair to express constraint #1 explicitly.
 
