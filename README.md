@@ -24,7 +24,7 @@ The only requirements of Terrifically Simple JSON are that you follow the 3 cons
 
 There is a generalization of the `self` concept that allows arbitrary datatypes to be expressed in JSON in a consistent fashion. 
 This generalization is expressed with the optional `_value` and `_datatype` name/value pairs. Terrifically Simple JSON
-does not require you to use them, but they are there if you want an explcit way to handle arbitrary datatypes in Terrifically Simple JSON.
+does not require you to use them, but they are there if you want an explicit way to handle arbitrary datatypes in Terrifically Simple JSON.
 
 The special meanings assigned to `self`, `_value` and `_datatype`
 suggest a new media type, however minimal. There is no registered media type for Terrifically Simple JSON — just use `application/json`. Since they are conceptually part of the media type, the self, _value and _datatype JSON name/value pairs are exempt from constraints #2 and #3.
