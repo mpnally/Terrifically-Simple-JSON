@@ -139,7 +139,7 @@ the intent of the first is the same as that of the second. Computers are not ver
 Whether you use the first or second form in your API might depend on who the audience is and whether you want to require 
 them to have context. This choice involves a trade-off between ease-of-use and precision—
 the first form is simpler to read and code for a human who has the required context and the second form is more precise and correct 
-and therefore can be reliably interpreted without context <a href="#footnote3" id="ref3"><sup>4</sup></a>.
+and therefore can be reliably interpreted without context <a href="#footnote3" id="ref3"><sup>3</sup></a>.
 
 ### That's it
 
@@ -201,7 +201,7 @@ handled the same way. In other words, the following are equivalent:
     }
 }
 ```
-[<a href="#footnote4" id="ref4"><sup>5</sup></a>] If this example
+[<a href="#footnote4" id="ref4"><sup>4</sup></a>] If this example
 seems unintuitive, consider that
 when you write `178` in JSON, you are writing a reference to an entity. The number 178 has been around a lot longer 
 than JSON—the notation you are using to write this reference was
