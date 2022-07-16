@@ -79,8 +79,7 @@ Here is an example of its use:
 ```
 This example says simply that the entity whose id is http://martin-nally.name# has the first name Martin.
 Constraints 2 and 3 tell us that the first name of the entity is Martin and the `self` property tells us which entity we are talking about.
-This is the primary idea in Terrifically Simple JSON—if you have understood this idea, you have understood most of what
-is valuable in Terrifically Simple JSON.
+The primary idea and value of Terrifically Simple JSON is that every JSON object follows this pattern, without exception.
 
 The `self` name/value pair can be used in nested objects too, like this:
 ```JSON
@@ -134,7 +133,7 @@ The following two examples are both Terrifically Simple JSON (you can verify tha
 }
 ```
 Interpreted strictly,
-the second says I was born in a country while the first says I was born in a string. Common sense tells us that
+the second example says I was born in a country while the first says I was born in a string. Common sense tells us that
 the intent of the first is the same as that of the second. Computers are not very good at common sense, but humans are if they have some context.
 Whether you use the first or second form in your API might depend on who the audience is and whether you want to require 
 them to have context. This choice involves a trade-off between ease-of-use and precision—
