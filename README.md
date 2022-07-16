@@ -146,7 +146,7 @@ That is it for the required part of Terrifically Simple JSON. The next section d
 
 ### <a name="datatypes"></a>Datatypes
 
-One of the challenges of JSON is that it only supports 3 useful datatypes: number, string, and boolean (the `null` value is the unique member of a 4th datatype). 
+One of the challenges of JSON is that it only supports 4 useful datatypes: number, string, boolean and array (the `null` value is the unique member of a 5th datatype). 
 The two most common
 datatypes in Web API programming that are not covered by JSON are URL and date/time. Unless you are willing to invent extensions or
 conventions on top of JSON—in other words, a new media type—the best you can do is to encode them as strings. The [example above](#explicit-urls) shows how the `self` name/value pair
@@ -238,22 +238,24 @@ In summary, Terrifically Simple JSON considers that standardization of collectio
 
 ## Prior Art and Acknowledgements
 
-If you know RDF, you will recognize that Terrifically Simple JSON is a representation format for a data model that is loosely related to RDF.
-Adding a `self` name/value pair to a JSON object converts JSON's name/value pairs into triples, with the value of `self` providing the subject.
+If you know RDF, you will recognize that Terrifically Simple JSON is a representation format for an information model that is similar to that of RDF;
+adding a `self` name/value pair to a JSON object converts JSON's name/value pairs into triples, with the value of `self` providing the subject.
 Terrifically Simple JSON objects without a `self` name/value pair are like RDF blank nodes.
-Terrifically Simple JSON is not trying to define a new RDF format or a new data model—its goal is
-to constrain the patterns of use of JSON to make Web API design easier.
+Terrifically Simple JSON is not trying to define a new RDF format or a new information model—its goal is
+to constrain the patterns of use of JSON to make Web APIs easier to design and use.
 
-Compared to the RDF data model, Terrifically Simple JSON lacks the requirements that predicates and classes be entities 
-identified with URLs and lacks the ability to express multi-valued properties—JSON's array feature expresses list-valued properties.
-Having done a couple of projects using a strict interpretation of the RDF model, 
+Compared to the RDF information model model, Terrifically Simple JSON lacks the requirements that predicates and classes be entities 
+identified with URLs and lacks the ability to express multi-valued properties. 
+Having done a couple of projects adhereing faithfully to the RDF model, 
 we've seen that those RDF features cause significant friction in practical API programming. 
 Those features also contribute significantly to the complexity of standard JSON representations
-of RDF, especially [JSON-LD](http://json-ld.org/), whose complexity is likely to be fatal in our opinion, 
+of RDF, especially [JSON-LD](http://json-ld.org/), whose complexity is likely to be fatal in my opinion, 
 but also, to a lesser degree, [RDF/JSON](https://www.w3.org/TR/rdf-json/).
+Terrifically Simple JSON inherits JSON's array feature for expressing list-valued properties, and leaves concepts like a `type` predicate and classes to the API data model designer.
 
-Terrifically Simple JSON has very few concepts, and those it has are mostly stolen from elsewhere. The value is in what was left out, not what was put in.
-The `self` name/value pair of Terrifically Simple JSON corresponds fairly exactly to the `@id` name/value pair of JSON-LD. This is the only concept found in JSON-LD that also appears in Terrifically Simple JSON. 
+Terrifically Simple JSON has very few concepts, and those it has are mostly stolen from elsewhere. The value is in what is left out, not what was put in.
+The `self` name/value pair of Terrifically Simple JSON corresponds fairly exactly to the `@id` name/value pair of JSON-LD. 
+This is the only concept found in JSON-LD that also appears in Terrifically Simple JSON. 
 We chose `self` instead of `@id` because `@id` is awkward for Javascript programming, and `self` is used by others (standardized by [ATOM](https://tools.ietf.org/html/rfc4287), and often copied).
 `_value` and `_datatype` perform the same functions as `value`, `type` and `datatype` from RDF/JSON. We use `_value` and `_datatype` (only 2 are needed)
 to reduce the likelihood of collisions with property names.
@@ -267,7 +269,7 @@ implies that there can be more than one name/value pair with the same name but d
 says that "The names within an object SHOULD be unique". This restriction allows JSON to map simply to common programming language constructs,
 which is the primary value of JSON and reason for its success.<a href="#ref2">↩</a>
 
-<a name="footnote3"><sup>3</sup></a> To understand what it is like to lack the required context, imagine both examples with all names and values in Chinese characters
+<a name="footnote3"><sup>3</sup></a> To understand what it is like to lack the required context, imagine both examples with all property names and values in Chinese characters
 (unless you can actually read Chinese, in which case use Cryllic or Arabic). <a href="#ref3">↩</a>
 
 <a name="footnote4"><sup>4</sup>I invented this URL for the JSON number notation—I'm not aware of an official one.</a><a href="#ref4">↩</a>
