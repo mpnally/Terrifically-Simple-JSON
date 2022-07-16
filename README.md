@@ -27,7 +27,7 @@ This generalization is expressed with the optional `_value` and `_datatype` name
 does not require you to use them, but they are there if you want an explicit way to handle arbitrary datatypes in Terrifically Simple JSON.
 
 The special meanings assigned to `self`, `_value` and `_datatype`
-suggest a new media type, however minimal. There is no registered media type for Terrifically Simple JSON — just use `application/json`. Since they are conceptually part of the media type, the self, _value and _datatype JSON name/value pairs are exempt from constraints #2 and #3.
+suggest a new media type, however minimal. There is no registered media type for Terrifically Simple JSON — just use `application/json`. Since they are conceptually part of the media type, the `self`, `_value` and `_datatype` JSON name/value pairs are exempt from constraints #2 and #3.
 
 ## Tutorial
 
@@ -78,8 +78,8 @@ Here is an example of its use:
 }
 ```
 This example says simply that the entity whose id is http://martin-nally.name# has the first name Martin.
-Constraints 2 and 3 tell us that the first name of the entity is Martin and the `self` property tells us which entity we are talking about.
-The primary idea and value of Terrifically Simple JSON is that every JSON object follows this pattern, without exception.
+Constraints 2 and 3 tell us that the first name of the entity is Martin and the `self` name/value pair tells us which entity we are talking about.
+The primary idea and primary value of Terrifically Simple JSON is that every JSON object follows this simple pattern, without exception.
 
 The `self` name/value pair can be used in nested objects too, like this:
 ```JSON
@@ -98,7 +98,7 @@ This example encodes two separate pieces of information:
 
 ### When `self` is missing
 
-When the `self` property of a Terrifically Simple JSON object is missing, the object still must correspond to an 
+When the `self` name/value pair of a Terrifically Simple JSON object is missing, the object still must correspond to an 
 entity in the API data model. A JSON object with no `self` should be read as a noun clause that references an entity. This example
 ```JSON
 {
@@ -239,8 +239,8 @@ In summary, Terrifically Simple JSON considers that standardization of collectio
 ## Prior Art and Acknowledgements
 
 If you know RDF, you will recognize that Terrifically Simple JSON is a representation format for a data model that is loosely related to RDF.
-Adding a `self` property to a JSON object converts JSON's name/value pairs into triples, with the value of the `self` property providing the subject.
-Terrifically Simple JSON objects without a `self` property are like RDF blank nodes.
+Adding a `self` name/value pair to a JSON object converts JSON's name/value pairs into triples, with the value of `self` providing the subject.
+Terrifically Simple JSON objects without a `self` name/value pair are like RDF blank nodes.
 Terrifically Simple JSON is not trying to define a new RDF format or a new data model—its goal is
 to constrain the patterns of use of JSON to make Web API design easier.
 
@@ -253,7 +253,7 @@ of RDF, especially [JSON-LD](http://json-ld.org/), whose complexity is likely to
 but also, to a lesser degree, [RDF/JSON](https://www.w3.org/TR/rdf-json/).
 
 Terrifically Simple JSON has very few concepts, and those it has are mostly stolen from elsewhere. The value is in what was left out, not what was put in.
-The `self` name/value pair of Terrifically Simple JSON corresponds fairly exactly to the `@id` property of JSON-LD. This is the only concept found in JSON-LD that also appears in Terrifically Simple JSON. 
+The `self` name/value pair of Terrifically Simple JSON corresponds fairly exactly to the `@id` name/value pair of JSON-LD. This is the only concept found in JSON-LD that also appears in Terrifically Simple JSON. 
 We chose `self` instead of `@id` because `@id` is awkward for Javascript programming, and `self` is used by others (standardized by [ATOM](https://tools.ietf.org/html/rfc4287), and often copied).
 `_value` and `_datatype` perform the same functions as `value`, `type` and `datatype` from RDF/JSON. We use `_value` and `_datatype` (only 2 are needed)
 to reduce the likelihood of collisions with property names.
