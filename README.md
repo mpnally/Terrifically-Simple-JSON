@@ -143,7 +143,7 @@ Interpreted strictly,
 the second example says I was born in a country while the first says I was born in a string. Common sense tells us that
 the intent of the first is the same as that of the second. Computers are not very good at common sense, but humans are if they have some context.
 Whether you use the first or second form in your API might depend on who the audience is and whether you want to require 
-them to already know that the value of `bornIn` will be an identifier. This choice involves a trade-off between ease-of-use and precision—
+them to already know that the value of `bornIn` will be a reference to another entity. This choice involves a trade-off between ease-of-use and precision—
 the first form is simpler to read and code for a human who has the required knowledge and the second form can be reliably 
 interpreted without that prior knowledge <a href="#footnote3" id="ref3"><sup>3</sup></a>.
 
