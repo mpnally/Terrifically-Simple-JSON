@@ -42,6 +42,8 @@ The following is a Terrifically Simple JSON document:
 Because of Terrifically Simple JSON's 3 constraints, we know that this single JSON object with 3 name/value pairs represents a single entity 
 in the API data model with 3 property values.
 
+The primary idea and primary value of Terrifically Simple JSON is that each JSON object will follow this simple pattern, without exception.
+
 The following JSON document encodes the same information in a different style. It is not Terrifically Simple JSON—it violates all 3 of the constraints above. That does not mean it's a bad
 design, just that it follows a different set of rules than Terrifically Simple JSON; it is its own media type.
 ```
@@ -79,7 +81,6 @@ Here is an example of its use:
 ```
 This example says simply that the entity whose id is http://martin-nally.name# has the first name Martin.
 Constraints 2 and 3 tell us that the first name of the entity is Martin and the `self` name/value pair tells us which entity we are talking about.
-The primary idea and primary value of Terrifically Simple JSON is that every JSON object follows this simple pattern, without exception.
 
 You might think that in a web API it would be natural for all identifiers to be URIs, specifically HTTP URLs since those are the URIs of the web. 
 In reality, using HTTP URLs for identifiers, as I do in the examples, is unusual in web APIs. 
@@ -105,7 +106,7 @@ This example encodes two separate pieces of information:
 ### When `self` is missing
 
 When the `self` name/value pair of a Terrifically Simple JSON object is missing, the object still must correspond to an 
-entity in the API data model. A JSON object with no `self` should be read as a noun clause that references an entity. This example
+entity in the API data model. A JSON object with no `self` should be read as a noun clause that references an entity. The following example
 ```JSON
 {
  "isA": "Person",
@@ -208,7 +209,7 @@ handled the same way. In other words, the following are equivalent:
 ```
 [<a href="#footnote4" id="ref4"><sup>4</sup></a>] If this example
 seems unintuitive, consider that
-when you write `178` in JSON, you are writing a reference to an entity. The number 178 has been around a lot longer 
+when you write `178` in JSON, you are writing a reference to an entity. The number 178 is an entity that has been around a lot longer 
 than JSON—the notation you are using to write this reference was
 [developed over 3 millenia](https://en.wikipedia.org/wiki/History_of_the_Hindu-Arabic_numeral_system). Other notations for writing references to the same entity
 exist—it can be written as `CLXXVIII` in [Roman numerals](https://en.wikipedia.org/wiki/Roman_numerals).
