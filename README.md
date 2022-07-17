@@ -18,7 +18,7 @@ Terrifically Simple JSON reduces complexity by adding 3 constraints:
 3. The `value` of a name/value pair must be the value of the entity property referenced by the name.
 
 Terrifically Simple JSON defines a special name/value pair whose name is `self`, that allows you to declare explicitly which data model entity a particular JSON object corresponds to.
-Its value is always a URI, encoded as a JSON string. `self` is not a property of the entity; it specifies the identity of the entity whose property values are given by the other name/value pairs in the same JSON object.
+Its value is an identifier encoded as a JSON string. `self` is not a property of the entity; it specifies the identity of the entity whose property values are given by the other name/value pairs in the same JSON object.
 
 The only requirements of Terrifically Simple JSON are that you follow the 3 constraints above, and use the `self` name/value pair to express constraint #1 explicitly.
 
@@ -68,7 +68,7 @@ Line 9 violates constraint 3—`bornIn` is a property (or relationship) name in 
 
 Constraint #1 of Terrifically Simple JSON is that every JSON object
 corresponds to an entity in the API data model. The `self` name/value pair provides a direct way of specifying which entity. 
-Its value is always a URI.
+Its value is an identifier encoded as a JSON string.
 Here is an example of its use:
 
 ```JSON
@@ -80,6 +80,12 @@ Here is an example of its use:
 This example says simply that the entity whose id is http://martin-nally.name# has the first name Martin.
 Constraints 2 and 3 tell us that the first name of the entity is Martin and the `self` name/value pair tells us which entity we are talking about.
 The primary idea and primary value of Terrifically Simple JSON is that every JSON object follows this simple pattern, without exception.
+
+You might think that in a web API it would be natural for all identifiers to be URIs, specifically HTTP URLs since those are the URIs of the web. 
+In reality, using HTTP URLs for identifiers, as I do in the examples, is unusual in web APIs. 
+It is much more common to use simple identifiers that look like database primary keys, and require the client to learn 
+rules specific to the API to translate these identifiers into HTTP URLs whenever necessary. 
+Terrifically Simple JSON does not mandate any particular syntax or semantics for identifiers, and can be used with the identifiers of your choice.
 
 The `self` name/value pair can be used in nested objects too, like this:
 ```JSON
@@ -117,7 +123,7 @@ entity in the API data model. A JSON object with no `self` should be read as a n
 should be read as meaning,
 "**the Person whose name is Martin** has eyes colored **the RGBColor whose red value is zero, green value is 0 and blue value is 155**".
 
-### <a name="explicit-urls"></a>An explicit way of encoding URLs
+### <a name="explicit-identifiers"></a>An explicit way of encoding identifiers
 
 The following two examples are both Terrifically Simple JSON (you can verify that they follow the constraints).
 ```JSON
@@ -136,9 +142,9 @@ Interpreted strictly,
 the second example says I was born in a country while the first says I was born in a string. Common sense tells us that
 the intent of the first is the same as that of the second. Computers are not very good at common sense, but humans are if they have some context.
 Whether you use the first or second form in your API might depend on who the audience is and whether you want to require 
-them to have context. This choice involves a trade-off between ease-of-use and precision—
-the first form is simpler to read and code for a human who has the required context and the second form is more precise and correct 
-and therefore can be reliably interpreted without context <a href="#footnote3" id="ref3"><sup>3</sup></a>.
+them to already know that the value of `bornIn` will be an identifier. This choice involves a trade-off between ease-of-use and precision—
+the first form is simpler to read and code for a human who has the required knowledge and the second form can be reliably 
+interpreted without that prior knowledge <a href="#footnote3" id="ref3"><sup>3</sup></a>.
 
 ### That's it
 
@@ -147,9 +153,9 @@ That is it for the required part of Terrifically Simple JSON. The next section d
 ### <a name="datatypes"></a>Datatypes
 
 One of the challenges of JSON is that it only supports 4 useful datatypes: number, string, boolean and array (the `null` value is the unique member of a 5th datatype). 
-The two most common
-datatypes in Web API programming that are not covered by JSON are URL and date/time. Unless you are willing to invent extensions or
-conventions on top of JSON—in other words, a new media type—the best you can do is to encode them as strings. The [example above](#explicit-urls) shows how the `self` name/value pair
+Two common datatypes in Web API programming that are not covered by JSON are URL and date/time. Unless you are willing to invent extensions or
+conventions on top of JSON—in other words, a new media type—the best you can do is to encode them as strings. 
+The [example above](#explicit-identifiers) shows how the `self` name/value pair
 can be used in Terrifically Simple JSON to encode URLs more precisely, at some cost to simplicity and ease-of-programming. 
 This idea can be extended to other datatypes by defining the following two Terrifically Simple JSON examples to be equivalent.
 ```JSON
@@ -163,14 +169,14 @@ This idea can be extended to other datatypes by defining the following two Terri
  "self": "http://martin-nally.name#",
  "bornIn": {
     "_value": "http://www.scotland.org#",
-    "_datatype": "resource"
+    "_datatype": "entity"
     }
 }
 ```
-The `_datatype` value tells you the datatype of the entity referenced in the `_value` field, and by inference the notation of the reference itself. 
+The `_datatype` value tells you the datatype of the entity referenced in the `_value` field, and by inference the syntax of the datatype values. 
 `_datatype` and `_value` must both appear in an object, or neither must appear.
 A Terrifically Simple JSON object may have `self` or `_value`, but not both.
-The `self` name/value pair is a shorthand way to express a `_value` for entities whose `_datatype` is `resource` and hence whose reference notaton is [URI](https://tools.ietf.org/html/rfc3986). 
+The `self` name/value pair is a shorthand way to express an identifier `_value` for entities whose `_datatype` is `entity`.
 
 Other values for `_datatype` can be used for other datatypes, e.g. dates, like this:
 ```JSON
@@ -209,7 +215,7 @@ exist—it can be written as `CLXXVIII` in [Roman numerals](https://en.wikipedia
 When you write `true` or `false` in JSON, you are writing a reference using a notation that is specific to booleans. 
 Strings can be viewed the same way, although it may take a little more thought to see why this is true (think of different notions for designating the same string). 
 Any datatype can be thought of as consisting of a pre-defined set of entities with a notation for writing
-references to them [and perhaps some operators on them, but operators are outside of the scope of JSON].
+references to those entities [and perhaps some operators on them, but operators are outside of the scope of JSON].
 JSON has built-in notations for referencing numbers, booleans and strings—for other datatypes, 
 we must state explicitly which datatype and notation we're using, or rely on contextual knowledge.
 This view of datatypes says that in Terrifically Simple JSON, values as well as objects must correspond to entities in the API model.
@@ -217,8 +223,8 @@ This view of datatypes says that in Terrifically Simple JSON, values as well as 
 I'm not suggesting that anyone would actually encode a number in JSON in this way<a href="#footnote5" id="ref5"><sup>5</sup></a>—the point is to show
 that the concept works for all datatypes. If you need a way
 to encode dates and other dataypes that distinguishes them from strings, this is the way you should do it in Terrifically Simple JSON.
-If you don't need to distinguish dates from their stringified equivalents—that is, you rely on the client having enough context—
-you can represent dates as simple strings.
+If you don't need to distinguish dates from strings—that is, you rely on the client having enough context to know which values are dates—
+then you can represent dates as simple strings.
 
 ## No Collections?
 
@@ -234,7 +240,8 @@ that are exposed using the normal rules of Terrifically Simple JSON. Here is an 
 }
 ```
 
-In summary, Terrifically Simple JSON considers that standardization of collection representations is a data modelling (ontology) problem, not a media-type problem.
+In summary, Terrifically Simple JSON considers that standardization of collection representations is a data modelling (ontology) problem, 
+not a media-type problem. It takes the same view of classes and types.
 
 ## Prior Art and Acknowledgements
 
@@ -272,6 +279,6 @@ which is the primary value of JSON and reason for its success.<a href="#ref2">�
 <a name="footnote3"><sup>3</sup></a> To understand what it is like to lack the required context, imagine both examples with all property names and values in Chinese characters
 (unless you can actually read Chinese, in which case use Cryllic or Arabic). <a href="#ref3">↩</a>
 
-<a name="footnote4"><sup>4</sup>I invented this URL for the JSON number notation—I'm not aware of an official one.</a><a href="#ref4">↩</a>
+<a name="footnote4"><sup>4</sup>I invented this identifier for the JSON number notation—I'm not aware of an official one.</a><a href="#ref4">↩</a>
 
 <a name="footnote5"><sup>5</sup></a> [RDF/JSON](https://www.w3.org/TR/rdf-json/) encodes even types for which JSON has built-in support this way.<a href="#ref5">↩</a>
